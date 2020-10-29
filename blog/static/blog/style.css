@@ -6,12 +6,11 @@ body {
     padding: 0px;
     margin: 0px;
     border: 0px;
-  }
-  #container{
-    width: inherit;
-    height: inherit;
-    margin: 0;
-    padding: 0;
+  } 
+
+  @keyframes animation1{
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
   .header {
     height:  10vh;
@@ -49,6 +48,7 @@ body {
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
+
   div.header-option {
     margin-top: 1vh;
     height:4vh;
@@ -58,13 +58,6 @@ body {
     background-color: #19353f;
     align-items: center;
     transition: .5s;
-  }
-
-  .skill-icon {
-    -o-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
   }
 
   .header-option:hover {
@@ -81,21 +74,22 @@ body {
     transform: translateY(7vh);
   }
 
-  .table-small:hover .skill-icon{
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    -moz-transform: scale(2);
-    transform: scale(2);
-  }
+
 
   .column { 
     float: left;
-    color: black;
-    margin: auto auto;
+    color: black;   
     display: flex;
     justify-content: center;
     border: 1px black solid;
+  }
+  
+  .column-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto auto;
+    text-decoration: none;
   }
 
   .col7 {
@@ -137,6 +131,10 @@ body {
     transform: scale(2);
   }
 
+  .column:hover .icon-text{
+    opacity: 100%;
+  }
+
   .icon:hover{
     -webkit-transform: scale(2);
     -ms-transform: scale(2);
@@ -145,21 +143,41 @@ body {
     transform: scale(2);
   }
 
-  div.mainfo {
+  .main-box{
+    position: absolute;
     display: none;
-    position: fixed;
-    left:400px;
-    bottom: 400px;
-
-    background-color: rgb(4, 4, 88);
-    z-index: 5;
-    opacity: 50%;
-
+    background-color: rgb(36, 29, 29);
+    width: 90vw;
+    height: 86vh;
+    margin: 7vh 5vw;
+    opacity: 90%;
+    animation: animation1 0.5s;
   }
 
-  .col-python:hover .mainfo{
-    opacity: 100%;
-    display: block;
+
+  .main-box:target{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-text{
+    font-size: 20;
+    text-decoration: none;
+    color: rgba(7, 6, 6, 0.63);
+    opacity: 0%;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+
+  .closebtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 24px;
+    height: 24px;
+
   }
 
 

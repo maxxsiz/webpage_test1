@@ -6,23 +6,76 @@ Skills - maxxsiz
 {% endblock %}
 {% block content %}
 <div class='col-block'>
-    <div class='column col7 col-1'><img class='icon' src="{% static 'blog/img/icons/database-search.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#sqlite-info'>
+        <img class='icon' src="{% static 'blog/img/icons/database-search.png' %}" alt=''>
+        <h2 class='icon-text'>SQLite</h2>
+    </a>
     </div>
-    <div class='column col7 col-2'><img class='icon' src="{% static 'blog/img/icons/git.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#git-info'>
+        <img class='icon' src="{% static 'blog/img/icons/git.png' %}" alt=''>
+        <h2 class='icon-text'>Git</h2>
+    </a>
     </div>
-    <div class='column col7 col-3'><img class='icon' src="{% static 'blog/img/icons/language-css3.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#CSS3-info'>
+        <img class='icon' src="{% static 'blog/img/icons/language-css3.png' %}" alt=''>
+        <h2 class='icon-text'>CSS3</h2>
+    </a>
     </div>
-    <div class='column col7 col-python'><img class='icon' src="{% static 'blog/img/icons/language-python.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#python-info'>
+        <img class='icon' src="{% static 'blog/img/icons/language-python.png' %}" alt=''>
+        <h2 class='icon-text'>Python</h2>
+    </a>
     </div>
-    <div class='column col7 col-5'><img class='icon' src="{% static 'blog/img/django_logo.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#django-info'>
+        <img class='icon' src="{% static 'blog/img/django_logo.png' %}" alt=''>
+        <h2 class='icon-text'>Django</h2>
+    </a>
     </div>
-    <div class='column col7 col-6'><img class='icon' src="{% static 'blog/img/icons/language-html5.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#html5-info'>
+        <img class='icon' src="{% static 'blog/img/icons/language-html5.png' %}" alt=''>
+        <h2 class='icon-text'>HTML5</h2>
+    </a>
     </div>
-    <div class='column col7 col-7'><img class='icon' src="{% static 'blog/img/icons/language-javascript.png' %}" alt=''>
+    <div class='column col7'>
+        <a class='column-link' href='#javascript-info'>
+        <img class='icon' src="{% static 'blog/img/icons/language-javascript.png' %}" alt=''>
+        <h2 class='icon-text'>JavaScript</h2>
+    </a>
     </div>
 </div>
-<div class='main-info'>
-    <p>python</p>
+<div id='sqlite-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>sqlite</h2>
+</div>
+<div id='git-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>git</h2>
+</div>
+<div id='CSS3-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>CSS3</h2>
+</div>
+<div id='python-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>python</h2>
+</div>
+<div id='django-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>django</h2>
+</div>
+<div id='html5-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>html5</h2>
+</div>
+<div id='javascript-info' class='main-box'>
+    <a href="skills" class="closebtn"><img src="{% static 'blog/img/icons/close-thick.png' %}" alt=''></a>
+    <h2>javascript</h2>
 </div>
 {% endblock %}
 
