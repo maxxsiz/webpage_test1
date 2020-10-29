@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class='header'>
+        <div class='header-main' style='border-radius:0px, 0px, 1vh, 1vh;'>
+        <div class='header-option'><a href='' onmouseover="this.text='About Me'" onmouseout="this.text='Maksym Mishchuk'">Maksym Mishchuk</a></div>
+        <div class='header-option'><a href="/skills">Skills</a></div>
+        <div class='header-option'><a href="/projects">Projects</a></div>
+        <div class='header-option'><a href="/hobbies">Hobbies</a></div>
+        <div class='header-option'><a href="/gallery">Gallery</a></div>
+        </div>
+        <div class='header-adding' style='border-radius:0px, 0px, 1vh, 1vh;'>
+            <span>Menu</span>
+        </div>
+    </div>
+{% block content %} {% endblock %}
+</body>
+</html>

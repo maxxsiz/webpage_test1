@@ -1,0 +1,26 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<div id="container">
+    <div id="nav">Левая колонка</div>
+    <div id="aside">Правая колонка</div>
+    <div id="content">
+        <h1>Додати ресурс</h1>
+        <form method='post' class='input'>
+            {% csrf_token %}
+            {{form.res_name }}<br>
+            {{form.rarest }}<br>
+            <button type='submit' class='btn btn-success'>Add</button>
+        </form>
+        <h1>Всі ресурси</h1>
+        {% for r in res %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ r.res_name }}</h3>
+                <h4>{{ r.rarest }}</h4>
+            </div></div>
+   </div>
+{% endfor %}
+{% endblock %}
