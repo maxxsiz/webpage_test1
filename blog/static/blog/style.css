@@ -143,15 +143,20 @@ body {
     transform: scale(2);
   }
 
-  .main-box{
+  .main-box {
     position: absolute;
     display: none;
-    background-color: rgb(36, 29, 29);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.7);
+    animation: animation1 0.5s;
+  }
+
+  .main-info{
+    background-color: rgba(36, 29, 29,0.7);
     width: 90vw;
     height: 86vh;
-    margin: 7vh 5vw;
-    opacity: 90%;
-    animation: animation1 0.5s;
+    margin: auto auto;
   }
 
 
@@ -173,13 +178,18 @@ body {
   }
 
   .closebtn {
-    display: flex;
-    justify-content: flex-end;
+    float: right;
+    margin: 2vh;
     width: 24px;
     height: 24px;
+    text-decoration: none;
 
   }
 
+  .main-text {
+    margin: 6vh 4vw 2vh 4vw;
+  }
+ 
 
 
   
