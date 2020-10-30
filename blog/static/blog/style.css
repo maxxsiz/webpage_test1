@@ -1,6 +1,6 @@
 
 body {
-    background-color: #ffffff;
+    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
     font-family: 'Playfair Display', monospace;
     color:  rgb(255, 255, 255);
     padding: 0px;
@@ -12,68 +12,130 @@ body {
     from {opacity: 0;}
     to {opacity: 1;}
   }
-  .header {
-    height:  10vh;
-    position: absolute;
-    left: 0;
-    top: -7vh; 
-    z-index: 5;
-    text-align: center;
-    -o-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  @keyframes text-animation{
+    0% {bottom: 10vh;}
+    50% {bottom: 3vh;
+          opacity: 1;}
+    100% {opacity: 0;
+          bottom: 3vh;}
   }
-  .header-main {
-    height:  7vh;
-    margin-left: 20vw;
-    margin-right: 20vw; 
-    background-color: #042a36;
-    text-align: center;
-    border-radius: 0px 0px 3vw 3vw;
+  @keyframes menu_open{
+    0% {width: 70px;
+      height: 70px;}
+    100% {width: 500px;
+        height: 500px;
+        left: calc(50% - 250px);
+        bottom: -30vh;}
   }
-  .header-adding {
-    height:  3vh;
-    margin-top: 0px;
-    margin-left: 45vw;
-    margin-right: 45vw;
-    width: 10vw;
-    background-color: #042a36;
-    text-align: center;
-    display:block;
-    border-radius: 0px 0px 3vw 3vw;
+  @keyframes menu_item-1{
+    0% {bottom: 10vh;}
+    50% {left: calc(50% - 35px);
+      bottom: 3vh;}
+    60% {left: calc(50% - 35px - 150px);
+      bottom: 3vh;}
+    100% {left: calc(50% - 35px - 150px);
+        bottom: 3vh;}
   }
-  .header-option a{
-    font-size: 20;
+  @keyframes menu_item-2{
+    0% {bottom: 10vh;}
+    50% {bottom: 3vh;}
+    60% {left: calc(50% - 35px);
+      bottom: 3vh;}
+    70% {left: calc(50% - 35px - 90x);
+      bottom: 9.5vh;}
+    100% {left: calc(50% - 35px - 90px);
+      bottom: 9.5vh;}
+  }
+  @keyframes menu_item-3{
+    0% {bottom: 10vh;}
+    50% {bottom: 3vh;}
+    70% {bottom: 3vh;}
+    80% {bottom: 13vh;}
+    100% {bottom: 13vh;}
+  }
+  @keyframes menu_item-4{
+    0% {bottom: 10vh;}
+    50% {bottom: 3vh;}
+    80% {left: calc(50% - 35px);
+      bottom: 3vh;}
+    90% {left: calc(50% - 35px + 90px);
+      bottom: 9.5vh;}
+    100% {left: calc(50% - 35px + 90px);
+      bottom: 9.5vh;}
+  }
+  @keyframes menu_item-5{
+    0% {bottom: 10vh;}
+    50% {bottom: 3vh;}
+    90% {left: calc(50% - 35px);}
+    100% {left: calc(50% - 35px + 150px);
+      bottom: 3vh;}
+  }
+
+  .menubtn {
+    display: block;
+    width: 70px;
+    height: 70px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgb(29, 23, 23);
+    position: fixed;
+    bottom: 10vh;
+    left: calc(50% - 35px);
+    align-items: center;
+    z-index: 7;
+  }
+
+  .menu-item, .menu-main-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 10vh;
+    left: calc(50% - 35px);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+  }
+  .menu-main-item{
+    z-index: 9;
+    background-color: rgb(0, 0, 0);
+  }
+  .menu-item {
+    z-index: 8;
+    background-color: rgb(68, 60, 60);
+  }
+  .menu-item a{
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
-
-  div.header-option {
-    margin-top: 1vh;
-    height:4vh;
-    width:20vh;
-    border-radius: 10%;
-    display:inline-block;
-    background-color: #19353f;
-    align-items: center;
-    transition: .5s;
+  .menubtn:hover{
+    animation:menu_open 1s forwards;
   }
-
-  .header-option:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+  .menubtn:hover .menu-main-item{
+    animation:text-animation 2s forwards; 
   }
-
-  .header:hover {
-    -webkit-transform: translateY(7vh);
-    -ms-transform: translateY(7vh);
-    -o-transform: translateY(7vh);
-    -moz-transform: translateY(7vh);
-    transform: translateY(7vh);
+  .menubtn:hover .menu-item{
+    animation:menu_item_show 1s forwards;
   }
-
+  .menubtn:hover .item-1{
+    animation:menu_item-1 2s forwards;
+  }
+  .menubtn:hover .item-2{
+    animation:menu_item-2 2s forwards;
+  }
+  .menubtn:hover .item-3{
+    animation:menu_item-3 2s forwards;
+  }
+  .menubtn:hover .item-4{
+    animation:menu_item-4 2s forwards;
+  }
+  .menubtn:hover .item-5{
+    animation:menu_item-5 2s forwards;
+  }
 
 
   .column { 
@@ -110,7 +172,6 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom right, white, #19353f);
   }
 
   .icon {

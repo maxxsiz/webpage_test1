@@ -8,18 +8,16 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div class='header'>
-        <div class='header-main' style='border-radius:0px, 0px, 1vh, 1vh;'>
-        <div class='header-option'><a href='' onmouseover="this.text='About Me'" onmouseout="this.text='Maksym Mishchuk'">Maksym Mishchuk</a></div>
-        <div class='header-option'><a href="/skills">Skills</a></div>
-        <div class='header-option'><a href="/projects">Projects</a></div>
-        <div class='header-option'><a href="/hobbies">Hobbies</a></div>
-        <div class='header-option'><a href="/gallery">Gallery</a></div>
-        </div>
-        <div class='header-adding' style='border-radius:0px, 0px, 1vh, 1vh;'>
-            <span>Menu</span>
-        </div>
-    </div>
+<div>
+<div class="menubtn" >
+    <span class="menu-main-item">Menu</span>
+    <div class="menu-item item-1"><a href="">AboutMe</a></div>
+    <div class="menu-item item-2"><a href="/skills">Skills</a></div>
+    <div class="menu-item item-3"><a href="/projects">Projects</a></div>
+    <div class="menu-item item-4"><a href="/hobbies">Hobbies</a></div>
+    <div class="menu-item item-5"><a href="/gallery">Gallery</a></div>       
+</div>
+</div>
 {% block content %} {% endblock %}
 </body>
 </html>
