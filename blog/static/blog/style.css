@@ -8,73 +8,40 @@ body {
     border: 0px;
   } 
 
-  @keyframes animation1{
+  @keyframes opacity_down{
     from {opacity: 0;}
     to {opacity: 1;}
   }
-  @keyframes text-animation{
-    0% {bottom: 10vh;}
-    50% {bottom: 3vh;
-          opacity: 1;}
-    100% {opacity: 0;
-          bottom: 3vh;}
+
+  @keyframes menu_item_down{
+    from {bottom: 10vh;}
+    to {bottom: 25px;}
   }
+
+
+  @keyframes text-animation{
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
   @keyframes menu_open{
-    0% {width: 70px;
-      height: 70px;}
+    0% {width: 50px;
+      height: 50px;}
     100% {width: 500px;
         height: 500px;
         left: calc(50% - 250px);
-        bottom: -30vh;}
+        bottom: -250px;}
   }
-  @keyframes menu_item-1{
-    0% {bottom: 10vh;}
-    50% {left: calc(50% - 35px);
-      bottom: 3vh;}
-    60% {left: calc(50% - 35px - 150px);
-      bottom: 3vh;}
-    100% {left: calc(50% - 35px - 150px);
-        bottom: 3vh;}
-  }
-  @keyframes menu_item-2{
-    0% {bottom: 10vh;}
-    50% {bottom: 3vh;}
-    60% {left: calc(50% - 35px);
-      bottom: 3vh;}
-    70% {left: calc(50% - 35px - 90x);
-      bottom: 9.5vh;}
-    100% {left: calc(50% - 35px - 90px);
-      bottom: 9.5vh;}
-  }
-  @keyframes menu_item-3{
-    0% {bottom: 10vh;}
-    50% {bottom: 3vh;}
-    70% {bottom: 3vh;}
-    80% {bottom: 13vh;}
-    100% {bottom: 13vh;}
-  }
-  @keyframes menu_item-4{
-    0% {bottom: 10vh;}
-    50% {bottom: 3vh;}
-    80% {left: calc(50% - 35px);
-      bottom: 3vh;}
-    90% {left: calc(50% - 35px + 90px);
-      bottom: 9.5vh;}
-    100% {left: calc(50% - 35px + 90px);
-      bottom: 9.5vh;}
-  }
-  @keyframes menu_item-5{
-    0% {bottom: 10vh;}
-    50% {bottom: 3vh;}
-    90% {left: calc(50% - 35px);}
-    100% {left: calc(50% - 35px + 150px);
-      bottom: 3vh;}
-  }
+ 
+    transform: translateX(-150px);
+    transform: translateX(-50px);
+    transform: translateX(50px);
+    transform: translateX(150px);
 
   .menubtn {
     display: block;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
@@ -82,7 +49,7 @@ body {
     background-color: rgb(29, 23, 23);
     position: fixed;
     bottom: 10vh;
-    left: calc(50% - 35px);
+    left: calc(50% - 25px);
     align-items: center;
     z-index: 7;
   }
@@ -95,7 +62,7 @@ body {
     height: 70px;
     position: fixed;
     bottom: 10vh;
-    left: calc(50% - 35px);
+    left: calc(50% - 25px);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
@@ -116,26 +83,49 @@ body {
     animation:menu_open 1s forwards;
   }
   .menubtn:hover .menu-main-item{
-    animation:text-animation 2s forwards; 
+    animation:opacity_down 1s forwards;
+    animation-delay: 1s;
   }
-  .menubtn:hover .menu-item{
-    animation:menu_item_show 1s forwards;
-  }
-  .menubtn:hover .item-1{
-    animation:menu_item-1 2s forwards;
+  .menubtn:hover .item-1,.item-2,.item-3,.item-4,.item-5,.menu-main-item{
+    animation:menu_item_down 1s forwards ease-out;
   }
   .menubtn:hover .item-2{
-    animation:menu_item-2 2s forwards;
+    transform: translateX(150px);
+    transition-delay: 1s;
   }
   .menubtn:hover .item-3{
-    animation:menu_item-3 2s forwards;
+    transform: translateX(150px);
+    transition-delay: 1s;
   }
   .menubtn:hover .item-4{
-    animation:menu_item-4 2s forwards;
+    transform: translateX(150px);
+    transition-delay: 1s;
   }
   .menubtn:hover .item-5{
-    animation:menu_item-5 2s forwards;
+    transform: translateX(150px);
+    transition-delay: 1s;
   }
+  .menubtn:hover .item-6{
+    transform: translateX(-150px);
+    transition-delay: 1s;
+  }
+  .menubtn:hover .item-7{
+    transform: translateX(-50px);
+    transition-delay: 1s;
+  }
+  .menubtn:hover .item-8{
+    transform: translateX(50px);
+    transition-delay: 1s;
+  }
+  .menubtn:hover .item-9{
+    transform: translateX(150px);
+    transition-delay: 1s;
+  }
+
+
+
+
+
 
 
   .column { 
@@ -172,9 +162,11 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
 
   .icon {
+    filter: grayscale(100%);
     width: 48px;
     height: 48px;
     align-self:center;
@@ -182,6 +174,10 @@ body {
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+  }
+
+  .hided-photo {
+    opacity: 0;
   }
 
   .column:hover .icon{
@@ -251,6 +247,7 @@ body {
     margin: 6vh 4vw 2vh 4vw;
   }
  
+
 
 
   

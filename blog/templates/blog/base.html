@@ -10,12 +10,16 @@
 <body>
 <div>
 <div class="menubtn" >
-    <span class="menu-main-item">Menu</span>
+    <span class="menu-main-item"><img src="{% static 'blog/img/icons/menu.png' %}" alt=''></span>
     <div class="menu-item item-1"><a href="">AboutMe</a></div>
     <div class="menu-item item-2"><a href="/skills">Skills</a></div>
     <div class="menu-item item-3"><a href="/projects">Projects</a></div>
     <div class="menu-item item-4"><a href="/hobbies">Hobbies</a></div>
-    <div class="menu-item item-5"><a href="/gallery">Gallery</a></div>       
+    <div class="menu-item item-5"><a href="/gallery">Gallery</a></div>
+    <div class="menu-item item-5"><a href="https://github.com/maxxsiz"><img src="{% static 'blog/img/icons/youtube_white.png' %}" alt=''></a></div>
+    <div class="menu-item item-5"><a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA?view_as=subscriber"><img src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a></div>
+    <div class="menu-item item-5"><a href="https://www.facebook.com/maks.miszczuk.1"><img src="{% static 'blog/img/icons/facebook_white.png' %}" alt=''></a></div>
+    <div class="menu-item item-5"><a href="https://www.instagram.com/maxxsiz/tagged/"><img src="{% static 'blog/img/icons/instagram_white.png' %}" alt=''></a></div>     
 </div>
 </div>
 {% block content %} {% endblock %}
