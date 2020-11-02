@@ -8,40 +8,35 @@ body {
     border: 0px;
   } 
 
-  @keyframes opacity_down{
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-
   @keyframes menu_item_down{
-    from {bottom: 10vh;}
-    to {bottom: 25px;}
+    0% {bottom:10vh;}
+    100% {bottom: 10px;}
   }
-
-
-  @keyframes text-animation{
-    from {opacity: 1;}
-    to {opacity: 0;}
+  @keyframes opacity_item_down{
+    0% {bottom:10vh;}
+    50% {opacity: 1;
+         bottom: 10px;}
+    100% {opacity: 0;
+      bottom: 10px;}
   }
-
+  @keyframes cross_animation{
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+  }
   @keyframes menu_open{
-    0% {width: 50px;
-      height: 50px;}
-    100% {width: 500px;
-        height: 500px;
-        left: calc(50% - 250px);
-        bottom: -250px;}
+    0% {width: 70px;
+      height: 70px;}
+    100% {width: 600px;
+        height: 600px;
+        left: calc(50% - 300px);
+        bottom: -300px;}
   }
  
-    transform: translateX(-150px);
-    transform: translateX(-50px);
-    transform: translateX(50px);
-    transform: translateX(150px);
-
   .menubtn {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
@@ -49,12 +44,13 @@ body {
     background-color: rgb(29, 23, 23);
     position: fixed;
     bottom: 10vh;
-    left: calc(50% - 25px);
+    left: calc(50% - 35px);
     align-items: center;
     z-index: 7;
+    
   }
 
-  .menu-item, .menu-main-item{
+  .menu-contact, .menu-main-item, .menu-cross{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,71 +58,97 @@ body {
     height: 70px;
     position: fixed;
     bottom: 10vh;
-    left: calc(50% - 25px);
+    left: calc(50% - 35px);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
+    transition: all 0.5s ease-in-out;
   }
+  .menu-cross {
+    width: 70px;
+    height: 70px;
+    bottom: 15vh;
+    left: calc(50% - 35px);
+    transform-origin: center;
+    opacity: 0;
+    
+  }
+  .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    background-color: rgb(77, 2, 2);
+    transform:rotate(45deg);
+    transition: 0s;
+    transform-origin: center;
+    z-index: 8;
+    opacity: 0;
+}
+
+  .item-1, .item-2, .item-3, .item-4  {
+    bottom: 15vh;
+    left: calc(50% - 35px);
+  }
+
   .menu-main-item{
     z-index: 9;
     background-color: rgb(0, 0, 0);
   }
-  .menu-item {
-    z-index: 8;
-    background-color: rgb(68, 60, 60);
-  }
+
   .menu-item a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+    transform:rotate(-45deg);
+    transition: 0s;
+    font-weight: bold;
   }
   .menubtn:hover{
     animation:menu_open 1s forwards;
   }
-  .menubtn:hover .menu-main-item{
-    animation:opacity_down 1s forwards;
-    animation-delay: 1s;
+  .menubtn:hover .menu-cross{
+    animation:cross_animation 2s ease-out forwards;
   }
-  .menubtn:hover .item-1,.item-2,.item-3,.item-4,.item-5,.menu-main-item{
+  .menubtn:hover .menu-contact{
     animation:menu_item_down 1s forwards ease-out;
   }
+  .menubtn:hover .menu-main-item{
+    animation:opacity_item_down 2s ease-out forwards;
+  }
+  .menubtn:hover .item-1{
+    transform: translate(75px, -3px) rotate(45deg);
+    animation:cross_animation 2s ease-out forwards;
+  }
   .menubtn:hover .item-2{
-    transform: translateX(150px);
-    transition-delay: 1s;
+    transform: translate(-75px, -3px) rotate(45deg);
+    animation:cross_animation 2s ease-out forwards;
   }
   .menubtn:hover .item-3{
-    transform: translateX(150px);
-    transition-delay: 1s;
+    transform: translateY(-78px) rotate(45deg);
+    animation:cross_animation 2s ease-out forwards;
   }
   .menubtn:hover .item-4{
-    transform: translateX(150px);
-    transition-delay: 1s;
-  }
-  .menubtn:hover .item-5{
-    transform: translateX(150px);
-    transition-delay: 1s;
+    transform: translateY(72px) rotate(45deg);
+    animation:cross_animation 2s ease-out forwards;
   }
   .menubtn:hover .item-6{
-    transform: translateX(-150px);
+    transform: translateX(230px);
     transition-delay: 1s;
   }
   .menubtn:hover .item-7{
-    transform: translateX(-50px);
+    transform: translateX(90px);
     transition-delay: 1s;
   }
   .menubtn:hover .item-8{
-    transform: translateX(50px);
+    transform: translateX(-90px);
     transition-delay: 1s;
   }
   .menubtn:hover .item-9{
-    transform: translateX(150px);
+    transform: translateX(-230px);
     transition-delay: 1s;
   }
-
-
-
-
-
-
 
   .column { 
     float: left;
