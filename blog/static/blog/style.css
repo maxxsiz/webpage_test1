@@ -17,7 +17,8 @@ body {
     50% {opacity: 1;
          bottom: 10px;}
     100% {opacity: 0;
-      bottom: 2vh;}
+      bottom: 2vh;
+      z-index:6;}
   }
   @keyframes cross_animation{
     0% {opacity: 0;}
@@ -122,6 +123,7 @@ body {
     animation:opacity_item_down 2s ease-out forwards;
     transform:rotate(90deg);
     transition-delay: 1s;
+    z-index:6;
   }
   .menubtn:hover .item-1{
     transform: translate(80px, -0px) rotate(45deg);
