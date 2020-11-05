@@ -1,6 +1,5 @@
 
 body {
-    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
     font-family: 'Playfair Display', monospace;
     color:  rgb(255, 255, 255);
     padding: 0px;
@@ -33,7 +32,7 @@ body {
         left: calc(50% - 300px);
         bottom: -300px;}
   }
- 
+  /* menu settigns */
   .menubtn {
     display: block;
     width: 70px;
@@ -157,6 +156,39 @@ body {
     transform: translateX(-230px);
     transition-delay: 1s;
   }
+
+  /* page settigns */
+  .main-block{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+  .page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
+    overflow: hidden;
+  }
+
+  .hobbies {
+    display: none;
+    
+  }
+  .main {
+    display: none;
+    
+  }
+  .projects {
+    display: none;
+    
+  }
+  .skills {
+    display: block;
+    transform: translateX(50vw);
+    transition: 0s;
+  }
+
 
   .column { 
     float: left;
