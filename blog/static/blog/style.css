@@ -85,10 +85,29 @@ body {
     transform:rotate(45deg);
     transition: 0s;
     transform-origin: center;
-    z-index: 8;
+    z-index: 10;
     opacity: 0;
     border: 2px solid rgb(134, 128, 128);
 }
+
+  .menu-item::before{
+    z-index:8;
+    width: 75px;
+    height: 75px;
+    left: -5px;
+    top: -5px;
+  }
+
+  .menu-item::after{
+    z-index:9;
+    width: 75px;
+    height: 75px;
+    right: -5px;
+    bottom: -5px;
+    background: #41ebdf;
+  }
+
+
 
   .item-1, .item-2, .item-3, .item-4  {
     bottom: 12vh;
@@ -162,13 +181,14 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    overflow: hidden;
   }
   .page {
     position: absolute;
     width: 100vw;
     height: 100vh;
     background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
-    overflow: hidden;
   }
 
   .hobbies {
@@ -184,9 +204,9 @@ body {
     
   }
   .skills {
-    display: block;
-    transform: translateX(50vw);
-    transition: 0s;
+    display: flex;
+    transform: translateX(10vw);
+    transition: 1s ease-in-out;
   }
 
 
@@ -308,6 +328,8 @@ body {
   .main-text {
     margin: 6vh 4vw 2vh 4vw;
   }
+
+
  
 
 
