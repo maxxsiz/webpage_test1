@@ -10,16 +10,25 @@
 <body>
 <div class="menubtn" >
     <div class="menu-main-item"><img src="{% static 'blog/img/icons/menu.png' %}" alt=''></div>
-    <div class="menu-item item-1"><a href="">AboutMe</a></div>
-    <div class="menu-item item-2"><a href="/skills">Skills</a></div>
+    <div class="menu-item item-1"><a href="#" role="button" onclick="changepage('main_page')">AboutMe</a></div>
+    <div class="menu-item item-2"><a href="#" role="button" onclick="changepage('skills_page')">Skills</a></div>
     <!--<div class="menu-cross"><img src="{% static 'blog/img/menu_main.png' %}" alt='' widht='180px' height="180px"></div>-->
-    <div class="menu-item item-3"><a href="/hobbies">Hobbies</a></div>
-    <div class="menu-item item-4"><a href="/projects">Projects</a></div>
+    <div class="menu-item item-3"><a href="#" role="button" onclick="changepage('hobbies_page')">Hobbies</a></div>
+    <div class="menu-item item-4"><a href="#" role="button" onclick="changepage('projects_page')">Projects</a></div>
     <div class="menu-contact item-6"><a href="https://github.com/maxxsiz"><img src="{% static 'blog/img/icons/youtube_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-7"><a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA?view_as=subscriber"><img src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-8"><a href="https://www.facebook.com/maks.miszczuk.1"><img src="{% static 'blog/img/icons/facebook_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-9"><a href="https://www.instagram.com/maxxsiz/tagged/"><img src="{% static 'blog/img/icons/instagram_white.png' %}" alt=''></a></div>     
 </div>
 {% block content %} {% endblock %}
+<script>
+    'use strict';
+    let curent_page = 'main_page';
+    function changepage(go_to_page, curent_page){
+        document.getElementById(go_to_page).style.left='0vw';
+        document.getElementById(curent_page).style.left='100vw';
+        current_page = go_to_page;
+    }
+</script>
 </body>
 </html>

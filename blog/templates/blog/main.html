@@ -5,9 +5,10 @@ Maksym Mishchuk
 {% endblock %}
 {% block content %}
 <div class='main-block'>
-<div class='main page'>
+<div id="main_page">
+    <h1>main page</h1>
     </div>
-<div class='projects page'>
+<div id="projects_page">
     <div class='col-block'>
         <div class='column col3'><img class='icon' src="{% static 'blog/img/icons/robot-excited.png' %}" alt=''>
         </div>
@@ -17,7 +18,7 @@ Maksym Mishchuk
         </div>
     </div>
     </div>
-<div class='hobbies page'>
+<div id="hobbies_page">
 <div class='col-block'>
     <div class='column col7'><img class='icon' src="{% static 'blog/img/icons/ski.png' %}" alt=''>
         <img class='hided-photo' src="{% static 'blog/img/icons/ski.png' %}" alt=''>
@@ -42,7 +43,7 @@ Maksym Mishchuk
     </div>
 </div>
     </div>
-<div class='skills page'>
+<div id="skills_page">
         <div class='col-block'>
             <div class='column col7'>
                 <a class='column-link' href='#sqlite-info'>

@@ -178,36 +178,41 @@ body {
 
   /* page settigns */
   .main-block{
-    position: absolute;
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     overflow: hidden;
   }
   .page {
+    display: flex;
     position: absolute;
+    left:-30vw;
+    top:0;
     width: 100vw;
     height: 100vh;
-    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
+    transition: left 5s;
   }
 
   .hobbies {
-    display: none;
-    
+    background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center 20%;
+    filter: grayscale(100%); 
   }
   .main {
-    display: none;
-    
+    transform: translateX(100vw);
+    background: rgba(128, 128, 128, 0.068) url(img/main_background.jpg) center 20%;
+    filter: grayscale(100%); 
   }
   .projects {
-    display: none;
-    
+    background: rgba(128, 128, 128, 0.068) url(img/project.jpg) center 20%;
+    filter: grayscale(100%); 
   }
   .skills {
-    display: flex;
-    transform: translateX(10vw);
-    transition: 1s ease-in-out;
+    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
+    filter: grayscale(100%); 
+
   }
+
 
 
   .column { 
