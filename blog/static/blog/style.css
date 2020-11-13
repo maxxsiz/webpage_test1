@@ -6,7 +6,7 @@ body {
     margin: 0px;
     border: 0px;
   } 
-
+  /* menu animation */
   @keyframes menu_item_down{
     0% {bottom:10vh;}
     100% {bottom: 2vh;}
@@ -31,6 +31,15 @@ body {
         height: 600px;
         left: calc(50% - 300px);
         bottom: -300px;}
+  }
+  /* page changing animation */
+  @keyframes slide-left-0vw{
+    0% {left:-100vw}
+    100% {left: 0vw}
+  }
+  @keyframes slide-left-100vw{
+    0% {left:0vw}
+    100% {left:100vw}
   }
   /* menu settigns */
   .menubtn {
@@ -183,34 +192,37 @@ body {
     height: 100vh;
     display: flex;
     overflow: hidden;
+    background-color: teal;
   }
   .page {
     display: flex;
     position: absolute;
-    left:-30vw;
     top:0;
     width: 100vw;
     height: 100vh;
     transition: left 5s;
+    left:-100vw;
   }
 
-  .hobbies {
-    background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center 20%;
+  #hobbies_page {
+    background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
+    background-size: cover;
+    filter: grayscale(100%);
+  }
+  #main_page {
+    background: rgba(128, 128, 128, 0.068) url(img/main_background.jpg) center;
+    background-size: cover;
+    filter: grayscale(100%);
+    left: 0vw;
+  }
+  #projects_page {
+    background: rgba(128, 128, 128, 0.068) url(img/project.jpg) center;
+    background-size: cover;
     filter: grayscale(100%); 
   }
-  .main {
-    transform: translateX(100vw);
-    background: rgba(128, 128, 128, 0.068) url(img/main_background.jpg) center 20%;
-    filter: grayscale(100%); 
-  }
-  .projects {
-    background: rgba(128, 128, 128, 0.068) url(img/project.jpg) center 20%;
-    filter: grayscale(100%); 
-  }
-  .skills {
-    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center 20%;
-    filter: grayscale(100%); 
-
+  #skills_page{
+    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
+    background-size: cover;
   }
 
 
@@ -244,7 +256,6 @@ body {
   .col-block {
     display: flex;
     flex-direction: row;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;

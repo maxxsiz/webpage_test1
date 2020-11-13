@@ -5,10 +5,10 @@ Maksym Mishchuk
 {% endblock %}
 {% block content %}
 <div class='main-block'>
-<div id="main_page">
+<div id="main_page" class='page'>
     <h1>main page</h1>
     </div>
-<div id="projects_page">
+<div id="projects_page" class='page'>
     <div class='col-block'>
         <div class='column col3'><img class='icon' src="{% static 'blog/img/icons/robot-excited.png' %}" alt=''>
         </div>
@@ -18,7 +18,7 @@ Maksym Mishchuk
         </div>
     </div>
     </div>
-<div id="hobbies_page">
+<div id="hobbies_page" class='page'>
 <div class='col-block'>
     <div class='column col7'><img class='icon' src="{% static 'blog/img/icons/ski.png' %}" alt=''>
         <img class='hided-photo' src="{% static 'blog/img/icons/ski.png' %}" alt=''>
@@ -43,51 +43,51 @@ Maksym Mishchuk
     </div>
 </div>
     </div>
-<div id="skills_page">
-        <div class='col-block'>
-            <div class='column col7'>
-                <a class='column-link' href='#sqlite-info'>
-                <img class='icon' src="{% static 'blog/img/icons/database-search.png' %}" alt=''>
-                <h2 class='icon-text'>SQLite</h2>
+<div id="skills_page" class='page'>
+    <div class='col-block'>
+        <div class='column col7'>
+            <a class='column-link' href='#sqlite-info'>
+            <img class='icon' src="{% static 'blog/img/icons/database-search.png' %}" alt=''>
+            <h2 class='icon-text'>SQLite</h2>
             </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#git-info'>
-                <img class='icon' src="{% static 'blog/img/icons/git.png' %}" alt=''>
-                <h2 class='icon-text'>Git</h2>
-            </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#CSS3-info'>
-                <img class='icon' src="{% static 'blog/img/icons/language-css3.png' %}" alt=''>
-                <h2 class='icon-text'>CSS3</h2>
-            </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#python-info'>
-                <img class='icon' src="{% static 'blog/img/icons/language-python.png' %}" alt=''>
-                <h2 class='icon-text'>Python</h2>
-            </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#django-info'>
-                <img class='icon' src="{% static 'blog/img/icons/django_logo.png' %}" alt='' width="48px" height="48px">
-                <h2 class='icon-text'>Django</h2>
-            </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#html5-info'>
-                <img class='icon' src="{% static 'blog/img/icons/language-html5.png' %}" alt=''>
-                <h2 class='icon-text'>HTML5</h2>
-            </a>
-            </div>
-            <div class='column col7'>
-                <a class='column-link' href='#javascript-info'>
-                <img class='icon' src="{% static 'blog/img/icons/language-javascript.png' %}" alt=''>
-                <h2 class='icon-text'>JavaScript</h2>
-            </a>
-            </div>
         </div>
+        <div class='column col7'>
+            <a class='column-link' href='#git-info'>
+            <img class='icon' src="{% static 'blog/img/icons/git.png' %}" alt=''>
+            <h2 class='icon-text'>Git</h2>
+            </a>
+        </div>
+        <div class='column col7'>
+            <a class='column-link' href='#CSS3-info'>
+            <img class='icon' src="{% static 'blog/img/icons/language-css3.png' %}" alt=''>
+            <h2 class='icon-text'>CSS3</h2>
+            </a>
+        </div>
+        <div class='column col7'>
+            <a class='column-link' href='#python-info'>
+            <img class='icon' src="{% static 'blog/img/icons/language-python.png' %}" alt=''>
+            <h2 class='icon-text'>Python</h2>
+            </a>
+        </div>
+        <div class='column col7'>
+            <a class='column-link' href='#django-info'>
+            <img class='icon' src="{% static 'blog/img/icons/django_logo.png' %}" alt='' width="48px" height="48px">
+            <h2 class='icon-text'>Django</h2>
+            </a>
+        </div>
+        <div class='column col7'>
+            <a class='column-link' href='#html5-info'>
+            <img class='icon' src="{% static 'blog/img/icons/language-html5.png' %}" alt=''>
+            <h2 class='icon-text'>HTML5</h2>
+            </a>
+        </div>
+        <div class='column col7'>
+            <a class='column-link' href='#javascript-info'>
+            <img class='icon' src="{% static 'blog/img/icons/language-javascript.png' %}" alt=''>
+            <h2 class='icon-text'>JavaScript</h2>
+        </a>
+        </div>
+    </div>
         <div id='sqlite-info' class='main-box'>
             <div class="main-info">
             <a href="skills" class="closebtn"></a>
