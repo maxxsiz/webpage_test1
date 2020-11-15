@@ -11,11 +11,11 @@
 <body>
 <div class="menubtn" >
     <div class="menu-main-item"><img src="{% static 'blog/img/icons/menu.png' %}" alt=''></div>
-    <div class="menu-item item-1"><a role="button" onclick="changepage('main_page')">AboutMe</a></div>
-    <div class="menu-item item-2"><a role="button" onclick="changepage('skills_page')">Skills</a></div>
+    <a role="button" onclick="changepage('main_page')"><div class="menu-item item-1"><span class='link-text'>AboutMe</span></div></a>
+    <a role="button" onclick="changepage('skills_page')"><div class="menu-item item-2"><span class='link-text'>Skills</span></div></a>
     <!--<div class="menu-cross"><img src="{% static 'blog/img/menu_main.png' %}" alt='' widht='180px' height="180px"></div>-->
-    <div class="menu-item item-3"><a role="button" onclick="changepage('hobbies_page')">Hobbies</a></div>
-    <div class="menu-item item-4"><a role="button" onclick="changepage('projects_page')">Projects</a></div>
+    <a role="button" onclick="changepage('hobbies_page')"><div class="menu-item item-3"><span class='link-text'>Hobbies</span></div></a>
+    <a role="button" onclick="changepage('projects_page')"><div class="menu-item item-4"><span class='link-text'>Projects</span></div></a>
     <div class="menu-contact item-6"><a href="https://github.com/maxxsiz"><img src="{% static 'blog/img/icons/youtube_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-7"><a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA?view_as=subscriber"><img src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-8"><a href="https://www.facebook.com/maks.miszczuk.1"><img src="{% static 'blog/img/icons/facebook_white.png' %}" alt=''></a></div>
@@ -26,21 +26,15 @@
 <script>
     'use strict';
     let curent_page = 'main_page';
-    function changepage(go_to_page, curent_page){
+    function changepage(go_to_page){
         if (go_to_page==curent_page){
             return 0;
         } else {
-            function() { document.getElementById(go_to_page).style.left = '0vw'; 
-        }
-            function()
+        document.getElementById(go_to_page).style.left = '0vw'; 
         document.getElementById(curent_page).style.left = '100vw';
-        }
-        setTimeout(function() {
-            document.getElementById(curent_page).style.webkitAnimationName = '';
-            document.getElementById(go_to_page).style.webkitAnimationName = '';
-            current_page = go_to_page;
-        }, 4000);
+        current_page = go_to_page;
     }
+}
 </script>
 
 </body>

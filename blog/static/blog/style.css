@@ -97,26 +97,7 @@ body {
     z-index: 10;
     opacity: 0;
     border: 2px solid rgb(134, 128, 128);
-}
-
-  .menu-item::before{
-    z-index:8;
-    width: 75px;
-    height: 75px;
-    left: -5px;
-    top: -5px;
   }
-
-  .menu-item::after{
-    z-index:9;
-    width: 75px;
-    height: 75px;
-    right: -5px;
-    bottom: -5px;
-    background: #41ebdf;
-  }
-
-
 
   .item-1, .item-2, .item-3, .item-4  {
     bottom: 12vh;
@@ -129,12 +110,14 @@ body {
     border: 2px solid rgb(134, 128, 128);
   }
 
-  .menu-item a{
+  .link-text {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
     transform:rotate(-45deg);
     transition: 0s;
-    font-weight: bold;
+    transform-origin: center;
   }
 
   .menubtn:hover{
