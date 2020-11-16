@@ -28,9 +28,12 @@ body {
     0% {width: 70px;
       height: 70px;}
     100% {width: 600px;
-        height: 600px;
+        height: 100vh;
         left: calc(50% - 300px);
-        bottom: -300px;}
+        border-radius: 0%;
+        bottom: 0;
+        border: 0px;
+        opacity: 90%;}
   }
   /* page changing animation */
   @keyframes slide-left-0vw{
@@ -43,12 +46,10 @@ body {
   }
   /* menu settigns */
   .menubtn {
-    display: block;
+    display: flex;
+    overflow: hidden;
     width: 70px;
     height: 70px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -khtml-border-radius: 50%;
     border-radius: 50%;
     background-color: rgb(29, 23, 23);
     position: fixed;
