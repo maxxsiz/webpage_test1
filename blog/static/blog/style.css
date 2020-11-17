@@ -184,7 +184,7 @@ body {
     top:0;
     width: 100vw;
     height: 100vh;
-    transition: left 5s;
+    transition: left 4s;
     left:-100vw;
   }
 

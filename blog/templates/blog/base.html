@@ -26,22 +26,37 @@
 <script>
     'use strict';
     let current_page = 'main_page';
+    let last_page = '';
+    let is_f_start = 0 ;
     function changepage(go_to_page){
+        console.log('is_f_strt =' + is_f_start);
+        ++is_f_start;
+        if (is_f_start > 1){
+            --is_f_start;
+            return console.log('функция запущена');
+        }
+        console.log('я запустился 1')
         if (go_to_page==current_page){
-            return 0;
+            --is_f_start;
+            return console.log('Current page');
         } else {
         document.getElementById(go_to_page).style.left = '0vw'; 
         document.getElementById(current_page).style.left = '100vw';
+        console.log('я запустился 2')
 
         setTimeout(function() {
+        console.log('доп функц:');
         document.getElementById(current_page).style.transition = "left 0s";
         document.getElementById(current_page).style.left = '-100vw';
+        last_page = current_page;
         current_page = go_to_page;
-        }, 6000);
+        }, 5000);
 
         setTimeout(function() {
-        document.getElementById(current_page).style.transition = "left 5s";
-            }, 7000);
+        document.getElementById(last_page).style.transition = "left 4s";
+        console.log('я запустился 3')
+        is_f_start = 0;
+        }, 5500);
     }
 }
 </script>
