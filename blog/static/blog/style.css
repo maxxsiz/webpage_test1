@@ -1,15 +1,22 @@
 
 body {
+      --def: #96B7C4; 
+    --inv: #fff;
     font-family: 'Playfair Display', monospace;
     color:  rgb(255, 255, 255);
     padding: 0px;
     margin: 0px;
     border: 0px;
-  } 
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+    }
+
   /* menu animation */
   @keyframes menu_item_down{
     0% {bottom:10vh;}
-    100% {bottom: 2vh;}
+    100% {bottom:2vh;}
   }
   @keyframes opacity_item_down{
     0% {bottom:10vh;}
@@ -19,7 +26,7 @@ body {
       bottom: 2vh;
       z-index:6;}
   }
-  @keyframes cross_animation{
+  @keyframes opacity_item_up{
     0% {opacity: 0;}
     50% {opacity: 0;}
     100% {opacity: 1;}
@@ -27,82 +34,68 @@ body {
   @keyframes menu_open{
     0% {width: 70px;
       height: 70px;}
-    100% {width: 600px;
+    100% {width: calc(100vw/3);
         height: 100vh;
-        left: calc(50% - 300px);
         border-radius: 0%;
         bottom: 0;
         border: 0px;
         opacity: 90%;}
   }
-  /* page changing animation */
-  @keyframes slide-left-0vw{
-    0% {left:-100vw}
-    100% {left: 0vw}
-  }
-  @keyframes slide-left-100vw{
-    0% {left:0vw}
-    100% {left:100vw}
-  }
   /* menu settigns */
-  .menubtn {
+
+  .menu-contact, .menu-main-item, .menubtn{
+    margin: auto;
+    position: fixed;
+    left:0;
+    right:0;
     display: flex;
-    overflow: hidden;
+    bottom: 10vh;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
-    background-color: rgb(29, 23, 23);
-    position: fixed;
-    bottom: 10vh;
-    left: calc(50% - 35px);
-    align-items: center;
-    z-index: 7;
-    border: 2px solid rgb(134, 128, 128);
-    
-  }
-
-  .menu-contact, .menu-main-item, .menu-cross{
-    display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    bottom: 10vh;
-    left: calc(50% - 35px);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
     transition: all 0.5s ease-in-out;
   }
-  .menu-cross {
-    width: 70px;
-    height: 70px;
-    bottom: 12vh;
-    left: calc(50% - 35px);
-    transform-origin: center;
-    opacity: 0;
+  .menubtn {
+    background-image: linear-gradient(-25deg, #161515 0%, #b8bcbe 100%);
+    z-index: 6;
+    cursor: pointer;
+  }
+  .menu-main-item{
+    background-image: linear-gradient(-25deg, #161515 0%, #b8bcbe 100%);
+    border: 2px solid rgb(134, 128, 128);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    transition: all 0.5s ease-in-out;
     z-index: 7;
   }
   .menu-item {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 15vw;
+    height: 7vh;
+    margin: auto;
     position: fixed;
-    background-color: rgb(73, 67, 67);
-    transform:rotate(45deg);
-    transition: 0s;
+    left:0;
+    right:0;
+    padding: 21px 68px;
+    font-size: 21px;
+    color: var(--inv);
+    letter-spacing: 16px;
+    text-transform: uppercase;
     transform-origin: center;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 10;
     opacity: 0;
-    border: 2px solid rgb(134, 128, 128);
-  }
-
-  .item-1, .item-2, .item-3, .item-4  {
-    bottom: 12vh;
-    left: calc(50% - 35px);
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
   }
 
   .menu-main-item{
@@ -111,24 +104,15 @@ body {
     border: 2px solid rgb(134, 128, 128);
   }
 
-  .link-text {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    cursor: pointer;
-    transform:rotate(-45deg);
-    transition: 0s;
-    transform-origin: center;
-  }
-
   .menubtn:hover{
     animation:menu_open 1s forwards;
   }
-  .menubtn:hover .menu-cross{
-    animation:cross_animation 2s ease-out forwards;
-  }
   .menubtn:hover .menu-contact{
-    animation:menu_item_down 1s forwards ease-out;
+    animation:opacity_item_up 2s ease-out forwards, menu_item_down 1s ease-out forwards;
+  }
+  .menubtn:hover .menu-item{
+    display: flex;
+    animation: opacity_item_up 2s ease-out forwards;
   }
   .menubtn:hover .menu-main-item{
     animation:opacity_item_down 2s ease-out forwards;
@@ -137,38 +121,84 @@ body {
     z-index:6;
   }
   .menubtn:hover .item-1{
-    transform: translate(80px, -0px) rotate(45deg);
-    animation:cross_animation 2s ease-out forwards;
+    transform: translateY(-40vh);
   }
   .menubtn:hover .item-2{
-    transform: translate(-82px, -0px) rotate(45deg);
-    animation:cross_animation 2s ease-out forwards;
+    transform: translateY(-30vh);
   }
   .menubtn:hover .item-3{
-    transform: translate(-2px, -80px) rotate(45deg);
-    animation:cross_animation 2s ease-out forwards;
+    transform: translateY(-20vh);
   }
   .menubtn:hover .item-4{
-    transform: translate(-2px, 80px) rotate(45deg);
-    animation:cross_animation 2s ease-out forwards;
+    transform: translateY(-10vh);
   }
   .menubtn:hover .item-6{
-    transform: translateX(230px);
+    transform: translateX(calc(50vw - 40vw));
     transition-delay: 1s;
   }
   .menubtn:hover .item-7{
-    transform: translateX(110px);
+    transform: translateX(calc(50vw - 46.6666vw));
     transition-delay: 1s;
   }
   .menubtn:hover .item-8{
-    transform: translateX(-110px);
+    transform: translateX(calc(50vw - 53.3333vw));
     transition-delay: 1s;
   }
   .menubtn:hover .item-9{
-    transform: translateX(-230px);
+    transform: translateX(calc(50vw - 60vw));
     transition-delay: 1s;
   }
+  /*menu-btn animation*/
+  .menu-item:before, .menu-item:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+  }
+    
+  .menu-item:hover {
+    color: var(--def);
+    transition-delay: .5s;
+  }
+    
+  .menu-item:hover:before {
+    transition-delay: 0s;
+  }
+    
+  .menu-item:hover:after {
+    background: var(--inv);
+    transition-delay: .35s;
+  }
 
+  .menu-item:before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 1px solid var(--inv);
+    border-left: 0;
+    border-right: 0;
+  }
+      
+  .menu-item:after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: var(--inv);
+  }
+      
+  .menu-item:hover:before {
+    left: 0;
+    width: 100%;
+  }
+      
+  .menu-item:hover:after {
+    top: 0;
+    height: 100%;
+  }
+      
+  
   /* page settigns */
   .main-block{
     position: relative;

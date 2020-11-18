@@ -11,16 +11,15 @@
 <body>
 <div class="menubtn" >
     <div class="menu-main-item"><img src="{% static 'blog/img/icons/menu.png' %}" alt=''></div>
-    <a role="button" onclick="changepage('main_page')"><div class="menu-item item-1"><span class='link-text'>AboutMe</span></div></a>
-    <a role="button" onclick="changepage('skills_page')"><div class="menu-item item-2"><span class='link-text'>Skills</span></div></a>
-    <!--<div class="menu-cross"><img src="{% static 'blog/img/menu_main.png' %}" alt='' widht='180px' height="180px"></div>-->
-    <a role="button" onclick="changepage('hobbies_page')"><div class="menu-item item-3"><span class='link-text'>Hobbies</span></div></a>
-    <a role="button" onclick="changepage('projects_page')"><div class="menu-item item-4"><span class='link-text'>Projects</span></div></a>
+    <a role="button" onclick="changepage('main_page')"><div class="menu-item item-1">AboutMe</div></a>
+    <a role="button" onclick="changepage('skills_page')"><div class="menu-item item-2">Skills</div></a>
+    <a role="button" onclick="changepage('hobbies_page')"><div class="menu-item item-3">Hobbies</div></a>
+    <a role="button" onclick="changepage('projects_page')"><div class="menu-item item-4">Projects</div></a>
     <div class="menu-contact item-6"><a href="https://github.com/maxxsiz"><img src="{% static 'blog/img/icons/youtube_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-7"><a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA?view_as=subscriber"><img src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-8"><a href="https://www.facebook.com/maks.miszczuk.1"><img src="{% static 'blog/img/icons/facebook_white.png' %}" alt=''></a></div>
     <div class="menu-contact item-9"><a href="https://www.instagram.com/maxxsiz/tagged/"><img src="{% static 'blog/img/icons/instagram_white.png' %}" alt=''></a></div>     
-    </div>
+</div>
 {% block content %} {% endblock %}
 
 <script>
