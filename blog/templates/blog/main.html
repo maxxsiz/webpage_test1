@@ -1,7 +1,7 @@
 {% extends 'blog/base.html'%}
 {% load static %}
 {% block title %}
-Maksym Mishchuk
+Maksym Mishchuk - Hello world!
 {% endblock %}
 {% block content %}
 <div class='main-block'>
@@ -10,11 +10,23 @@ Maksym Mishchuk
     </div>
 <div id="projects_page" class='page'>
     <div class='col-block'>
-        <div class='column col3'><img class='icon' src="{% static 'blog/img/icons/robot-excited.png' %}" alt=''>
+        <div class='column col3 pr-telbot'>
+            <a class='column-link'>
+                <img class='icon' src="{% static 'blog/img/icons/robot-excited.png' %}" alt=''>
+                <h2 class='icon-text'>Telegram BOT</h2>
+            </a>
         </div>
-        <div class='column col3'><img class='icon' src="{% static 'blog/img/icons/calculator.png' %}" alt=''>
+        <div class='column col3 pr-website'>
+            <a class='column-link'>
+                <img class='icon' src="{% static 'blog/img/icons/calculator.png' %}" alt=''>
+                <h2 class='icon-text'>Travian Troop Calculator</h2>
+            </a>
         </div>
-        <div class='column col3'><img class='icon' src="{% static 'blog/img/icons/application.png' %}" alt=''>
+        <div class='column col3 pr-calc'>
+            <a class='column-link'>
+                <img class='icon' src="{% static 'blog/img/icons/application.png' %}" alt=''>
+                <h2 class='icon-text'>My Own Website</h2>
+            </a>
         </div>
     </div>
     </div>

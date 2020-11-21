@@ -228,11 +228,7 @@ body {
     filter: grayscale(100%);
     left: 0vw;
   }
-  #projects_page {
-    background: rgba(128, 128, 128, 0.068) url(img/project.jpg) center;
-    background-size: cover;
-    filter: grayscale(100%); 
-  }
+
   #skills_page{
     background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
     background-size: cover;
@@ -278,13 +274,11 @@ body {
     flex: calc(100vw/3);
     height: 100vh;
     transition: flex 700ms ease;
-    background-image: linear-gradient(-25deg, #16151500 0%, #b8bcbe00 100%);
   }
 
   .col3:hover {
     flex: 0 0 calc(100vw/2);
     height: 100vh;
-    background-image: linear-gradient(-25deg, #16151598 0%, #b8bcbeab 100%);
   }
 
   .icon {
@@ -293,6 +287,16 @@ body {
     height: 48px;
     align-self:center;
     transition: all 0.5s ease-in-out;
+  }
+
+  .pr-telbot {
+    background: url(img/bc_telbot.jpg) 0 0 no-repeat;
+  }
+  .pr-website{
+    background: url(img/bc_website.jpg) 0 0 no-repeat;
+  }
+  .pr-calc{
+    background: url(img/bc_calculator.jpg) 0 0 no-repeat;
   }
 
   .column:hover .icon{
@@ -310,6 +314,7 @@ body {
     opacity: 0%;
     transition: all 0.5s ease-in-out;
     text-align: center;
+    text-transform: uppercase;
   }
 
   
