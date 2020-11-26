@@ -246,6 +246,7 @@ body {
     display: flex;  
     justify-content: center;
     border: 1px black solid;
+    flex-direction: column;
   }
   
   .column-link {
@@ -302,13 +303,107 @@ body {
   .icon-text{
     font-size: 20;
     text-decoration: none;
-    color: rgb(159, 172, 216);
+    color: rgb(255, 255, 255);
     opacity: 0%;
     transition: all 0.5s ease-in-out;
     text-align: center;
     text-transform: uppercase;
     padding-top: 30px;
   }
+  /* setting how to show a column info*/
+  .column-info{
+    justify-content: center;
+    position: relative;
+    margin: 30px ;
+    width: calc(100% - 60px) ;
+    height: 0;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .column:hover .column-info{
+    height: 70vh;
+    transition-delay: 500ms;
+
+  }
+  .column-info:before, .column-info:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+  }
+       
+  .column-info:hover:before {
+    transition-delay: 0s;
+  }
+    
+  .column-info:hover:after {
+    background-image: linear-gradient(-25deg, #161515d0 0%, #b8bcbed0 100%);
+    transition-delay: .35s;
+  }
+
+  .column-info:before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 2px solid white;
+    border-left: 0;
+    border-right: 0;
+  }
+      
+  .column-info:after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background-image: linear-gradient(-25deg, #161515d0 0%, #b8bcbed0 100%);
+  }
+      
+  .column-info:hover:before {
+    left: 0;
+    width: 100%;
+  }
+      
+  .column-info:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  .column-info:hover .info-text{
+    display: block;
+    opacity: 100%;
+  }
+
+
+  .info-text{
+    color: #C0C0C0;
+    display: none;
+    opacity: 0;
+    margin: 30px;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+  .info-text h1{
+    margin-bottom: 60px;
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+  }
+  .info-text ul{
+    list-style: none;
+    padding-left: 40px;
+    font-weight: bold;
+  }
+
+  .info-text li:before {
+    padding-right:10px;
+    font-weight: bold;
+    color: white;
+    content: "\2714";
+    transition-duration: 0.5s;
+  } 
+
+  .info-text li:hover:before {
+    color: rgb(24, 11, 98);
+    content: "\2714";
+  }  
    /* setting to projects page*/
   .pr-telbot {
     background: url(img/backgrounds/bc_telbot.jpg) 0 0 no-repeat;
@@ -350,6 +445,16 @@ body {
   }
 
    /* setting to skills page*/
+
+   .skill-col {
+    background-image: linear-gradient(-25deg, #16151500 0%, #b8bcbe00 100%);
+   }
+
+   .skill-col:hover {
+    background-image: linear-gradient(-25deg, #16151588 0%, #b8bcbe81 100%);
+   }
+
+
 
 
  
