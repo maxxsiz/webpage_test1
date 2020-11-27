@@ -314,11 +314,12 @@ body {
   .column-info{
     justify-content: center;
     position: relative;
-    margin: 30px ;
+    margin: 0px 30px 30px 30px ;
     width: calc(100% - 60px) ;
     height: 0;
     transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
   }
+  
   .column:hover .column-info{
     height: 70vh;
     transition-delay: 500ms;
@@ -367,23 +368,20 @@ body {
     top: 0;
     height: 100%;
   }
-  .column-info:hover .info-text{
-    display: block;
-    opacity: 100%;
-  }
-
-
   .info-text{
-    color: #C0C0C0;
-    display: none;
+    color: #ffffff;
     opacity: 0;
     margin: 30px;
     font-family: 'Montserrat Alternates', sans-serif;
+    transition: all 1s ease-in-out;
+    transition-delay: .85s;
+  }
+  .column-info:hover .info-text{
+    opacity: 1;
   }
   .info-text h1{
     margin-bottom: 60px;
     text-align: left;
-    text-transform: uppercase;
     border-bottom: 2px solid white;
   }
   .info-text ul{
