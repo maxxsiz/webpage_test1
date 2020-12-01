@@ -1,4 +1,3 @@
-
 body {
       --def: #96B7C4; 
     --inv: #fff;
@@ -199,13 +198,12 @@ body {
       
   
   /* page settigns */
-  .main-block{
+  .main-block {
     position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     overflow: hidden;
-    background-color: teal;
   }
   .page {
     display: flex;
@@ -221,17 +219,16 @@ body {
     background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
     background-size: cover;
   }
+
   #main_page {
-    background: rgba(128, 128, 128, 0.068) url(img/main_background.jpg) center;
-    background-size: cover;
     left: 0vw;
+    background-image: linear-gradient(-25deg, #4e4d4d 0%, #000000 100%);
   }
 
-  #skills_page{
+  #skills_page {
     background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
     background-size: cover;
   }
-
 
 /* solo page setting */
   .col-block {
@@ -291,12 +288,12 @@ body {
     transition: all 0.5s ease-in-out;
   }
 
-  .column:hover .icon{
+  .column:hover .icon {
     transform: scale(2);
     filter: grayscale(0%)
   }
 
-  .column:hover .icon-text{
+  .column:hover .icon-text {
     opacity: 100%;
   }
 
@@ -320,7 +317,7 @@ body {
     transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
   }
   
-  .column:hover .column-info{
+  .column:hover .column-info {
     height: 70vh;
     transition-delay: 500ms;
 
@@ -368,7 +365,7 @@ body {
     top: 0;
     height: 100%;
   }
-  .info-text{
+  .info-text {
     color: #ffffff;
     opacity: 0;
     margin: 30px;
@@ -379,29 +376,124 @@ body {
   .column-info:hover .info-text{
     opacity: 1;
   }
-  .info-text h1{
+  .info-text h1 {
     margin-bottom: 60px;
     text-align: left;
     border-bottom: 2px solid white;
   }
-  .info-text ul{
+  .info-text ul {
     list-style: none;
     padding-left: 40px;
     font-weight: bold;
   }
-
   .info-text li:before {
     padding-right:10px;
     font-weight: bold;
     color: white;
     content: "\2714";
     transition-duration: 0.5s;
-  } 
-
+  }
   .info-text li:hover:before {
     color: rgb(24, 11, 98);
     content: "\2714";
-  }  
+  }
+
+  /* setting to main page*/
+  .main-block-main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+  }
+  .photo-block {
+    width: 30vw;
+    height: 100vh;
+  }
+  .photo-block span{
+    letter-spacing: 16px;
+    font-size: 8vh;
+    z-index: 2;
+  }
+  .my-photo{
+    position: absolute;
+    top: 10vh;
+    left: 1vh;
+    height: 80vh;
+  } 
+  .my-name{
+    position: absolute;
+    top: 64vh;
+    left: 10vh;
+  }
+  .my-surname{
+    position: absolute;
+    top: 72vh;
+    left: 10vh;
+    border-bottom: 2px solid white;
+    padding-bottom: 0;
+  }
+  .color-photo{
+    z-index: 1;
+  }
+  .monochrom-photo{
+    z-index: 2;
+    opacity: 1;
+    transition: all 1s ;
+  }
+
+  .blog-col {
+    display: flex;
+    flex-direction: column;
+    width: calc((100vw - 30vw)/3);
+  }
+  .article{
+    margin: 30px;
+  }
+  .article h1{
+    border-bottom: 1px solid white;
+  }
+  .btn-more-blog{
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding-right: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+  }
+  .btn-more-blog span {
+    transform: translateX(-200%);
+    transition: .6s;
+    display: inline-block;
+    position: relative;
+  } 
+  .btn-more-blog:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    bottom: 0;
+    height: .125rem;
+    margin: auto;
+    background: #ffffff;
+    z-index: 0;
+    transition: .6s cubic-bezier(.6, .01, 0, 1);
+  }
+  .article:hover .btn-more-blog span{
+    transform: translateX(0%);
+  }
+  .article:hover .btn-more-blog:before {
+    transform: translateX(50px)
+}
+  
+
+  .photo-block:hover .monochrom-photo{
+    opacity: 0;
+  }
    /* setting to projects page*/
   .pr-telbot {
     background: url(img/backgrounds/bc_telbot.jpg) 0 0 no-repeat;
@@ -451,6 +543,7 @@ body {
    .skill-col:hover {
     background-image: linear-gradient(-25deg, #16151588 0%, #b8bcbe81 100%);
    }
+
 
 
 

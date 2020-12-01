@@ -6,8 +6,69 @@ Maksym Mishchuk - Hello world!
 {% block content %}
 <div class='main-block'>
 <div id="main_page" class='page'>
-    <h1>main page</h1>
-    </div>
+    <div class='main-block-main'>
+        <div class='photo-block'>
+            <img class='my-photo color-photo' src="{% static 'blog/img/me_color.png' %}" alt=''>
+            <img class='my-photo monochrom-photo' src="{% static 'blog/img/me_monochrom.png' %}" alt=''>
+            <span class='my-name'>Maksym</span>
+            <span class='my-surname'>Mishchuk</span>
+        </div>
+        <div class='blog-col first-col'>
+            <div class='article'>
+                <h1>My studies</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+            <div class='article'>
+                <h1>Why I choose IT sphere</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                    на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                    що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                    </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+        </div>
+        <div class='blog-col second-col'>
+            <div class='article'>
+                <h1>My routine day</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                    на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                    що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                    </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+            <div class='article'>
+                <h1>Future projects</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                    на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                    що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                    </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+        </div>
+        <div class='blog-col third-col'>
+            <div class='article'>
+                <h1>Work experience</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                    на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                    що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                    </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+            <div class='article'>
+                <h1>A little about my character</h1>
+                <p>Після закінчення польської школи, я вирішив піти по стопам батька поступивши
+                    на Biotechnology при Politechnika Krakowska. Нажаль після двох років навчання я зрозумів
+                    що це не моє. Саме тоді я наткнувся на безкоштовний webinar з Java. 
+                    </p>
+                <div class="btn-more-blog"><span>More</span></div>
+            </div>
+        </div>
+</div>
+</div>
 <div id="projects_page" class='page'>
     <div class='col-block'>
         <div class='column col3 pr-telbot'>
@@ -160,17 +221,26 @@ Maksym Mishchuk - Hello world!
                     <h2>Час навчання: 12+ місяців.</h2>
                     <h3>Після самостійної проби вникнути в програмування через вивчення Java, мова програмування Python
                         для мене було порятунком. Python був основною мовою програмування для мене на університеті і дотепер
-                        залишається найбільш навчаємою через мене мовою. Я стараюсь поширювати свої знання в різних сферах
-                        застосування Python. 
+                        залишається найбільш навчаємою через мене мовою. На універі більше був уклон на різні алгоритми та продуктивність,
+                        натомість різний функціонал, включно з ООП вивчався окремо.
                         Список практикуємих інструментів:
                     </h3>
                     <ul>
-                        <li></li>
-                        <li>Аналіз інформації та її обробка.</li>
-                        <li>Формування інформації в доступному вигляді.</li>
-                        <li>Контакт з ігроками, надавання інформації через бота.</li>
-                        <li>Аналіз ігроків та надання порад (підвищити або вигнати).</li>
+                        <li>NumPy</li>
+                        <li>Pillow</li>
+                        <li>Plotly</li>
+                        <li>BeautifulSoup</li>
+                        <li>Django</li>
+                        <li>Kivy</li>
+                        <li>KivyMD</li>
+                        <li>Kivy</li>
+                        <li>Telegram Bot API</li>
+                        <li>Pyautogui</li>
                     </ul>
+                    <h3>В мене нема конкретного списку, що я мушу вивчити. Я стараюсь вчитись на практиці, роблячи більші або меньші проекти.
+                        Таким чином я познаю нові різні бібліотеки та поширюю свої знання в Python. На даний момент я стараюсь поширювати свої
+                        знання в різних сферах застосування Python.
+                    </h3>
                 </div>
             </div>
         </div>
@@ -182,6 +252,10 @@ Maksym Mishchuk - Hello world!
             <div class='column-info'>
                 <div class='info-text'>
                     <h2>Час навчання: 2+ місяців.</h2>
+                    <h3>Звісно Django не міг бути оминутий мною при вивчанні різних бібліотек. Як один з найпопулярніших інструментів для
+                        створення серверної частини сайтів, за допомогою якого я міг зреалізувати певні свої ідеї. Одною з таких ідей було створення
+                        інтернет сервісу для вечірок друзів, де будуть заміщені різні настольні ігри.
+                    </h3>
                 </div>
             </div>
         </div>
@@ -193,6 +267,9 @@ Maksym Mishchuk - Hello world!
             <div class='column-info'>
                 <div class='info-text'>
                     <h2>Час навчання: 2+ місяців.</h2>
+                    <h3>HTML дуже легкий до вивчення, да і сильно багато вчити нема що. Аналогічно до ситуації з CSS я не збираюсь
+                        ставати спеціалістом в HTML.
+                    </h3>
                 </div>
             </div>
         </div>
@@ -204,6 +281,11 @@ Maksym Mishchuk - Hello world!
             <div class='column-info'>
                 <div class='info-text'>
                     <h2>Час навчання: 2+ місяців.</h2>
+                    <h3>При роботі з CSS та HTML виникла необхідність в сторонньому інструменті для створення сайта, конкренто потрібний був 
+                        більш гнучкий інструмент для анімації. Звісно JavaScript був ідеальним кандидатом. JS це третя серйозна мова програмування з якою я зустрівся. 
+                        Після Python було досить легко ввійти в незвичну для себе по структурі мову. Мої знання по JS на даний момент 
+                        являються базовими, я пройшов декілька інтернет курсів, дойшовши до ООП.
+                    </h3>
                 </div>
             </div>
         </div>
