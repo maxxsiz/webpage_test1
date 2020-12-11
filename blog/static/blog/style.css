@@ -364,6 +364,24 @@ body {
     height: 2vw;
     margin:3vh 1.5vw;
   }
+  .customline-click{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .customline-click p{
+    margin-right:30px;
+    font-size: 45px;
+    cursor: pointer;
+  }
+  .typing-1, .typing-2{
+    display: none;
+  }
+  .customline-click span{
+    font-size: 45px;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+  }
   .btn-more-blog {
     cursor: pointer;
     text-decoration: none;
@@ -372,8 +390,7 @@ body {
     position: relative;
     padding-right: 30px;
     font-size: 45px;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
     width: 100%;
   }
   .btn-more-blog span {
@@ -413,26 +430,26 @@ body {
     padding-left: 24px;
     margin: auto auto auto 80px;
   }
-  .heading-1{
+  #heading-1{
     margin-top: 50px;
     background: url(img/icons/study_icon.png) 0 4px no-repeat;
-    margin-left: 7.63vw;
+    background-size: 60px 60px;
   }
-  .heading-2{
+  #heading-2{
     background: url(img/icons/it_sphere_icon.png) 0 4px no-repeat;
-    margin-left: calc(7.63vw*2);
+    background-size: 60px 60px;
   }
-  .heading-3{
+  #heading-3{
     background: url(img/icons/workandstudy_icon.png) 0 4px no-repeat;
-    margin-left: calc(7.63vw*3);
+    background-size: 60px 60px;
   }
-  .heading-4{
+  #heading-4{
     background: url(img/icons/unknownperson_icon.png) 0 4px no-repeat;
-    margin-left: calc(7.63vw*4);
+    background-size: 60px 60px;
   }
-  .heading-5{
+  #heading-5{
     background: url(img/icons/skills_icon.png) 0 4px no-repeat; 
-    margin-left: calc(7.63vw*5);
+    background-size: 60px 60px;
   }
   .aboutme{
     display: flex;
@@ -440,6 +457,10 @@ body {
     background-size: 60px 60px;
     height: 60px;
     margin-bottom: 20px;
+    opacity: 0;
+    transition: all 1s ease;
+    margin-left: 0;
+    
   }
   .aboutme li:after{
     content: " ...";
