@@ -45,33 +45,35 @@
                     wrapper.appendChild(span);
                 }, 75 * i);
             }(i));
-    }
-    },0);
-    setTimeout(function(){
-        var wrapper = document.querySelector(".customline-click");
-        var text = document.querySelector(".customline-click .typing-2");
-        var textCont = text.textContent;
-        for (var i = 0; i < textCont.length; i++) {
-            (function(i) {
-                setTimeout(function() {
-                    var texts = document.createTextNode(textCont[i])
-                    var span = document.createElement('span');
-                    span.appendChild(texts);
-                    wrapper.appendChild(span);
-                }, 75 * i);
-            }(i));
         }
-        },1500);
-        }
-        else {
-            return console.log('already typed');
-        }
+        },0);
+        setTimeout(function(){
+            var wrapper = document.querySelector(".customline-click");
+            var text = document.querySelector(".customline-click .typing-2");
+            var textCont = text.textContent;
+            for (var i = 0; i < textCont.length; i++) {
+                (function(i) {
+                    setTimeout(function() {
+                        var texts = document.createTextNode(textCont[i])
+                        var span = document.createElement('span');
+                        span.appendChild(texts);
+                        wrapper.appendChild(span);
+                    }, 75 * i);
+                }(i));
+            }
+            },1500);
+            }
+            else {
+                return console.log('already typed');
+            }
         }
 
     var is_aboutme_show = 0;
     function moreaboutme(){
         if (is_aboutme_show==0){
             is_aboutme_show==1;
+            document.getElementById("custom-2").style.transition = "all 1s ease";
+            document.getElementById("custom-2").style.transform = "skewY(-20deg)";
             setTimeout(function(){
                 document.getElementById("heading-1").style.marginLeft = "7.63vw";
                 document.getElementById("heading-1").style.opacity = "1";
@@ -96,4 +98,25 @@
         else {
             return console.log('already about_me showed');
         }
+    }
+
+    var current_topic_id = "base-info-aboutme";
+    var current_heading_id = "";
+    function moreaboutme_full(topic_id, heading_id){
+        if (current_topic_id != topic_id){
+            if (current_heading_id != ""){
+                document.getElementById(current_heading_id).style.color = "white";
+                document.getElementById(current_heading_id).style.transform = "";
+            }
+            document.getElementById(current_topic_id).style.opacity = "0";
+            document.getElementById(heading_id).style.transform = "translateX(50px)";
+            document.getElementById(heading_id).style.color = "aqua";
+            current_topic_id = topic_id;
+            current_heading_id = heading_id;
+            document.getElementById(topic_id).style.opacity = "1";
+        }
+        else {
+            return console.log(topic_id + ' already showed');
+        }
+
     }

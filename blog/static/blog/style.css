@@ -76,6 +76,10 @@ body {
   }
   .menu-item:hover  p{
     opacity: 1;
+    color: aqua;
+  }
+  .menu-item:hover{
+    border-color: aqua;
   }
 
   /* page settigns */
@@ -301,7 +305,7 @@ body {
     width:100vw;
     z-index: 0;
   }
-  .custom-2 {
+  #custom-2 {
     position: absolute;
     left:0;
     top:0;
@@ -348,6 +352,7 @@ body {
   }
 
   .big-block-blog {
+    position: relative;
     width: 70vw;
     height: 85vh;
     margin:3vh 0vw 10vh 1vw ;
@@ -355,12 +360,22 @@ body {
   }
   .big-block-blog h1 {
     font-size: 100px;
-    margin-left: 60px;
+    margin-left: 70px;
   }
   .big-block-blog p {
     font-size: 45px;
+    margin-left: 30px;
   }
-
+  #base-info-aboutme{
+    transition: all .8s ease;
+    overflow: hidden;
+    border-left: 1px white solid;
+    border-top: 1px white solid;
+  }
+  #heading-list{
+    position: relative;
+    transition: top .8 ease;
+  }
   .blog-col {
     display: flex;
     flex-direction: column;
@@ -391,42 +406,6 @@ body {
     font-size: 45px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
-  }
-  .btn-more-blog {
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    padding-right: 30px;
-    font-size: 45px;
-    font-weight: 400;
-    width: 100%;
-  }
-  .btn-more-blog span {
-    transform: translateX(-200%);
-    transition: all .6s ease;
-    display: inline-block;
-    position: relative;
-  } 
-  .btn-more-blog:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    bottom: 0;
-    height: 7px;
-    margin: auto;
-    background: #ffffff;
-    z-index: 3;
-    transition: all .6s ease;
-  }
-  .btn-more-blog:hover span{
-    transform: translateX(0%);
-  }
-  .btn-more-blog:hover:before {
-    transform: translateX(180px);
   }
 
   .photo-block:hover .monochrom-photo{
@@ -481,6 +460,15 @@ body {
   .aboutme:hover li:after {
     opacity: 1;
   }
+
+  .aboutme-full{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: all .5s ease;
+  }
+
 
 
    /* setting to projects page*/
