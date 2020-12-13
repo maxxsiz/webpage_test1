@@ -30,6 +30,7 @@
     }
     var is_typed_already = 0;
     function show_more_text(){
+        console.log('show_more_text_script_start');
         if (is_typed_already == 0){
         setTimeout(function(){
         is_typed_already = 1;
@@ -39,7 +40,7 @@
         for (var i = 0; i < textCont.length; i++) {
             (function(i) {
                 setTimeout(function() {
-                    var texts = document.createTextNode(textCont[i])
+                    var texts = document.createTextNode(textCont[i]);
                     var span = document.createElement('span');
                     span.appendChild(texts);
                     wrapper.appendChild(span);
@@ -54,7 +55,7 @@
             for (var i = 0; i < textCont.length; i++) {
                 (function(i) {
                     setTimeout(function() {
-                        var texts = document.createTextNode(textCont[i])
+                        var texts = document.createTextNode(textCont[i]);
                         var span = document.createElement('span');
                         span.appendChild(texts);
                         wrapper.appendChild(span);
@@ -70,6 +71,7 @@
 
     var is_aboutme_show = 0;
     function moreaboutme(){
+        console.log('moreaboutme_script_start');
         if (is_aboutme_show==0){
             is_aboutme_show==1;
             document.getElementById("custom-2").style.transition = "all 1s ease";
@@ -103,16 +105,21 @@
     var current_topic_id = "base-info-aboutme";
     var current_heading_id = "";
     function moreaboutme_full(topic_id, heading_id){
+        console.log('moreaboutme_full_script_start');
         if (current_topic_id != topic_id){
             if (current_heading_id != ""){
                 document.getElementById(current_heading_id).style.color = "white";
                 document.getElementById(current_heading_id).style.transform = "";
             }
             document.getElementById(current_topic_id).style.opacity = "0";
+            document.getElementById(current_topic_id).style.zIndex = "3";
+            if (heading_id != ""){
             document.getElementById(heading_id).style.transform = "translateX(50px)";
-            document.getElementById(heading_id).style.color = "aqua";
+            document.getElementById(heading_id).style.color = "rgb(63, 168, 168)";
+            }
             current_topic_id = topic_id;
             current_heading_id = heading_id;
+            document.getElementById(topic_id).style.zIndex = "4";
             document.getElementById(topic_id).style.opacity = "1";
         }
         else {

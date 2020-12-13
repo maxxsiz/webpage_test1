@@ -298,7 +298,7 @@ body {
   /* setting to main page*/
   .custom-1 {
     position: absolute;
-    background-image: linear-gradient(-25deg, #1d1b1b 0%, #b9c0c3 100%);
+    background-image: linear-gradient(-25deg, #a7a7a7 0%, rgb(63, 168, 168) 100%);
     right:0;
     top:0;
     height:100vh;
@@ -312,7 +312,7 @@ body {
     height:100vh;
     width:100vw;
     z-index: 2;
-    background-image: linear-gradient(-25deg, #6e676788 0%,  #e3ebf081 100%);
+    background-image: linear-gradient(-25deg, #2e2e2e 0%,  rgb(175, 175, 175)00%);
     transform: skewY(20deg);
   }
   .photo-block {
@@ -361,6 +361,7 @@ body {
   .big-block-blog h1 {
     font-size: 100px;
     margin-left: 70px;
+    border-bottom: 3px solid white;
   }
   .big-block-blog p {
     font-size: 45px;
@@ -369,8 +370,6 @@ body {
   #base-info-aboutme{
     transition: all .8s ease;
     overflow: hidden;
-    border-left: 1px white solid;
-    border-top: 1px white solid;
   }
   #heading-list{
     position: relative;
@@ -466,8 +465,23 @@ body {
     top:0;
     left:0;
     opacity: 0;
-    transition: all .5s ease;
+    transition: all .6s ease;
+    z-index: 2;
   }
+  .aboutme-full h1{
+    border-bottom: 3px solid white;
+  }
+  #base-info-aboutme{
+    z-index: 4;
+  }
+  .btnbacktomain{
+    cursor:pointer;
+    margin-top:30px;
+    cursor: pointer;
+  }
+  .btn-backtomain:hover{
+    color:rgb(63, 168, 168);
+  } 
 
 
 
