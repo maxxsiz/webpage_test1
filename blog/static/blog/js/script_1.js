@@ -112,14 +112,14 @@
                 document.getElementById(current_heading_id).style.transform = "";
             }
             document.getElementById(current_topic_id).style.opacity = "0";
-            document.getElementById(current_topic_id).style.zIndex = "3";
+            document.getElementById(current_topic_id).style.display = "none";
             if (heading_id != ""){
             document.getElementById(heading_id).style.transform = "translateX(50px)";
             document.getElementById(heading_id).style.color = "rgb(63, 168, 168)";
             }
             current_topic_id = topic_id;
             current_heading_id = heading_id;
-            document.getElementById(topic_id).style.zIndex = "4";
+            document.getElementById(topic_id).style.display = "block";
             document.getElementById(topic_id).style.opacity = "1";
         }
         else {
