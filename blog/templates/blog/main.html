@@ -66,6 +66,26 @@ Maksym Mishchuk - Hello world!
                 <div class='aboutme' id='heading-4' onclick="moreaboutme_full('full-4','heading-4')"><li>About my personality</li></div>
                 <div class='aboutme' id='heading-5' onclick="moreaboutme_full('full-5','heading-5')"><li>My work experience</li></div>
             </div>
+            <div class="slider">
+                <div class="slider__wrapper">
+                  <div class="slider__items">
+                    <div class="slider__item">
+                        <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
+                    </div>
+                    <div class="slider__item">
+                        <img class="slider__photo" src="{% static 'blog/img/me_tola_paintball.jpg' %}" alt=''>
+                    </div>
+                    <div class="slider__item">
+                        <img class="slider__photo" src="{% static 'blog/img/me_polina.jpg' %}" alt=''>
+                    </div>
+                    <div class="slider__item">
+                        <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
+                    </div>
+                  </div>
+                </div>
+                <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                <a class="slider__control slider__control_next" href="#" role="button"></a>
+              </div>
         </div>
         <div class='blog-col'>
             <img class='icon-contact' src="{% static 'blog/img/icons/instagram_white.png' %}" alt=''>
