@@ -1,5 +1,5 @@
 body {
-      --def: #96B7C4; 
+    --third_color: #96B7C4; 
     --inv: #fff;
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
@@ -8,40 +8,6 @@ body {
     border: 0px;
   }
 
-  *, *:before, *:after {
-    box-sizing: border-box;
-    }
-  
-  /* snow animation */
-  
-  /* menu animation */
-  @keyframes menu_item_down{
-    0% {bottom:10vh;}
-    100% {bottom:2vh;}
-  }
-  @keyframes opacity_item_down{
-    0% {bottom:10vh;}
-    50% {opacity: 1;
-         bottom: 10px;}
-    100% {opacity: 0;
-      bottom: 2vh;
-      z-index:6;}
-  }
-  @keyframes opacity_item_up{
-    0% {opacity: 0;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-  @keyframes menu_open{
-    0% {width: 70px;
-      height: 70px;}
-    100% {width: calc(100vw/3);
-        height: 100vh;
-        border-radius: 0%;
-        bottom: 0;
-        border: 0px;
-        opacity: 90%;}
-  }
   /* menu settigns */
   .menu-line {
     position: fixed;
@@ -57,20 +23,17 @@ body {
   }
   .menu-item {
     display: flex;
-    align-items: center;
+    align-items:center;
     width: 100px;
     height: 4vh;
     border-bottom: 5px white solid;
     transition: all 2s ease-in-out;
     cursor: pointer;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0 30px;
     font-size: 21px;
   }
   .menu-item p{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
+    margin: 0 auto 0 auto;
     opacity: 0;
     transition: all .5s ease-in-out;
   }
@@ -166,7 +129,6 @@ body {
     flex: 0 0 calc(100vw/2);
     height: 100vh;
     filter: grayscale(0%);
-    
   }
 
   .icon {
@@ -174,12 +136,12 @@ body {
     width: 48px;
     height: 48px;
     align-self:center;
-    transition: all 0.5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 
   .column:hover .icon {
     transform: scale(2);
-    filter: grayscale(0%)
+    filter: grayscale(0%);
   }
 
   .column:hover .icon-text {
@@ -204,14 +166,14 @@ body {
     margin: 0px 30px 90px 30px ;
     width: calc(100% - 60px) ;
     height: 0;
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
   }
   
   .column:hover .column-info {
     height: 70vh;
-    transition-delay: 500ms;
-
+    transition-delay: .5s;
   }
+
   .column-info:before, .column-info:after {
     content: '';
     position: absolute;
@@ -255,6 +217,7 @@ body {
     top: 0;
     height: 100%;
   }
+
   .info-text {
     color: #ffffff;
     opacity: 0;
@@ -264,25 +227,30 @@ body {
     transition: all 1s ease-in-out;
     transition-delay: .85s;
   }
+
   .column-info:hover .info-text{
     opacity: 1;
   }
+
   .info-text h2 {
     margin-bottom: 60px;
     text-align: left;
     border-bottom: 2px solid white;
     font-size: 35px;
   }
+
   .info-text h3 {
     margin-bottom: 60px;
     text-align: left;
     font-size: 25px;
   }
+
   .info-text ul {
     list-style: none;
     padding-left: 40px;
     font-weight: bold;
   }
+
   .info-text li:before {
     padding-right:10px;
     font-weight: bold;
@@ -290,6 +258,7 @@ body {
     content: "\2714";
     transition-duration: 0.5s;
   }
+
   .info-text li:hover:before {
     color: rgb(24, 11, 98);
     content: "\2714";
@@ -305,6 +274,7 @@ body {
     width:100vw;
     z-index: 0;
   }
+
   #custom-2 {
     position: absolute;
     left:0;
@@ -315,26 +285,31 @@ body {
     background-image: linear-gradient(-25deg, #2e2e2e 0%,  rgb(175, 175, 175)00%);
     transform: skewY(20deg);
   }
+  
   .photo-block {
     width: 25vw;
     height: 100vh;
   }
+
   .photo-block span{
     letter-spacing: 16px;
     font-size: 8vh;
     z-index: 5;
   }
+
   .my-photo{
     position: absolute;
     top: 10vh;
     left: 1vh;
     height: 80vh;
   } 
+
   .my-name{
     position: absolute;
     top: 64vh;
     left: 10vh;
   }
+
   .my-surname{
     position: absolute;
     top: 72vh;
@@ -355,29 +330,33 @@ body {
     position: relative;
     width: 70vw;
     height: 85vh;
-    margin:3vh 0vw 10vh 1vw ;
+    margin:3vh 0vw 10vh 1vw;
     z-index: 3;
   }
+
   .big-block-blog h1 {
     font-size: 100px;
     margin-left: 70px;
     border-bottom: 3px solid white;
   }
+
   .big-block-blog p {
     font-size: 45px;
     margin-left: 30px;
   }
-  #base-info-aboutme{
+
+  #base-info-aboutme {
     transition: all .8s ease;
     overflow: hidden;
   }
-  #heading-list{
+
+  #heading-list {
     position: absolute;
     transition: top .8 ease;
     bottom: 0;
     left: 0;
-
   }
+
   .blog-col {
     display: flex;
     flex-direction: column;
@@ -386,31 +365,41 @@ body {
     z-index: 3;
     justify-content: center;
   }
+
   .icon-contact {
     width: 2vw;
     height: 2vw;
     margin:3vh 1.5vw;
   }
-  .customline-click{
+
+  .customline-click {
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all .7s ease;
   }
-  .customline-click p{
+
+  .customline-click p {
     margin-right:30px;
     font-size: 45px;
     cursor: pointer;
   }
-  .typing-1, .typing-2{
+
+  .typing-1, .typing-2 {
     display: none;
   }
-  .customline-click span{
+
+  .customline-click span {
     font-size: 45px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
   }
 
-  .photo-block:hover .monochrom-photo{
+  .customline-click:hover {
+    color:rgb(63, 168, 168);
+  }
+
+  .photo-block:hover .monochrom-photo {
     opacity: 0;
   }
   
@@ -421,27 +410,33 @@ body {
     padding-left: 24px;
     margin: auto auto auto 80px;
   }
+
   #heading-1{
     margin-top: 50px;
     background: url(img/icons/study_icon.png) 0 4px no-repeat;
     background-size: 60px 60px;
   }
+
   #heading-2{
     background: url(img/icons/it_sphere_icon.png) 0 4px no-repeat;
     background-size: 60px 60px;
   }
+
   #heading-3{
     background: url(img/icons/workandstudy_icon.png) 0 4px no-repeat;
     background-size: 60px 60px;
   }
+
   #heading-4{
     background: url(img/icons/unknownperson_icon.png) 0 4px no-repeat;
     background-size: 60px 60px;
   }
+
   #heading-5{
     background: url(img/icons/skills_icon.png) 0 4px no-repeat; 
     background-size: 60px 60px;
   }
+
   .aboutme{
     display: flex;
     align-items: center;
@@ -451,14 +446,15 @@ body {
     opacity: 0;
     transition: all 1s ease;
     margin-left: 0;
-    
   }
+
   .aboutme li:after{
     content: " ...";
     opacity: 0;
     font-size: 45px; 
     transition: all .7s ease;
   }
+
   .aboutme:hover li:after {
     opacity: 1;
   }
@@ -471,29 +467,33 @@ body {
     transition: all .6s ease;
     display: none;
   }
+
   .aboutme-full h1{
     border-bottom: 3px solid white;
   }
+
   .btnbacktomain{
     cursor:pointer;
     margin-top:30px;
     cursor: pointer;
   }
+  
   .btn-backtomain:hover{
     color:rgb(63, 168, 168);
   } 
 
-
-
    /* setting to projects page*/
+
   .pr-telbot {
     background: url(img/backgrounds/bc_telbot.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .pr-website{
     background: url(img/backgrounds/bc_website.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .pr-calc{
     background: url(img/backgrounds/bc_calculator.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
@@ -504,25 +504,31 @@ body {
     background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .hobbie-snowboard{
     background: url(img/backgrounds/bg_snowboard.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .hobbie-rollerskate{
     background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .hobbie-rollerblade {
     background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
+
   .hobbie-videomake{
     background: url(img/backgrounds/bg_gopro.jpg) 0 0 no-repeat;
     background-size:auto 130vh;
   }
+
   .hobbie-gaming{
     background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
   }
+
   .hobbie-printer3d{
     background: url(img/backgrounds/bg_printing.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
@@ -538,8 +544,7 @@ body {
     background-image: linear-gradient(-25deg, #16151588 0%, #b8bcbe81 100%);
    }
 
-   /* фото слайдер */
-   /* стили основного контейнера слайдера */
+   /* slider for photo */
    .slider {
     position: absolute;
     overflow: hidden;
@@ -549,23 +554,19 @@ body {
     bottom: 0;
     z-index: 4;
     margin-right: 30px;
-    border: 2px white solid;
   }
 
-  /* стили для обёртки, в которой заключены слайды */
   .slider__wrapper {
     position: relative;
     overflow: hidden;
   
   }
 
-  /* стили для контейнера слайдов */
   .slider__items {
     display: flex;
     transition: transform 0.6s ease;
   }
 
-  /* стили для слайдов */
   .slider__item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -578,7 +579,7 @@ body {
   .slider__photo{
     height: 600px;
   }
-  /* стили для кнопок "вперед" и "назад" */
+  
   .slider__control {
     position: absolute;
     top: 50%;
@@ -592,6 +593,7 @@ body {
     height: 50px;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
 
   .slider__control_show {
@@ -631,7 +633,6 @@ body {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
   }
 
-  /* стили для индикаторов */
   .slider__indicators {
     position: absolute;
     display: flex;
@@ -662,10 +663,9 @@ body {
   }
 
   .slider__indicators li.active {
-    background-color: aqua;
+    background-color: rgb(63, 168, 168);
   }
 
-  /* для стилизации текущего слайдера */
   .img-fluid {
     display: inline-block;
     height: auto;
