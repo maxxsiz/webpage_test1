@@ -107,6 +107,9 @@
     function moreaboutme_full(topic_id, heading_id){
         console.log('moreaboutme_full_script_start');
         if (current_topic_id != topic_id){
+            if (topic_id=="base-info-aboutme"){
+                document.getElementById("custom-2").style.transform = "skewY(20deg)";
+            }
             if (current_heading_id != ""){
                 document.getElementById(current_heading_id).style.color = "white";
                 document.getElementById(current_heading_id).style.transform = "";
