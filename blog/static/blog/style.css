@@ -127,7 +127,7 @@ body {
   }
 
   .col3:hover {
-    flex: 0 0 calc(100vw/2);
+    flex: 0 0 calc(100vw*0.7);
     height: 100vh;
     filter: grayscale(0%);
   }
@@ -219,31 +219,31 @@ body {
   }
 
   .info-text {
-    position: relative;
     color: #ffffff;
     opacity: 0;
     margin: 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Montserrat Alternates', sans-serif;
     transition: all 1s ease-in-out;
     transition-delay: .85s;
+  }
+
+  .main-info-text {
+    width: 100%;
+  }
+
+  .secondary-info-text, .secondary-info-slider {
+    width: 50%;
+    display: inline-block;
+    float: left;
   }
 
   .column-info:hover .info-text{
     opacity: 1;
   }
 
-  .info-text h2 {
-    margin-bottom: 60px;
-    text-align: left;
-    border-bottom: 2px solid white;
-    font-size: 35px;
-  }
-
   .info-text h3 {
-    margin-bottom: 60px;
     text-align: left;
-    font-size: 25px;
   }
 
   .info-text ul {
@@ -266,7 +266,7 @@ body {
   }
 
   /* setting to main page*/
-  .custom-1 {
+  #custom-1 {
     position: absolute;
     background-image: linear-gradient(-25deg, #a7a7a7 0%, rgb(63, 168, 168) 100%);
     right:0;
@@ -488,17 +488,17 @@ body {
    /* setting to projects page*/
 
   .pr-telbot {
-    background: url(img/backgrounds/bc_telbot.jpg) 0 0 no-repeat;
+    background: url(img/backgrounds/bc_telbot.jpg) 0 0 repeat;
     background-size:auto 100vh;
   }
 
   .pr-website{
-    background: url(img/backgrounds/bc_website.jpg) 0 0 no-repeat;
+    background: url(img/backgrounds/bc_website.jpg) 0 0 repeat;
     background-size:auto 100vh;
   }
 
   .pr-calc{
-    background: url(img/backgrounds/bc_calculator.jpg) 0 0 no-repeat;
+    background: url(img/backgrounds/bc_calculator.jpg) 0 0 repeat;
     background-size:auto 100vh;
   }
 
@@ -558,13 +558,17 @@ body {
     margin-right: 30px;
    }
    .block-slider-project-page {
-    position: absolute;
-    width: 640px;
-    height: 360px;
+    position: relative;
+    width: 900px;
+    height: 600px;
     right: 0;
-    bottom: 0;
+    top: 0;
     z-index: 4;
-    margin: 30px;
+    margin: 60px auto;
+   }
+   .slider{
+     width: 100%;
+     height: 100%;
    }
 
   .slider__wrapper {

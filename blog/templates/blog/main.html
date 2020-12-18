@@ -6,7 +6,7 @@ Maksym Mishchuk - Hello world!
 {% block content %}
 <div class="main-block">
     <div id="main_page" class="page">
-            <div class="custom-1"></div>
+            <div id="custom-1"></div>
             <div id="custom-2"></div>
             <div class="photo-block">
                 <img class="my-photo color-photo" src="{% static 'blog/img/me_color.png' %}" alt=''>
@@ -108,50 +108,56 @@ Maksym Mishchuk - Hello world!
                 </a>
                 <div class="column-info">
                     <div class="info-text">
-                    <h1>Телеграм бот</h1>
-                    <h3>    Ідея була зробити бота помічника на всі руки для клану в ігрі Clash Royale.
-                        До створення бота, голова клану користувався Google sheets до ручного запису всього
-                        що відбувалось в клані. Бот використовувався на практиці, але не був завантажений
-                        на жодний хостінг. На даний момент бот є відключеним та не використовується.
-                        Можливості бота:</h3>
-                    <ul>
-                        <li>Збір інформації про ігроків клану.</li>
-                        <li>Аналіз інформації та її обробка.</li>
-                        <li>Формування інформації в доступному вигляді.</li>
-                        <li>Контакт з ігроками, надавання інформації через бота.</li>
-                        <li>Аналіз ігроків та надання порад (підвищити або вигнати).</li>
-                    </ul>
-                    <h3>Використані бібліотеки та інструменти в проекті:</h3>
-                    <ul>
-                        <li>Python - як основна та єдина мова.</li>
-                        <li>BeautifulSoup - web scraping.</li>
-                        <li>SQLite, як основна база данних.</li>
-                        <li>Plotly - більш сучасний аналог matplotlib.</li>
-                        <li>Telegram Bot API - бібліотека на якій базувався бот.</li>
-                    </ul>
-                    <div class="block-slider-project-page">
-                        <div class="slider">
-                            <div class="slider__wrapper">
-                            <div class="slider__items">
-                                <div class="slider__item">
-                                    <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
-                                </div>
-                                <div class="slider__item">
-                                    <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
-                                </div>
-                                <div class="slider__item">
-                                    <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
-                                </div>
-                                <div class="slider__item">
-                                    <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
-                                </div>
-                                <div class="slider__item">
-                                    <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
-                                </div>
+                        <div class="main-info-text">
+                            <h3>Ідея була зробити бота помічника на всі руки для клану в ігрі Clash Royale.
+                                До створення бота, голова клану користувався Google sheets до ручного запису всього
+                                що відбувалось в клані. Бот використовувався на практиці, але не був завантажений
+                                на жодний хостінг. На даний момент бот є відключеним та не використовується.
+                                Можливості бота:</h3>
+                        </div>
+                        <div class="secondary-info-text">
+                            <h3>Можливості бота:</h3>
+                            <ul>
+                                <li>Збір інформації про ігроків клану.</li>
+                                <li>Аналіз інформації та її обробка.</li>
+                                <li>Формування інформації в доступному вигляді.</li>
+                                <li>Контакт з ігроками, надавання інформації через бота.</li>
+                                <li>Аналіз ігроків та надання порад (підвищити або вигнати).</li>
+                            </ul>
+                            <h3>Використані бібліотеки та інструменти в проекті:</h3>
+                            <ul>
+                                <li>Python - як основна та єдина мова.</li>
+                                <li>BeautifulSoup - web scraping.</li>
+                                <li>SQLite, як основна база данних.</li>
+                                <li>Plotly - більш сучасний аналог matplotlib.</li>
+                                <li>Telegram Bot API - бібліотека на якій базувався бот.</li>
+                            </ul>
+                        </div>
+                        <div class="secondary-info-slider">
+                            <div class="block-slider-project-page">
+                                <div class="slider">
+                                    <div class="slider__wrapper">
+                                    <div class="slider__items">
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                                    <a class="slider__control slider__control_next" href="#" role="button"></a>
                             </div>
-                            </div>
-                            <a class="slider__control slider__control_prev" href="#" role="button"></a>
-                            <a class="slider__control slider__control_next" href="#" role="button"></a>
                         </div>
                     </div>
                 </div>
