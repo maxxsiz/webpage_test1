@@ -310,10 +310,11 @@ body {
     height:100vh;
     width:100vw;
     z-index: 2;
-    background-image: linear-gradient(-25deg, #2e2e2e 0%,  rgb(175, 175, 175)00%);
+    background-image: linear-gradient(-25deg, #000000 0%,  rgb(31, 30, 30)00%);
     transform: skewY(20deg);
   }
   
+  /*photo block and full name*/
   .photo-block {
     width: 25vw;
     height: 100vh;
@@ -356,6 +357,10 @@ body {
     transition: all 1s ;
   }
 
+  .photo-block:hover .monochrom-photo {
+    opacity: 0;
+  }
+  /*main part of main page*/
   .big-block-blog {
     position: relative;
     width: 70vw;
@@ -387,21 +392,6 @@ body {
     left: 0;
   }
 
-  .blog-col {
-    display: flex;
-    flex-direction: column;
-    width: 5vw;
-    height: 100vh;
-    z-index: 3;
-    justify-content: center;
-  }
-
-  .icon-contact {
-    width: 2vw;
-    height: 2vw;
-    margin:3vh 1.5vw;
-  }
-
   .customline-click {
     display: flex;
     flex-direction: row;
@@ -429,9 +419,6 @@ body {
     color:rgb(63, 168, 168);
   }
 
-  .photo-block:hover .monochrom-photo {
-    opacity: 0;
-  }
   
   .big-block-blog li {
     font-size: 45px;
@@ -511,7 +498,60 @@ body {
   .btn-backtomain:hover{
     color:rgb(63, 168, 168);
   } 
+  /* menu contact */
+  .blog-col {
+    display: flex;
+    flex-direction: column;
+    width: 5vw;
+    height: 100vh;
+    z-index: 3;
+    justify-content: center;
+  }
 
+
+  .icon-contact {
+    width: 2vw;
+    height: 2vw;
+    margin:3vh 1.5vw;
+  }
+
+  .btn-icon-contact {
+    cursor:pointer;
+  }
+  /* email contact block*/
+
+  #email-contact-big-block {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    background-color: #96b7c46c;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    margin: 0;
+    transition: all 1s ease;
+  }
+
+  .email-contact-small-block {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: var(--third_color);
+    width: 80w;
+    height: 80vh;
+    margin: 10vh 10vw;
+  }
+
+  .icon-exit-contact {
+    position:absolute;
+    top:10px;
+    right:10px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
    /* setting to projects page*/
 
   .pr-telbot {

@@ -97,6 +97,12 @@ Maksym Mishchuk - Hello world!
                 <a href="https://github.com/maxxsiz"><img class="icon-contact" src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a>
                 <a href="https://www.facebook.com/maks.miszczuk.1"><img class="icon-contact" src="{% static 'blog/img/icons/facebook_white.png' %}" alt=""></a>
                 <a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA"><img class="icon-contact" src="{% static 'blog/img/icons/youtube_white.png' %}" alt=""></a>
+                <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/email_icon.png' %}" alt=""></a>
+            </div>
+            <div id="email-contact-big-block">
+                <div class="email-contact-small-block">
+                    <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                </div>
             </div>
         </div>
     <div id="projects_page" class="page">
@@ -226,32 +232,34 @@ Maksym Mishchuk - Hello world!
                                 закінчуючи деплоїнгом. Звісно перще що впало на думку це свій сайт портфоліо. До цього часу часу я мав мінімальні знання HTML,
                                 та нульові в JavaScript та CSS. Ну і звісно я вперше стикнувся з так популярним фремоврокм як Django. </h3>
                         </div>
-                        <div class="secondary-info-text">
-                            <h3>Весь сайт ви звісно бачите прямо зараз перед собою але розкажу те що ви не бачите зі сторони серверної частини:</h3>
-                            <ul>
-                                <li>Згідно з вимогами перевірка валідності почти при вводі в закладці контакти.</li>
-                                <li>Обчислення додаткової інформації.</li>
-                            </ul>
-                            <h3>Використані бібліотеки та інструменти в проекті:</h3>
-                            <ul>
-                                <li>Django - як мова для Backend.</li>
-                                <li>JavaScript - мова для різних скриптів оформлення анімацій стайту (без JQuery).</li>
-                                <li>SQLite - як основна база данних.</li>
-                            </ul>
-                        </div>
-                        <div class="secondary-info-slider">
-                            <div class="block-slider-project-page">
-                                <div class="slider-website">
-                                    <div class="slider__wrapper-website">
-                                    <div class="slider__items-website">
-                                        <div class="slider__item-website">
-                                            <img class="slider__photo-website" src="{% static 'blog/img/website-view-old1.png' %}" alt=''>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <a class="slider__control-website slider__control_prev-website" href="#" role="button"></a>
-                                    <a class="slider__control-website slider__control_next-website" href="#" role="button"></a>
+                        <div class="secondary-info-block">
+                            <div class="secondary-info-text">
+                                <h3>Весь сайт ви звісно бачите прямо зараз перед собою але розкажу те що ви не бачите зі сторони серверної частини:</h3>
+                                <ul>
+                                    <li>Згідно з вимогами перевірка валідності почти при вводі в закладці контакти.</li>
+                                    <li>Обчислення додаткової інформації.</li>
+                                </ul>
+                                <h3>Використані бібліотеки та інструменти в проекті:</h3>
+                                <ul>
+                                    <li>Django - як мова для Backend.</li>
+                                    <li>JavaScript - мова для різних скриптів оформлення анімацій стайту (без JQuery).</li>
+                                    <li>SQLite - як основна база данних.</li>
+                                </ul>
                             </div>
+                            <div class="secondary-info-slider">
+                                <div class="block-slider-project-page">
+                                    <div class="slider-website">
+                                        <div class="slider__wrapper-website">
+                                        <div class="slider__items-website">
+                                            <div class="slider__item-website">
+                                                <img class="slider__photo-website" src="{% static 'blog/img/website-view-old1.png' %}" alt=''>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <a class="slider__control-website slider__control_prev-website" href="#" role="button"></a>
+                                        <a class="slider__control-website slider__control_next-website" href="#" role="button"></a>
+                                </div>
+                                </div>
                             </div>
                         </div>
                 </div>
