@@ -539,18 +539,30 @@ body {
     left: 0;
     top: 0;
     background-color: var(--third_color);
-    width: 80w;
+    width: 80vw;
     height: 80vh;
     margin: 10vh 10vw;
+    border-radius: 5vw 0 5vw 0;
   }
 
   .icon-exit-contact {
     position:absolute;
+    display: flex;
     top:10px;
     right:10px;
     width: 48px;
     height: 48px;
     cursor: pointer;
+    justify-content: center;
+  }
+  /* contact form settings*/
+
+  .contact-form-block {
+    height: 80%;
+    width: 40%;
+  }
+  .contact-form-block p {
+    font-size: 50px;
   }
    /* setting to projects page*/
 
