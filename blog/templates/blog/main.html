@@ -104,10 +104,11 @@ Maksym Mishchuk - Hello world!
                     <div class="email-contact-small-block">
                         <input class="input-block" placeholder="Name" type="text" id="name">
                         <input class="input-block" placeholder="E-mail" type="email" id="email">
-                        <textarea class="input-block" placeholder="Enter text here..." required></textarea>
-                        <button class="btn-submit-contact" type="submit" value="Send"></button>
+                        <textarea class="input-block textarea-form" placeholder="Enter text here..." required></textarea>
+                        <button class="btn-submit-contact" type="submit">Send</button>
+                    <div class="btn-exit-from-contact">
+                        <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
                     </div>
-                    <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
                 </div>
             </div>
         </div>
