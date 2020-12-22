@@ -100,18 +100,13 @@ Maksym Mishchuk - Hello world!
                 <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/email_icon.png' %}" alt=""></a>
             </div>
             <div id="email-contact-big-block">
-                <div class="email-contact-small-block">
-                    <h1>Contact me</h1>
-                    <fieldset class="contact-form-block">
-                        <p>Name<em>*</em></p>
-                        <input type="text" id="name">
-                        <p>Email</p>
-                        <input type="email" id="email">
-                        <p>Message</p>
-                        <textarea required>Enter text here...</textarea>
-                        <button type="submit" value="Send"></button>
-                        
-                    </fieldset>
+                <div class="email-contact-medium-block">
+                    <div class="email-contact-small-block">
+                        <input class="input-block" placeholder="Name" type="text" id="name">
+                        <input class="input-block" placeholder="E-mail" type="email" id="email">
+                        <textarea class="input-block" placeholder="Enter text here..." required></textarea>
+                        <button class="btn-submit-contact" type="submit" value="Send"></button>
+                    </div>
                     <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
                 </div>
             </div>
