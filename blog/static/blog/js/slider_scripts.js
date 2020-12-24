@@ -675,7 +675,7 @@ var slideShow = (function () {
       _indicatorIndexMax = _sliderItems.length - 1,
       _stepTouch = 50,
       _config = {
-        isAutoplay: true, // автоматическая смена слайдов
+        isAutoplay: false, // автоматическая смена слайдов
         directionAutoplay: 'next', // направление смены слайдов
         delayAutoplay: 5000, // интервал между автоматической сменой слайдов
         isPauseOnHover: true // устанавливать ли паузу при поднесении курсора к слайдеру
@@ -864,7 +864,7 @@ var slideShow = (function () {
       },
       // метод запускающий автоматическую смену слайдов
       cycle: function () {
-        _config.isAutoplay = true;
+        _config.isAutoplay = false;
         _startAutoplay();
       }
     }
@@ -872,5 +872,5 @@ var slideShow = (function () {
 }());
 
 slideShow('.slider-general', {
-  isAutoplay: true
+  isAutoplay: false
 });

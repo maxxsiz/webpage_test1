@@ -9,14 +9,8 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="menu-line">
-    <a role="button" onclick="changepage('main_page')"><div class="menu-item item-1"><p>Main</p></div></a>
-    <a role="button" onclick="changepage('skills_page')"><div class="menu-item item-2"><p>Skills</p></div></a>
-    <a role="button" onclick="changepage('hobbies_page')"><div class="menu-item item-3"><p>Hobbies</p></div></a>
-    <a role="button" onclick="changepage('projects_page')"><div class="menu-item item-4"><p>Projects</p></div></a>  
-</div>
 {% block content %} {% endblock %}
 <script type="text/javascript" src="{% static 'blog/js/script_1.js' %}"></script>
-<script type="text/javascript" src="{% static 'blog/js/slider_photo.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
 </body>
 </html>

@@ -55,8 +55,6 @@ body {
   }
   .page-v2 {
     display: flex;
-    position: absolute;
-
     width: 100vw;
     height: 100vh;
   }
@@ -884,16 +882,16 @@ body {
    height: 100%;
  }
 
-.slider__wrapper-general
-
- {
+.slider__wrapper-general {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .slider__items-general {
   display: flex;
-  transition: transform 0.6s ease;
+  transition: transform 1.5s ease;
 }
 
 .slider__item-general {
@@ -906,18 +904,17 @@ body {
 
 .slider__control-general {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   display: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 60px;
   color: #fff;
   text-align: center;
   opacity: 0.5;
   height: 50px;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 15;
 }
 
 .slider__control_show-general {
@@ -933,18 +930,18 @@ body {
 }
 
 .slider__control_prev-general {
-  left: 0;
+  left: calc(100vw/2 - 400px)
 }
 
 .slider__control_next-general {
-  right: 0;
+  right: calc(100vw/2 - 400px);
 }
 
 .slider__control-general::before  {
   content: '';
   display: inline-block;
   width: 20px;
-  height: 20px;
+  height: 40px;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
@@ -963,9 +960,9 @@ body {
   flex-direction: row;
   justify-content: center;
   right: 0;
-  bottom: 10px;
+  bottom: 30px;
   left: 0;
-  z-index: 15;
+  z-index: 30;
   margin-right: 15%;
   margin-left: 15%;
   list-style: none;
@@ -974,28 +971,25 @@ body {
 }
 
 .slider__indicators-general li {
-  width: 20px;
+  display: flex;
+  align-items:center;
+  width: 100px;
   height: 20px;
-  border-radius: 50%;
-  margin-right: 20px;
-  margin-left: 20px;
+  border-bottom: 10px white solid;
+  transition: all 2s ease-in-out;
   cursor: pointer;
-  background-color: rgb(119, 119, 119);
-  background-clip: padding-box;
-  border: 1px solid white;
-  padding-left: 0;
+  margin: 0 30px;
+  font-size: 21px;
 }
 
 .slider__indicators-general li.active {
-  background-color: rgb(63, 168, 168);
+  border-color: rgb(63, 168, 168);
 }
 
-.img-fluid-general {
+.img-fluid-general-general {
   display: inline-block;
   height: auto;
   max-width: 100%;
 }
-
-
-
+ 
   
