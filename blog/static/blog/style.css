@@ -8,72 +8,14 @@ body {
     border: 0px;
   }
 
-  /* menu settigns */
-  .menu-line {
-    position: fixed;
-    left:0;
-    bottom:0;
-    height: 9vh;
-    width:100vw;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-  }
-  .menu-item {
-    display: flex;
-    align-items:center;
-    width: 100px;
-    height: 4vh;
-    border-bottom: 5px white solid;
-    transition: all 2s ease-in-out;
-    cursor: pointer;
-    margin: 0 30px;
-    font-size: 21px;
-  }
-  .menu-item p{
-    margin: 0 auto 0 auto;
-    opacity: 0;
-    transition: all .5s ease-in-out;
-  }
-  .menu-item:hover  p{
-    opacity: 1;
-    color: aqua;
-  }
-  .menu-item:hover{
-    border-color: aqua;
-  }
-
   /* page settigns */
-  .main-block {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    overflow: hidden;
-  }
-  .page-v2 {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-
   .page {
     display: flex;
-    position: absolute;
-    top:0;
     width: 100vw;
     height: 100vh;
-    transition: left 4s;
-    left:-100vw;
   }
 
   #hobbies_page {
-    background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
-    background-size: cover;
-  }
-  #hobbies_page-v2 {
     background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
     background-size: cover;
   }
@@ -81,23 +23,10 @@ body {
   #main_page {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    left: 0vw;
-    background-image: linear-gradient(-25deg, #4e4d4d 0%, #000000 100%);
-  }
-  #main_page-v2 {
-    display: flex;
-    flex-direction: row;
     background-image: linear-gradient(-25deg, #4e4d4d 0%, #000000 100%);
   }
 
   #skills_page {
-    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
-    background-size: cover;
-  }
-
-  #skills_page-v2 {
     background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
     background-size: cover;
   }
@@ -135,7 +64,8 @@ body {
   }
 
   .col7:hover {
-    flex: 0 0 calc(100vw/3);
+    flex: 0.1 0.1 calc(100vw*0.33);
+    height: 100vh;
     filter: grayscale(0%);
   }
 
@@ -263,8 +193,6 @@ body {
     margin: 30px;
     font-size: 25px;
     font-family: 'Montserrat Alternates', sans-serif;
-    transition: all 1s ease-in-out;
-    transition-delay: .85s;
   }
 
   .main-info-text {
@@ -280,7 +208,9 @@ body {
   }
 
   .column-info:hover .info-text {
+    transition-delay: .85s;
     opacity: 1;
+    transition: all 1s ease-in-out;
   }
 
   .info-text h3 {
@@ -553,20 +483,21 @@ body {
     justify-content: center;
     left: 0;
     top: 0;
-    background-color: var(--third_color);
     width: 80vw;
     height: 80vh;
     margin: 10vh 10vw;
     border-radius: 5vw;
     border: 10px solid white;
     border-radius: 20px;
+    background: url(img/backgrounds/contact-background.jpg) 0 0 repeat;
+    background-size:100vw 100vh;
   }
 
   .email-contact-small-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(151, 209, 236);
+    background-color: rgb(167, 206, 224);
     height: 70vh;
     margin: 5vh auto;
     border-radius: 5vw 0 5vw 0;
@@ -908,12 +839,11 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 70px;
   color: #fff;
   text-align: center;
   opacity: 0.5;
-  height: 50px;
-  transform: translateY(-50%);
+  height: 70px;
   z-index: 15;
 }
 
@@ -923,7 +853,7 @@ body {
 
 .slider__control-general:hover,
 .slider__control-general:focus {
-  color: #fff;
+  color:rgb(63, 168, 168);
   text-decoration: none;
   outline: 0;
   opacity: 0.9;
@@ -934,14 +864,14 @@ body {
 }
 
 .slider__control_next-general {
-  right: calc(100vw/2 - 400px);
+  right: calc(100vw/2 - 440px);
 }
 
 .slider__control-general::before  {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 40px;
+  width: 40px;  
+  height: 70px;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
@@ -974,7 +904,7 @@ body {
   display: flex;
   align-items:center;
   width: 100px;
-  height: 20px;
+  height: 0px;
   border-bottom: 10px white solid;
   transition: all 2s ease-in-out;
   cursor: pointer;

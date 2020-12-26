@@ -1,33 +1,4 @@
 'use strict';
-    let current_page = 'main_page';
-    let last_page = '';
-    let is_f_start = 0 ;
-    function changepage(go_to_page){
-        ++is_f_start;
-        if (is_f_start > 1){
-            --is_f_start;
-            return console.log('функция запущена');
-        }
-        if (go_to_page==current_page){
-            --is_f_start;
-            return console.log('Current page');
-        } else {
-        document.getElementById(go_to_page).style.left = '0vw'; 
-        document.getElementById(current_page).style.left = '100vw';
-
-        setTimeout(function() {
-        document.getElementById(current_page).style.transition = "left 0s";
-        document.getElementById(current_page).style.left = '-100vw';
-        last_page = current_page;
-        current_page = go_to_page;
-        }, 4200);
-
-        setTimeout(function() {
-        document.getElementById(last_page).style.transition = "left 4s";
-        is_f_start = 0;
-        }, 4300);
-        }
-    }
     var is_typed_already = 0;
     function show_more_text(){
         console.log('show_more_text_script_start');

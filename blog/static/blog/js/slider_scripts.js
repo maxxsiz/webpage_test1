@@ -778,7 +778,7 @@ var slideShow = (function () {
         if (i === 0) {
           sliderIndicatorsItem.classList.add('active');
         }
-        sliderIndicatorsItem.setAttribute("data-slide-to", i);
+        sliderIndicatorsItem.setAttribute("data-slide-to-general", i);
         indicatorsContainer.appendChild(sliderIndicatorsItem);
       }
       _slider.appendChild(indicatorsContainer);
@@ -818,9 +818,9 @@ var slideShow = (function () {
           e.preventDefault();
           _move(e.target.classList.contains('slider__control_next-general') ? 'next' : 'prev');
           _startAutoplay();
-        } else if (e.target.getAttribute('data-slide-to')) {
+        } else if (e.target.getAttribute('data-slide-to-general')) {
           e.preventDefault();
-          _moveTo(parseInt(e.target.getAttribute('data-slide-to')));
+          _moveTo(parseInt(e.target.getAttribute('data-slide-to-general')));
           _startAutoplay();
         }
       });
