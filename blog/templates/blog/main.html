@@ -19,80 +19,83 @@ Maksym Mishchuk - Hello world!
                         <span class="my-surname">Mishchuk</span>
                     </div>
                     <div class="big-block-blog">
-                        <div id="base-info-aboutme">
-                        <h1>Hi, My name Max ...</h1>
-                        <p>... and I am a beginner programmer. My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
-                        <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
-                        <a class="btn-more-aboutme" role="button" onclick="moreaboutme()" onmouseover="show_more_text()">
-                            <div class="customline-click">
+                        <div class="top-block-blog">
+                            <div id="base-info-aboutme">
+                            <h1>Hi, My name Max ...</h1>
+                            <p>... and I am a beginner programmer. My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
+                            <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
+                            <div class="customline-click" role="button" onclick="moreaboutme()" onmouseover="show_more_text()">
                                 <p>Want to know more about me?</p>
                                 <p class="typing-1">&nbsp;&nbsp;Yes?&nbsp;&nbsp;</p>
                                 <p class="typing-2">So&nbsp;click&nbsp;me;)</p>
-                            </div></a>
+                            </div>
+                            </div>
+                            <div class="aboutme-full" id='full-1'>
+                                <h1>So about my studies</h1>
+                                <p>At the very beginning, I entered the Krakow Polytechnic at the Faculty of Biotechnology. The reasons 
+                                    for this decision were the father's desire to follow in his footsteps. Two years later, I realized that it was not mine.</p>
+                                <p>Then I entered the University of Wroclaw at the Faculty of Informatics. The first year of study was incredibly difficult.</p>
+                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                            </div>
+                            <div class="aboutme-full" id='full-2'>
+                                <h1>So about Why I choose IT spheres</h1>
+                                <p>I always spent a lot of time with the computer, which is why I was approached from school for various tips and problems.
+                                    When I got bored of biotechnology, I began to consider the options of areas that I liked the most. So I settled on IT.</p>
+                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                            </div>
+                            <div class="aboutme-full" id='full-3'>
+                                <h1>So about How I work and study</h1>
+                                <p>
+                                    I am currently learning programming languages ​​on my own.
+                                    The learning process is about trying to create a larger project. As I achieve my goals, 
+                                    I face new problems and try to find tools to solve them.</p>
+                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                            </div>
+                            <div class="aboutme-full" id='full-4'>
+                                <h1>So about my personality</h1>
+                                <p>First of all, I am a strong introvert, sometimes I prefer to spend free time at the computer than on a walk in the city. 
+                                    In addition, I consider myself a very responsible person, this applies to both private and professional issues.</p>
+                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                            </div>
+                            <div class="aboutme-full" id='full-5'>
+                                <h1>So about my work experience</h1>
+                                <p>I do not have any professional practice in the field of IT.
+                                    Of course, I worked in gastronomy and also did an internship at an agronomist company as a consultant.</p>
+                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                            </div>
                         </div>
-                        <div class="aboutme-full" id='full-1'>
-                            <h1>So about my studies</h1>
-                            <p>At the very beginning, I entered the Krakow Polytechnic at the Faculty of Biotechnology. The reasons 
-                                for this decision were the father's desire to follow in his footsteps. Two years later, I realized that it was not mine.</p>
-                            <p>Then I entered the University of Wroclaw at the Faculty of Informatics. The first year of study was incredibly difficult.</p>
-                            <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                        </div>
-                        <div class="aboutme-full" id='full-2'>
-                            <h1>So about Why I choose IT spheres</h1>
-                            <p>I always spent a lot of time with the computer, which is why I was approached from school for various tips and problems.
-                                When I got bored of biotechnology, I began to consider the options of areas that I liked the most. So I settled on IT.</p>
-                            <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                        </div>
-                        <div class="aboutme-full" id='full-3'>
-                            <h1>So about How I work and study</h1>
-                            <p>
-                                I am currently learning programming languages ​​on my own.
-                                The learning process is about trying to create a larger project. As I achieve my goals, 
-                                I face new problems and try to find tools to solve them.</p>
-                            <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                        </div>
-                        <div class="aboutme-full" id='full-4'>
-                            <h1>So about my personality</h1>
-                            <p>First of all, I am a strong introvert, sometimes I prefer to spend free time at the computer than on a walk in the city. 
-                                In addition, I consider myself a very responsible person, this applies to both private and professional issues.</p>
-                            <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                        </div>
-                        <div class="aboutme-full" id='full-5'>
-                            <h1>So about my work experience</h1>
-                            <p>I do not have any professional practice in the field of IT.
-                                Of course, I worked in gastronomy and also did an internship at an agronomist company as a consultant.</p>
-                            <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                        </div>
-                        <div id="heading-list">
-                            <div class="aboutme" id="heading-1" onclick="moreaboutme_full('full-1','heading-1')"><li>My studies</li></div>
-                            <div class="aboutme" id="heading-2" onclick="moreaboutme_full('full-2','heading-2')"><li>Why I choose IT sphere</li></div>
-                            <div class="aboutme" id="heading-3" onclick="moreaboutme_full('full-3','heading-3')"><li>How I work and study</li></div>
-                            <div class="aboutme" id="heading-4" onclick="moreaboutme_full('full-4','heading-4')"><li>About my personality</li></div>
-                            <div class="aboutme" id="heading-5" onclick="moreaboutme_full('full-5','heading-5')"><li>My work experience</li></div>
-                        </div>
-                        <div class="block-slider-main-page">
-                            <div class="slider">
-                                <div class="slider__wrapper">
-                                <div class="slider__items">
-                                    <div class="slider__item">
-                                        <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
+                        <div class="bottom-block-blog">
+                            <div id="heading-list">
+                                <div class="aboutme" id="heading-1" onclick="moreaboutme_full('full-1','heading-1')"><li>My studies</li></div>
+                                <div class="aboutme" id="heading-2" onclick="moreaboutme_full('full-2','heading-2')"><li>Why I choose IT sphere</li></div>
+                                <div class="aboutme" id="heading-3" onclick="moreaboutme_full('full-3','heading-3')"><li>How I work and study</li></div>
+                                <div class="aboutme" id="heading-4" onclick="moreaboutme_full('full-4','heading-4')"><li>About my personality</li></div>
+                                <div class="aboutme" id="heading-5" onclick="moreaboutme_full('full-5','heading-5')"><li>My work experience</li></div>
+                            </div>
+                            <div class="block-slider-main-page">
+                                <div class="slider">
+                                    <div class="slider__wrapper">
+                                    <div class="slider__items">
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
+                                        </div>
+                                        <div class="slider__item">
+                                            <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
+                                        </div>
                                     </div>
-                                    <div class="slider__item">
-                                        <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
                                     </div>
-                                    <div class="slider__item">
-                                        <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
-                                    </div>
-                                    <div class="slider__item">
-                                        <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
-                                    </div>
-                                    <div class="slider__item">
-                                        <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
-                                    </div>
+                                    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                                    <a class="slider__control slider__control_next" href="#" role="button"></a>
                                 </div>
-                                </div>
-                                <a class="slider__control slider__control_prev" href="#" role="button"></a>
-                                <a class="slider__control slider__control_next" href="#" role="button"></a>
                             </div>
                         </div>
                     </div>

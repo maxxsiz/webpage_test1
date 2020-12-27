@@ -46,7 +46,7 @@ body {
     background-size: cover;
   }
 
-/* solo page setting */
+/* column page setting */
   .col-block {
     display: flex;
     overflow: hidden;
@@ -98,7 +98,7 @@ body {
   }
 
   .icon {
-    margin-top:;
+    margin-top:3vh;
     width: 5vw;
     height: 5vw;
     align-self:center;
@@ -276,7 +276,7 @@ body {
 
   .photo-block span{
     letter-spacing: 0.5vw;
-    font-size: 5em;
+    font-size: 8em;
     z-index: 5;
   }
 
@@ -314,13 +314,35 @@ body {
   .photo-block:hover .monochrom-photo {
     opacity: 0;
   }
-  /*main part of main page*/
+  /* main part of main page */
+  /* container setting */
   .big-block-blog {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 70vw;
-    height: 85vh;
-    margin:3vh 0vw 10vh 1vw;
+    height: 90vh;
     z-index: 3;
+  }
+  .top-block-blog {
+    width: 100%;
+    height: 50%;
+  }
+
+  .bottom-block-blog {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+
+  }
+
+  /* top-block setting */
+  #base-info-aboutme {
+    transition: all .8s ease;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
 
   .big-block-blog h1 {
@@ -333,23 +355,9 @@ body {
     margin-left: 1.5625vw;
     font-size: 3em;
   }
-
-  #base-info-aboutme {
-    transition: all .8s ease;
-    overflow: hidden;
-  }
-
-  #heading-list {
-    position: absolute;
-    transition: top .8 ease;
-    bottom: 0;
-    left: 0;
-  }
-
   .customline-click {
     display: flex;
     flex-direction: row;
-    align-items: center;
     transition: all .7s ease;
 
   }
@@ -358,6 +366,8 @@ body {
     margin-right:2.5vw;
     cursor: pointer;
     font-size: 3em;
+    margin-top: 0;
+    margin-right: 0;
   }
 
   .typing-1, .typing-2 {
@@ -368,62 +378,69 @@ body {
     font-family: 'Playfair Display', serif;
     cursor: pointer;
     font-size: 3em;
+    margin-top: 0;
   }
 
   .customline-click:hover {
     color:rgb(63, 168, 168);
   }
 
-  
+  /* bottom-block-left setting */
+  #heading-list {
+    padding-left: 5vw;
+    transition: top .8 ease;
+  }
+
   .big-block-blog li {
     cursor: pointer;
     list-style: none;
-    padding-left: 1.2vw;
-    margin: auto auto auto 4vw;
+    padding-left: 2.5vw;
     font-size: 3em;
+    height: 100%;
+    transition: color .5s ease;
   }
 
   #heading-1{
-    margin-top: 5vh;
     background: url(img/icons/study_icon.png) 0 0 no-repeat;
-    background-size: 3.125vw 3.125vw;
+    background-size: 2vw;
   }
 
   #heading-2{
     background: url(img/icons/it_sphere_icon.png) 0 0 no-repeat;
-    background-size: 3.125vw 3.125vw;
+    background-size: 2vw;
   }
 
   #heading-3{
     background: url(img/icons/workandstudy_icon.png) 0 0 no-repeat;
-    background-size: 3.125vw 3.125vw;
+    background-size: 2vw;
   }
 
   #heading-4{
     background: url(img/icons/unknownperson_icon.png) 0 0 no-repeat;
-    background-size: 3.125vw 3.125vw;
+    background-size: 2vw;
   }
 
   #heading-5{
     background: url(img/icons/skills_icon.png) 0 0 no-repeat; 
-    background-size: 3.125vw 3.125vw;
+    background-size: 2vw;
   }
 
-  .aboutme{
+  .aboutme {
     display: flex;
     align-items: center;
-    background-size: 3.125vw 3.125vw;
-    height: 3.125vw;
-    margin-bottom: 1.4vw;
-    opacity: 0;
+    background-size: 2vw;
+    height: 2vw;
+    margin-bottom: .9vw;
+    opacity: 1;
     transition: all 1s ease;
     margin-left: 0;
   }
-
+  .aboutme:hover li {
+    color: var(--third_color);
+  }
   .aboutme li:after{
     content: " ...";
     opacity: 0;
-    font-size: 3em; 
     transition: all .7s ease;
   }
 
@@ -638,8 +655,8 @@ body {
    /* slider for photo */
    .block-slider-main-page {
     position: absolute;
-    width: 46.875vw;
-    height: 55.555vh;
+    width: 35vw;
+    height: 40vh;
     right: 0;
     bottom: 0;
     z-index: 4;
@@ -647,8 +664,8 @@ body {
    }
    .block-slider-project-page {
     position: absolute;
-    width: 46.875vw;
-    height: 55.555vh;
+    width: 35vw;
+    height: 40vh;
     right: 0;
     top: 0;
     z-index: 4;
@@ -656,8 +673,8 @@ body {
    }
 
    .slider, .slider-telegram, .slider-website {
-     width: 100%;
-     height: 100%;
+    width: 35vw;
+    height: 40vh;
    }
 
   .slider__wrapper,
@@ -679,7 +696,7 @@ body {
   .slider__item-telegram,
   .slider__item-website {
     flex: 0 0 100%;
-    max-width: 100%;
+    max-width: 35vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -689,7 +706,7 @@ body {
   .slider__photo,
   .slider__photo-telegram,
   .slider__photo-website {
-    height: 55.555vh;
+    height: 40vh;
   }
   
   .slider__control,
