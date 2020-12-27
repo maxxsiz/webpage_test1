@@ -216,9 +216,6 @@ slideShow('.slider', {
   isAutoplay: true
 });
 
-
-
-
 //slider for projects - telegram bot 
 
 var slideShow = (function () {

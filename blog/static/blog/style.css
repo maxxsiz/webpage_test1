@@ -3,11 +3,26 @@ body {
     --inv: #fff;
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 16px;
+  }
+  @media screen and (max-width:1023px) {
+    body {font-size: 50%;}
   }
 
+  @media screen and (min-width:1024px) {
+    body {font-size: 70%;}
+  }
+
+  @media screen and (min-width:1440px) {
+    body {font-size: 85%;}
+  }
+
+  @media screen and (min-width:1920px) {
+    body {font-size: 100%;}
+  }
   /* page settigns */
   .page {
     display: flex;
@@ -64,7 +79,7 @@ body {
   }
 
   .col7:hover {
-    flex: 0.1 0.1 calc(100vw*0.33);
+    flex: 0 0 calc(100vw/3);
     height: 100vh;
     filter: grayscale(0%);
   }
@@ -83,9 +98,9 @@ body {
   }
 
   .icon {
-    margin-top:60px;
-    width: 96px;
-    height: 96px;
+    margin-top:;
+    width: 5vw;
+    height: 5vw;
     align-self:center;
     transition: all .5s ease-in-out;
     filter: grayscale(100%);
@@ -102,15 +117,14 @@ body {
 
   .icon-text{
     position: relative;
-    font-size: 20;
     text-decoration: none;
     color: rgb(255, 255, 255);
     opacity: 0%;
     transition: all .5s ease-in-out;
     text-align: center;
     text-transform: uppercase;
-    padding-top: 30px;
-    font-size: 45px;
+    padding-top: 2.5vh;
+    font-size: 2em;
   }
 
   .icon-text:after {
@@ -132,8 +146,8 @@ body {
   /* setting how to show a column info*/
   .column-info{
     justify-content: center;
-    margin: 0px 30px 90px 30px;
-    width: calc(100% - 60px);
+    margin: 0 1.5vw 3vh 1.5vw;
+    width: calc(100% - 3vw);
     height: 0;
     transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
   }
@@ -190,8 +204,8 @@ body {
   .info-text {
     color: #ffffff;
     opacity: 0;
-    margin: 30px;
-    font-size: 25px;
+    margin: 1.5vw;
+    font-size: 1em;
     font-family: 'Montserrat Alternates', sans-serif;
   }
 
@@ -213,18 +227,14 @@ body {
     transition: all 1s ease-in-out;
   }
 
-  .info-text h3 {
-    text-align: left;
-  }
-
   .info-text ul {
     list-style: none;
-    padding-left: 40px;
+    padding-left: 2vw;
     font-weight: bold;
   }
 
   .secondary-info-text li:before {
-    padding-right:10px;
+    padding-right:0.5vw;
     font-weight: bold;
     color: white;
     content: "\2714";
@@ -265,8 +275,8 @@ body {
   }
 
   .photo-block span{
-    letter-spacing: 16px;
-    font-size: 8vh;
+    letter-spacing: 0.5vw;
+    font-size: 5em;
     z-index: 5;
   }
 
@@ -314,14 +324,14 @@ body {
   }
 
   .big-block-blog h1 {
-    font-size: 100px;
-    margin-left: 70px;
+    font-size: 5em;
+    margin-left: 3.65vw;
     border-bottom: 3px solid white;
   }
 
   .big-block-blog p {
-    font-size: 45px;
-    margin-left: 30px;
+    margin-left: 1.5625vw;
+    font-size: 3em;
   }
 
   #base-info-aboutme {
@@ -341,12 +351,13 @@ body {
     flex-direction: row;
     align-items: center;
     transition: all .7s ease;
+
   }
 
   .customline-click p {
-    margin-right:30px;
-    font-size: 45px;
+    margin-right:2.5vw;
     cursor: pointer;
+    font-size: 3em;
   }
 
   .typing-1, .typing-2 {
@@ -354,9 +365,9 @@ body {
   }
 
   .customline-click span {
-    font-size: 45px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
+    font-size: 3em;
   }
 
   .customline-click:hover {
@@ -365,45 +376,45 @@ body {
 
   
   .big-block-blog li {
-    font-size: 45px;
     cursor: pointer;
     list-style: none;
-    padding-left: 24px;
-    margin: auto auto auto 80px;
+    padding-left: 1.2vw;
+    margin: auto auto auto 4vw;
+    font-size: 3em;
   }
 
   #heading-1{
-    margin-top: 50px;
-    background: url(img/icons/study_icon.png) 0 4px no-repeat;
-    background-size: 60px 60px;
+    margin-top: 5vh;
+    background: url(img/icons/study_icon.png) 0 0 no-repeat;
+    background-size: 3.125vw 3.125vw;
   }
 
   #heading-2{
-    background: url(img/icons/it_sphere_icon.png) 0 4px no-repeat;
-    background-size: 60px 60px;
+    background: url(img/icons/it_sphere_icon.png) 0 0 no-repeat;
+    background-size: 3.125vw 3.125vw;
   }
 
   #heading-3{
-    background: url(img/icons/workandstudy_icon.png) 0 4px no-repeat;
-    background-size: 60px 60px;
+    background: url(img/icons/workandstudy_icon.png) 0 0 no-repeat;
+    background-size: 3.125vw 3.125vw;
   }
 
   #heading-4{
-    background: url(img/icons/unknownperson_icon.png) 0 4px no-repeat;
-    background-size: 60px 60px;
+    background: url(img/icons/unknownperson_icon.png) 0 0 no-repeat;
+    background-size: 3.125vw 3.125vw;
   }
 
   #heading-5{
-    background: url(img/icons/skills_icon.png) 0 4px no-repeat; 
-    background-size: 60px 60px;
+    background: url(img/icons/skills_icon.png) 0 0 no-repeat; 
+    background-size: 3.125vw 3.125vw;
   }
 
   .aboutme{
     display: flex;
     align-items: center;
-    background-size: 60px 60px;
-    height: 60px;
-    margin-bottom: 20px;
+    background-size: 3.125vw 3.125vw;
+    height: 3.125vw;
+    margin-bottom: 1.4vw;
     opacity: 0;
     transition: all 1s ease;
     margin-left: 0;
@@ -412,7 +423,7 @@ body {
   .aboutme li:after{
     content: " ...";
     opacity: 0;
-    font-size: 45px; 
+    font-size: 3em; 
     transition: all .7s ease;
   }
 
@@ -435,7 +446,7 @@ body {
 
   .btnbacktomain{
     cursor:pointer;
-    margin-top:30px;
+    margin-top:2.75vh;
     cursor: pointer;
   }
   
@@ -487,7 +498,7 @@ body {
     height: 80vh;
     margin: 10vh 10vw;
     border-radius: 5vw;
-    border: 10px solid white;
+    border: 0.625vw solid white;
     border-radius: 20px;
     background: url(img/backgrounds/contact-background.jpg) 0 0 repeat;
     background-size:100vw 100vh;
@@ -501,14 +512,14 @@ body {
     height: 70vh;
     margin: 5vh auto;
     border-radius: 5vw 0 5vw 0;
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 900;
     border: 5px solid white;
   }
 
   .icon-exit-contact {
-    width: 48px;
-    height: 48px;
+    width: 2.5vw;
+    height: 2.5vw;
     cursor: pointer;
     margin: auto;
   }
@@ -518,11 +529,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -35px;
-    right:-35px;
-    width: 70px;
-    height: 70px;
-    border: 8px white solid;
+    top: -2.5vw;
+    right:-2.5vw;
+    width: 5vw;
+    height: 5vw;
+    border: 0.625vw white solid;
     border-radius: 50%;
     background-color: var(--third_color);
   }
@@ -530,10 +541,10 @@ body {
   .input-block {
 		font-weight: 700;
 		font-size: 1.4em;
-		padding: 10px;
-		border: 8px rgba(247, 247, 247, .3) solid;
+		padding: 0.5vw;
+		border: 0.625vw rgba(247, 247, 247, .3) solid;
     background: url('transparent');
-    margin: 0px 30px 30px 30px;
+    margin: 0 1.56vw 1.56vw 1.56vw;
   }
 
   .input-block:focus {
@@ -548,7 +559,7 @@ body {
     height: 10%;
     width: 50%;
     background: url('transparent');
-    border: 8px rgba(247, 247, 247, .3) solid;
+    border: 0.625vw rgba(247, 247, 247, .3) solid;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 auto;
@@ -556,7 +567,7 @@ body {
   }
 
   .textarea-form {
-    font-size: 17px;
+    font-size: 1.3em;
     height: 40%;
     resize: none;
     columns: 60;
@@ -627,21 +638,21 @@ body {
    /* slider for photo */
    .block-slider-main-page {
     position: absolute;
-    width: 900px;
-    height: 600px;
+    width: 46.875vw;
+    height: 55.555vh;
     right: 0;
     bottom: 0;
     z-index: 4;
-    margin-right: 30px;
+    margin-right: 1.56vw;
    }
    .block-slider-project-page {
     position: absolute;
-    width: 900px;
-    height: 600px;
+    width: 46.875vw;
+    height: 55.555vh;
     right: 0;
     top: 0;
     z-index: 4;
-    margin: 60px auto;
+    margin: 5.555vh auto;
    }
 
    .slider, .slider-telegram, .slider-website {
@@ -678,7 +689,7 @@ body {
   .slider__photo,
   .slider__photo-telegram,
   .slider__photo-website {
-    height: 600px;
+    height: 55.555vh;
   }
   
   .slider__control,
@@ -689,11 +700,11 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 2.0833vw;
     color: #fff;
     text-align: center;
     opacity: 0.5;
-    height: 50px;
+    height: 4.63vh;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
@@ -734,8 +745,8 @@ body {
   .slider__control-website::before  {
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 1.4vw;
+    height: 1.4vw;
     background: transparent no-repeat center center;
     background-size: 100% 100%;
   }
@@ -760,7 +771,7 @@ body {
     flex-direction: row;
     justify-content: center;
     right: 0;
-    bottom: 10px;
+    bottom: 1.1vh;
     left: 0;
     z-index: 15;
     margin-right: 15%;
@@ -773,11 +784,11 @@ body {
   .slider__indicators li ,
   .slider__indicators-telegram li,
   .slider__indicators-website li {
-    width: 20px;
-    height: 20px;
+    width: 1.05vw;
+    height: 1.05vw;
     border-radius: 50%;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 1.05vw;
+    margin-left: 1.05vw;
     cursor: pointer;
     background-color: rgb(119, 119, 119);
     background-clip: padding-box;
@@ -839,11 +850,11 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 70px;
+  width: 3.65vw;
   color: #fff;
   text-align: center;
   opacity: 0.5;
-  height: 70px;
+  height: 3.65vw;
   z-index: 15;
 }
 
@@ -870,8 +881,8 @@ body {
 .slider__control-general::before  {
   content: '';
   display: inline-block;
-  width: 40px;  
-  height: 70px;
+  width: 2.08vw;  
+  height: 3.65vw;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
@@ -890,7 +901,7 @@ body {
   flex-direction: row;
   justify-content: center;
   right: 0;
-  bottom: 30px;
+  bottom: 3.06vh;
   left: 0;
   z-index: 30;
   margin-right: 15%;
@@ -903,13 +914,13 @@ body {
 .slider__indicators-general li {
   display: flex;
   align-items:center;
-  width: 100px;
-  height: 0px;
-  border-bottom: 10px white solid;
+  width: 5.208vw;
+  height: 0;
+  border-bottom: 0.625vw white solid;
   transition: all 2s ease-in-out;
   cursor: pointer;
-  margin: 0 30px;
-  font-size: 21px;
+  margin: 0 1.56vw;
+  font-size: 1.3em;
 }
 
 .slider__indicators-general li.active {
