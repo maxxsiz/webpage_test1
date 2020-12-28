@@ -1,5 +1,5 @@
 body {
-    --third_color: #96B7C4; 
+    --third_color: #6cc0e2; 
     --inv: #fff;
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
@@ -9,15 +9,15 @@ body {
     font-size: 16px;
   }
   @media screen and (max-width:1023px) {
-    body {font-size: 50%;}
+    body {font-size: 30%;}
   }
 
   @media screen and (min-width:1024px) {
-    body {font-size: 70%;}
+    body {font-size: 55%;}
   }
 
   @media screen and (min-width:1440px) {
-    body {font-size: 85%;}
+    body {font-size: 75%;}
   }
 
   @media screen and (min-width:1920px) {
@@ -284,19 +284,22 @@ body {
     position: absolute;
     top: 10vh;
     left: 1vh;
+    max-width: 25vw;
     height: 80vh;
   } 
 
   .my-name{
     position: absolute;
     top: 64vh;
-    left: 10vh;
+    left: 0;
+    margin-left: 3vw;
   }
 
   .my-surname{
     position: absolute;
     top: 72vh;
-    left: 10vh;
+    left: 0;
+    margin-left: 3vw;
     border-bottom: 6px solid white;
     padding-bottom: 0;
   }
@@ -389,6 +392,7 @@ body {
   #heading-list {
     padding-left: 5vw;
     transition: top .8 ease;
+    margin-top: 2vh;
   }
 
   .big-block-blog li {
@@ -431,7 +435,7 @@ body {
     background-size: 2vw;
     height: 2vw;
     margin-bottom: .9vw;
-    opacity: 1;
+    opacity: 0;
     transition: all 1s ease;
     margin-left: 0;
   }
@@ -655,16 +659,16 @@ body {
    /* slider for photo */
    .block-slider-main-page {
     position: absolute;
-    width: 35vw;
+    width: 30vw;
     height: 40vh;
-    right: 0;
-    bottom: 0;
+    right: 2.5vw;
+    bottom: 2.5vh;
     z-index: 4;
     margin-right: 1.56vw;
    }
    .block-slider-project-page {
     position: absolute;
-    width: 35vw;
+    width: 30vw;
     height: 40vh;
     right: 0;
     top: 0;
@@ -673,7 +677,7 @@ body {
    }
 
    .slider, .slider-telegram, .slider-website {
-    width: 35vw;
+    width: 30vw;
     height: 40vh;
    }
 
@@ -696,7 +700,7 @@ body {
   .slider__item-telegram,
   .slider__item-website {
     flex: 0 0 100%;
-    max-width: 35vw;
+    max-width: 30vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -801,11 +805,11 @@ body {
   .slider__indicators li ,
   .slider__indicators-telegram li,
   .slider__indicators-website li {
-    width: 1.05vw;
-    height: 1.05vw;
+    width: 1vw;
+    height: 1vw;
     border-radius: 50%;
-    margin-right: 1.05vw;
-    margin-left: 1.05vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
     cursor: pointer;
     background-color: rgb(119, 119, 119);
     background-clip: padding-box;
@@ -816,7 +820,7 @@ body {
   .slider__indicators li.active,
   .slider__indicators-telegram li.active,
   .slider__indicators-website li.active {
-    background-color: rgb(63, 168, 168);
+    background-color: var(--third_color);
   }
 
   .img-fluid, .img-fluid-telegram, .img-fluid-website {
@@ -868,11 +872,12 @@ body {
   align-items: center;
   justify-content: center;
   width: 3.65vw;
-  color: #fff;
+  color: var(--third_color);
   text-align: center;
   opacity: 0.5;
   height: 3.65vw;
   z-index: 15;
+  filter: grayscale(100%);
 }
 
 .slider__control_show-general {
@@ -881,25 +886,25 @@ body {
 
 .slider__control-general:hover,
 .slider__control-general:focus {
-  color:rgb(63, 168, 168);
+  filter: grayscale(0%);
   text-decoration: none;
   outline: 0;
   opacity: 0.9;
 }
 
 .slider__control_prev-general {
-  left: calc(100vw/2 - 400px)
+  left: 31vw;
 }
 
 .slider__control_next-general {
-  right: calc(100vw/2 - 440px);
+  right: 31vw;
 }
 
 .slider__control-general::before  {
   content: '';
   display: inline-block;
-  width: 2.08vw;  
-  height: 3.65vw;
+  width: 2vw;  
+  height: 3.5vw;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
@@ -921,8 +926,8 @@ body {
   bottom: 3.06vh;
   left: 0;
   z-index: 30;
-  margin-right: 15%;
-  margin-left: 15%;
+  margin-right: 33vw;
+  margin-left: 33vw;
   list-style: none;
   margin-top: 0;
   margin-bottom: 0;
@@ -931,17 +936,17 @@ body {
 .slider__indicators-general li {
   display: flex;
   align-items:center;
-  width: 5.208vw;
+  width: 5vw;
   height: 0;
-  border-bottom: 0.625vw white solid;
+  border-bottom: 0.5vw white solid;
   transition: all 2s ease-in-out;
   cursor: pointer;
-  margin: 0 1.56vw;
+  margin: 0 1.5vw;
   font-size: 1.3em;
 }
 
 .slider__indicators-general li.active {
-  border-color: rgb(63, 168, 168);
+  border-color: var(--third_color);
 }
 
 .img-fluid-general-general {

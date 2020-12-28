@@ -48,24 +48,24 @@
             document.getElementById("custom-2").style.transition = "all 1s ease";
             document.getElementById("custom-2").style.transform = "skewY(-20deg)";
             setTimeout(function(){
-                document.getElementById("heading-1").style.marginLeft = "7.63vw";
+                document.getElementById("heading-1").style.marginLeft = "5vw";
                 document.getElementById("heading-1").style.opacity = "1";
             },0);
             setTimeout(function(){
                 document.getElementById("heading-2").style.opacity = "1";
-                document.getElementById("heading-2").style.marginLeft = "7.63vw";
+                document.getElementById("heading-2").style.marginLeft = "5vw";
             },100);
             setTimeout(function(){
                 document.getElementById("heading-3").style.opacity = "1";
-                document.getElementById("heading-3").style.marginLeft = "7.63vw";
+                document.getElementById("heading-3").style.marginLeft = "5vw";
             },200);
             setTimeout(function(){
                 document.getElementById("heading-4").style.opacity = "1";
-                document.getElementById("heading-4").style.marginLeft = "7.63vw";
+                document.getElementById("heading-4").style.marginLeft = "5vw";
             },300);
             setTimeout(function(){
                 document.getElementById("heading-5").style.opacity = "1";
-                document.getElementById("heading-5").style.marginLeft = "7.63vw";
+                document.getElementById("heading-5").style.marginLeft = "5vw";
             },400);
         }
         else {
