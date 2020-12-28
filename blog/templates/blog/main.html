@@ -7,465 +7,467 @@ Maksym Mishchuk - Hello world!
 <div class="block-slider-page-changing">
     <div class="slider-general">
         <div class="slider__wrapper-general">
-        <div class="slider__items-general">
-            <div class="slider__item-general">
-                <div id="main_page" class="page">
-                    <div id="custom-1"></div>
-                    <div id="custom-2"></div>
-                    <div class="photo-block">
-                        <img class="my-photo color-photo" src="{% static 'blog/img/me_color.png' %}" alt=''>
-                        <img class="my-photo monochrom-photo" src="{% static 'blog/img/me_monochrom.png' %}" alt=''>
-                        <span class="my-name">Maksym</span>
-                        <span class="my-surname">Mishchuk</span>
-                    </div>
-                    <div class="big-block-blog">
-                        <div class="top-block-blog">
-                            <div id="base-info-aboutme">
-                            <h1>Hi, My name Max ...</h1>
-                            <p>... and I am a beginner programmer. My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
-                            <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
-                            <div class="customline-click" role="button" onclick="moreaboutme()" onmouseover="show_more_text()">
-                                <p>Want to know more about me?</p>
-                                <p class="typing-1">&nbsp;&nbsp;Yes?&nbsp;&nbsp;</p>
-                                <p class="typing-2">So&nbsp;click&nbsp;me;)</p>
-                            </div>
-                            </div>
-                            <div class="aboutme-full" id='full-1'>
-                                <h1>So about my studies</h1>
-                                <p>At the very beginning, I entered the Krakow Polytechnic at the Faculty of Biotechnology. The reasons 
-                                    for this decision were the father's desire to follow in his footsteps. Two years later, I realized that it was not mine.</p>
-                                <p>Then I entered the University of Wroclaw at the Faculty of Informatics. The first year of study was incredibly difficult.</p>
-                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                            </div>
-                            <div class="aboutme-full" id='full-2'>
-                                <h1>So about Why I choose IT spheres</h1>
-                                <p>I always spent a lot of time with the computer, which is why I was approached from school for various tips and problems.
-                                    When I got bored of biotechnology, I began to consider the options of areas that I liked the most. So I settled on IT.</p>
-                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                            </div>
-                            <div class="aboutme-full" id='full-3'>
-                                <h1>So about How I work and study</h1>
-                                <p>
-                                    I am currently learning programming languages ​​on my own.
-                                    The learning process is about trying to create a larger project. As I achieve my goals, 
-                                    I face new problems and try to find tools to solve them.</p>
-                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                            </div>
-                            <div class="aboutme-full" id='full-4'>
-                                <h1>So about my personality</h1>
-                                <p>First of all, I am a strong introvert, sometimes I prefer to spend free time at the computer than on a walk in the city. 
-                                    In addition, I consider myself a very responsible person, this applies to both private and professional issues.</p>
-                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                            </div>
-                            <div class="aboutme-full" id='full-5'>
-                                <h1>So about my work experience</h1>
-                                <p>I do not have any professional practice in the field of IT.
-                                    Of course, I worked in gastronomy and also did an internship at an agronomist company as a consultant.</p>
-                                <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
-                            </div>
+            <div class="slider__items-general">
+                <div class="slider__item-general">
+                    <div id="main_page" class="page">
+                        <div id="custom-1"></div>
+                        <div id="custom-2"></div>
+                        <div class="photo-block">
+                            <img class="my-photo color-photo" src="{% static 'blog/img/me_color.png' %}" alt=''>
+                            <img class="my-photo monochrom-photo" src="{% static 'blog/img/me_monochrom.png' %}" alt=''>
+                            <span class="my-name">Maksym</span>
+                            <span class="my-surname">Mishchuk</span>
                         </div>
-                        <div class="bottom-block-blog">
-                            <div id="heading-list">
-                                <div class="aboutme" id="heading-1" onclick="moreaboutme_full('full-1','heading-1')"><li>My studies</li></div>
-                                <div class="aboutme" id="heading-2" onclick="moreaboutme_full('full-2','heading-2')"><li>Why I choose IT sphere</li></div>
-                                <div class="aboutme" id="heading-3" onclick="moreaboutme_full('full-3','heading-3')"><li>How I work and study</li></div>
-                                <div class="aboutme" id="heading-4" onclick="moreaboutme_full('full-4','heading-4')"><li>About my personality</li></div>
-                                <div class="aboutme" id="heading-5" onclick="moreaboutme_full('full-5','heading-5')"><li>My work experience</li></div>
-                            </div>
-                            <div class="block-slider-main-page">
-                                <div class="slider">
-                                    <div class="slider__wrapper">
-                                    <div class="slider__items">
-                                        <div class="slider__item">
-                                            <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
-                                        </div>
-                                        <div class="slider__item">
-                                            <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
-                                        </div>
-                                        <div class="slider__item">
-                                            <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
-                                        </div>
-                                        <div class="slider__item">
-                                            <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
-                                        </div>
-                                        <div class="slider__item">
-                                            <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
-                                        </div>
+                        <div class="big-block-blog">
+                            <div class="top-block-blog">
+                                <div id="base-info-aboutme">
+                                <h1>Hi, My name Max ...</h1>
+                                <p>... and I am a beginner programmer. My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
+                                <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
+                                    <div class="customline-click" role="button" onclick="moreaboutme()" onmouseover="show_more_text()">
+                                        <p>Want to know more about me?</p>
+                                        <p class="typing-1">&nbsp;&nbsp;Yes?&nbsp;&nbsp;</p>
+                                        <p class="typing-2">So&nbsp;click&nbsp;me;)</p>
                                     </div>
-                                    </div>
-                                    <a class="slider__control slider__control_prev" href="#" role="button"></a>
-                                    <a class="slider__control slider__control_next" href="#" role="button"></a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-col">
-                        <a href="https://www.instagram.com/maxxsiz/"><img class="icon-contact" src="{% static 'blog/img/icons/instagram_white.png' %}" alt=""></a>
-                        <a href="https://github.com/maxxsiz"><img class="icon-contact" src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a>
-                        <a href="https://www.facebook.com/maks.miszczuk.1"><img class="icon-contact" src="{% static 'blog/img/icons/facebook_white.png' %}" alt=""></a>
-                        <a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA"><img class="icon-contact" src="{% static 'blog/img/icons/youtube_white.png' %}" alt=""></a>
-                        <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/email_icon.png' %}" alt=""></a>
-                    </div>
-                    <div id="email-contact-big-block">
-                        <div class="email-contact-medium-block">
-                            <div class="email-contact-small-block">
-                                <input class="input-block" placeholder="Name" type="text" id="name">
-                                <input class="input-block" placeholder="E-mail" type="email" id="email">
-                                <textarea class="input-block textarea-form" placeholder="Enter text here..." required></textarea>
-                                <button class="btn-submit-contact" type="submit">Send</button>
-                            <div class="btn-exit-from-contact">
-                                <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="slider__item-general">
-                <div id="projects_page" class="page">
-                    <div class="col-block">
-                        <div class="column col3 pr-telbot">
-                            <a class="column-link">
-                                <img class="icon" src="{% static 'blog/img/icons/telegram-icon.png' %}" alt="">
-                                <h2 class="icon-text">Telegram BOT</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <div class="main-info-text">
-                                        <h3>Ідея була зробити бота помічника на всі руки для клану в ігрі Clash Royale.
-                                            До створення бота, голова клану користувався Google sheets до ручного запису всього
-                                            що відбувалось в клані. Бот використовувався на практиці, але не був завантажений
-                                            на жодний хостінг. На даний момент бот є відключеним та не використовується.
-                                            Для подальшого використовування буде вимагатись актуалізація.</h3>
-                                    </div>
-                                    <div class="secondary-info-block">
-                                        <div class="secondary-info-text">
-                                            <h3>Можливості бота:</h3>
-                                            <ul>
-                                                <li>Збір інформації про ігроків клану.</li>
-                                                <li>Аналіз інформації та її обробка.</li>
-                                                <li>Формування інформації в доступному вигляді.</li>
-                                                <li>Контакт з ігроками, надавання інформації через бота.</li>
-                                                <li>Аналіз ігроків та надання порад (підвищити або вигнати).</li>
-                                            </ul>
-                                            <h3>Використані бібліотеки та інструменти в проекті:</h3>
-                                            <ul>
-                                                <li>Python - як основна та єдина мова.</li>
-                                                <li>BeautifulSoup - web scraping.</li>
-                                                <li>SQLite, як основна база данних.</li>
-                                                <li>Plotly - більш сучасний аналог matplotlib.</li>
-                                                <li>Telegram Bot API - бібліотека на якій базувався бот.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="secondary-info-slider">
-                                            <div class="block-slider-project-page">
-                                                <div class="slider-telegram">
-                                                    <div class="slider__wrapper-telegram">
-                                                    <div class="slider__items-telegram">
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
-                                                    <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column col3 pr-calc">
-                            <a class="column-link">
-                                <img class="icon" src="{% static 'blog/img/icons/calc-icon.png' %}" alt=''>
-                                <h2 class="icon-text">Travian Troop Calculator</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <div class="main-info-text">
-                                        <h3>Travian Calculator це міні алгоритм з графічною оболочкою для браузерної ігри Travian. Проект був
-                                            створюваний на прохання друга. Задачою було обрахувати скільки потрібно ресурсів для створення певної кількості
-                                            воїнів певного типу, певної фракції.
-                                        </h3>
-                                    </div>
-                                    <div class="secondary-info-block">
-                                        <div class="secondary-info-text">
-                                            <h3>Можливості програми:</h3>
-                                            <ul>
-                                                <li>Можливість міняти тип та фракцію воїна.</li>
-                                                <li>Обчислення додаткової інформації.</li>
-                                                <li>Взяття під увагу додаткові бонуси.</li>
-                                                <li>Різні мови програми.</li>
-                                                <li>Можливість створення, як .exe так і .apk версії.</li>
-                                            </ul>
-                                            <h3>Використані бібліотеки та інструменти в проекті:</h3>
-                                            <ul>
-                                                <li>Python - як основна та єдина мова.</li>
-                                                <li>Kivy and KivyMD - времворк для написання графічної складової проекта.</li>
-                                                <li>SQLite, як основна база данних.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="secondary-info-slider">
-                                            <div class="block-slider-project-page">
-                                                <div class="slider-telegram">
-                                                    <div class="slider__wrapper-telegram">
-                                                    <div class="slider__items-telegram">
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                        <div class="slider__item-telegram">
-                                                            <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
-                                                    <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column col3 pr-website">    
-                            <a class="column-link">
-                                <img class="icon" src="{% static 'blog/img/icons/website-icon.png' %}" alt=''>
-                                <h2 class="icon-text">My Own Website</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <div class="main-info-text">
-                                        <h3>По мірі навчання програмування вирішив спробувати веб програмування комплексово, тобто від бекенду до фронтенду і 
-                                            закінчуючи деплоїнгом. Звісно перще що впало на думку це свій сайт портфоліо. До цього часу часу я мав мінімальні знання HTML,
-                                            та нульові в JavaScript та CSS. Ну і звісно я вперше стикнувся з так популярним фремоврокм як Django. </h3>
-                                    </div>
-                                    <div class="secondary-info-block">
-                                        <div class="secondary-info-text">
-                                            <h3>Весь сайт ви звісно бачите прямо зараз перед собою але розкажу те що ви не бачите зі сторони серверної частини:</h3>
-                                            <ul>
-                                                <li>Згідно з вимогами перевірка валідності почти при вводі в закладці контакти.</li>
-                                                <li>Обчислення додаткової інформації.</li>
-                                            </ul>
-                                            <h3>Використані бібліотеки та інструменти в проекті:</h3>
-                                            <ul>
-                                                <li>Django - як мова для Backend.</li>
-                                                <li>JavaScript - мова для різних скриптів оформлення анімацій стайту (без JQuery).</li>
-                                                <li>SQLite - як основна база данних.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="secondary-info-slider">
-                                            <div class="block-slider-project-page">
-                                                <div class="slider-website">
-                                                    <div class="slider__wrapper-website">
-                                                    <div class="slider__items-website">
-                                                        <div class="slider__item-website">
-                                                            <img class="slider__photo-website" src="{% static 'blog/img/website-view-old1.png' %}" alt=''>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    <a class="slider__control-website slider__control_prev-website" href="#" role="button"></a>
-                                                    <a class="slider__control-website slider__control_next-website" href="#" role="button"></a>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider__item-general">
-                <div id="hobbies_page" class="page">
-                    <div class="col-block">
-                        <div class="column col7 hobbie-ski"><img class="icon" src="{% static 'blog/img/icons/ski.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
+                                <div class="aboutme-full" id='full-1'>
+                                    <h1>So about my studies</h1>
+                                    <p>At the very beginning, I entered the Krakow Polytechnic at the Faculty of Biotechnology. The reasons 
+                                        for this decision were the father's desire to follow in his footsteps. Two years later, I realized that it was not mine.</p>
+                                    <p>Then I entered the University of Wroclaw at the Faculty of Informatics. The first year of study was incredibly difficult.</p>
+                                    <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-snowboard"><img class="icon" src="{% static 'blog/img/icons/snowboard.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
+                                <div class="aboutme-full" id='full-2'>
+                                    <h1>So about Why I choose IT spheres</h1>
+                                    <p>I always spent a lot of time with the computer, which is why I was approached from school for various tips and problems.
+                                        When I got bored of biotechnology, I began to consider the options of areas that I liked the most. So I settled on IT.</p>
+                                    <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-rollerskate"><img class="icon" src="{% static 'blog/img/icons/skate.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-rollerblade"><img class="icon" src="{% static 'blog/img/icons/rollerblade.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-videomake"><img class="icon" src="{% static 'blog/img/icons/youtube.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-gaming"><img class="icon" src="{% static 'blog/img/icons/controller-classic.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column col7 hobbie-printer3d"><img class="icon" src="{% static 'blog/img/icons/printer-3d.png' %}" alt="">
-                            <div class="column-info">
-                                <div class="info-text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider__item-general">
-                <div id="skills_page" class="page">
-                    <div class="col-block">
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/database-search.png' %}" alt="">
-                            <h2 class="icon-text skill-col">SQLite</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 8+ місяців.</p>
-                                    <p>Статистика завжди мене притягувала, я постійно користувався таблицями Excel и Google в різни цілях.
-                                        Після вивчення основ з SQLite, я вирішив використати отримані знання на практиці в проекті калькулятора
-                                        для браузерної ігри.
+                                <div class="aboutme-full" id='full-3'>
+                                    <h1>So about How I work and study</h1>
                                     <p>
+                                        I am currently learning programming languages ​​on my own.
+                                        The learning process is about trying to create a larger project. As I achieve my goals, 
+                                        I face new problems and try to find tools to solve them.</p>
+                                    <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                                </div>
+                                <div class="aboutme-full" id='full-4'>
+                                    <h1>So about my personality</h1>
+                                    <p>First of all, I am a strong introvert, sometimes I prefer to spend free time at the computer than on a walk in the city. 
+                                        In addition, I consider myself a very responsible person, this applies to both private and professional issues.</p>
+                                    <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                                </div>
+                                <div class="aboutme-full" id='full-5'>
+                                    <h1>So about my work experience</h1>
+                                    <p>I do not have any professional practice in the field of IT.
+                                        Of course, I worked in gastronomy and also did an internship at an agronomist company as a consultant.</p>
+                                    <a class="btn-backtomain" role="button" onclick="moreaboutme_full('base-info-aboutme','')"><p>Back to main info</p></a>
+                                </div>
+                            </div>
+                            <div class="bottom-block-blog">
+                                <div id="heading-list">
+                                    <div class="aboutme" id="heading-1" onclick="moreaboutme_full('full-1','heading-1')"><li>My studies</li></div>
+                                    <div class="aboutme" id="heading-2" onclick="moreaboutme_full('full-2','heading-2')"><li>Why I choose IT sphere</li></div>
+                                    <div class="aboutme" id="heading-3" onclick="moreaboutme_full('full-3','heading-3')"><li>How I work and study</li></div>
+                                    <div class="aboutme" id="heading-4" onclick="moreaboutme_full('full-4','heading-4')"><li>About my personality</li></div>
+                                    <div class="aboutme" id="heading-5" onclick="moreaboutme_full('full-5','heading-5')"><li>My work experience</li></div>
+                                </div>
+                                <div class="block-slider-main-page">
+                                    <div class="slider">
+                                        <div class="slider__wrapper">
+                                        <div class="slider__items">
+                                            <div class="slider__item">
+                                                <img class="slider__photo" src="{% static 'blog/img/prague_polina.jpg' %}" alt=''>
+                                            </div>
+                                            <div class="slider__item">
+                                                <img class="slider__photo" src="{% static 'blog/img/family_restaurant.jpg' %}" alt=''>
+                                            </div>
+                                            <div class="slider__item">
+                                                <img class="slider__photo" src="{% static 'blog/img/morskie_oko_2020.jpg' %}" alt=''>
+                                            </div>
+                                            <div class="slider__item">
+                                                <img class="slider__photo" src="{% static 'blog/img/me_and_family.jpg' %}" alt=''>
+                                            </div>
+                                            <div class="slider__item">
+                                                <img class="slider__photo" src="{% static 'blog/img/photo_me_polina.jpg' %}" alt=''>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                                        <a class="slider__control slider__control_next" href="#" role="button"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/git.png' %}" alt="">
-                            <h2 class="icon-text">Git</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 12+ місяців.</p>
-                                    <p>З git я вперше познайомився на універистеті, це був предмет присвячений роботі з Linux, а конкретніше
-                                        завданням предмету було змусити користвуватися виключно терміналом. Розпочинаючи від створення папок, до
-                                        повного контролю над проектом на GitHub.
-                                    </p>
-                                </div>
+                        <div class="blog-col">
+                            <a href="https://www.instagram.com/maxxsiz/"><img class="icon-contact" src="{% static 'blog/img/icons/instagram_white.png' %}" alt=""></a>
+                            <a href="https://github.com/maxxsiz"><img class="icon-contact" src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a>
+                            <a href="https://www.facebook.com/maks.miszczuk.1"><img class="icon-contact" src="{% static 'blog/img/icons/facebook_white.png' %}" alt=""></a>
+                            <a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA"><img class="icon-contact" src="{% static 'blog/img/icons/youtube_white.png' %}" alt=""></a>
+                            <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/email_icon.png' %}" alt=""></a>
+                        </div>
+                        <div id="email-contact-big-block">
+                            <div class="email-contact-medium-block">
+                                <form class="email-contact-small-block" method="post">
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <input class="input-block" id="your_name" placeholder="Name" type="text">
+                                    <input class="input-block" id="your_email" placeholder="E-mail" type="email">
+                                    <textarea class="input-block textarea-form" id="your_message" placeholder="Enter text here..." type="text" required></textarea>
+                                    <button class="btn-submit-contact" type="submit">Send</button>
+                                    <div class="btn-exit-from-contact">
+                                        <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/language-css.png' %}" alt="">
-                            <h2 class="icon-text">CSS3</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 2+ місяців.</p>
-                                    <p>На даний момент CSS вивчаю я по мірі появлень проблем з створенням сайту, або ж коли зявляється певна
-                                        ідея, яку потрібно зреалізувати використовуючи CSS. Намірів сильно поглиблюватись в функціонал не бачу,
-                                        оскільки не збираюсь ставати frontend спеціалістом.
-                                    </p>
+                    </div>
+                </div>
+                <div class="slider__item-general">
+                    <div id="projects_page" class="page">
+                        <div class="col-block">
+                            <div class="column col3 pr-telbot">
+                                <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/telegram-icon.png' %}" alt="">
+                                    <h2 class="icon-text">Telegram BOT</h2>
+                                </a>
+                                <div class="column-info">
+                                    <div class="info-text">
+                                        <div class="main-info-text">
+                                            <h3>Ідея була зробити бота помічника на всі руки для клану в ігрі Clash Royale.
+                                                До створення бота, голова клану користувався Google sheets до ручного запису всього
+                                                що відбувалось в клані. Бот використовувався на практиці, але не був завантажений
+                                                на жодний хостінг. На даний момент бот є відключеним та не використовується.
+                                                Для подальшого використовування буде вимагатись актуалізація.</h3>
+                                        </div>
+                                        <div class="secondary-info-block">
+                                            <div class="secondary-info-text">
+                                                <h3>Можливості бота:</h3>
+                                                <ul>
+                                                    <li>Збір інформації про ігроків клану.</li>
+                                                    <li>Аналіз інформації та її обробка.</li>
+                                                    <li>Формування інформації в доступному вигляді.</li>
+                                                    <li>Контакт з ігроками, надавання інформації через бота.</li>
+                                                    <li>Аналіз ігроків та надання порад (підвищити або вигнати).</li>
+                                                </ul>
+                                                <h3>Використані бібліотеки та інструменти в проекті:</h3>
+                                                <ul>
+                                                    <li>Python - як основна та єдина мова.</li>
+                                                    <li>BeautifulSoup - web scraping.</li>
+                                                    <li>SQLite, як основна база данних.</li>
+                                                    <li>Plotly - більш сучасний аналог matplotlib.</li>
+                                                    <li>Telegram Bot API - бібліотека на якій базувався бот.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="secondary-info-slider">
+                                                <div class="block-slider-project-page">
+                                                    <div class="slider-telegram">
+                                                        <div class="slider__wrapper-telegram">
+                                                        <div class="slider__items-telegram">
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
+                                                        <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/language-python.png' %}" alt="">
-                            <h2 class="icon-text">Python</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 12+ місяців.</p>
-                                    <p>Після самостійної проби вникнути в програмування через вивчення Java, мова програмування Python
-                                        для мене було порятунком. Python був основною мовою програмування для мене на університеті і дотепер
-                                        залишається найбільш навчаємою через мене мовою. На універі більше був уклон на різні алгоритми та продуктивність,
-                                        натомість різний функціонал, включно з ООП вивчався окремо.
-                                        Список практикуємих інструментів:
-                                    </p>
-                                    <ul>
-                                        <li>NumPy</li>
-                                        <li>Pillow</li>
-                                        <li>Plotly</li>
-                                        <li>BeautifulSoup</li>
-                                        <li>Django</li>
-                                        <li>Kivy</li>
-                                        <li>KivyMD</li>
-                                        <li>Kivy</li>
-                                        <li>Telegram Bot API</li>
-                                        <li>Pyautogui</li>
-                                    </ul>
-                                    <p>В мене нема конкретного списку, що я мушу вивчити. Я стараюсь вчитись на практиці, роблячи більші або меньші проекти.
-                                        Таким чином я познаю нові різні бібліотеки та поширюю свої знання в Python. На даний момент я стараюсь поширювати свої
-                                        знання в різних сферах застосування Python.
-                                    </p>
+                            <div class="column col3 pr-calc">
+                                <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/calc-icon.png' %}" alt=''>
+                                    <h2 class="icon-text">Travian Troop Calculator</h2>
+                                </a>
+                                <div class="column-info">
+                                    <div class="info-text">
+                                        <div class="main-info-text">
+                                            <h3>Travian Calculator це міні алгоритм з графічною оболочкою для браузерної ігри Travian. Проект був
+                                                створюваний на прохання друга. Задачою було обрахувати скільки потрібно ресурсів для створення певної кількості
+                                                воїнів певного типу, певної фракції.
+                                            </h3>
+                                        </div>
+                                        <div class="secondary-info-block">
+                                            <div class="secondary-info-text">
+                                                <h3>Можливості програми:</h3>
+                                                <ul>
+                                                    <li>Можливість міняти тип та фракцію воїна.</li>
+                                                    <li>Обчислення додаткової інформації.</li>
+                                                    <li>Взяття під увагу додаткові бонуси.</li>
+                                                    <li>Різні мови програми.</li>
+                                                    <li>Можливість створення, як .exe так і .apk версії.</li>
+                                                </ul>
+                                                <h3>Використані бібліотеки та інструменти в проекті:</h3>
+                                                <ul>
+                                                    <li>Python - як основна та єдина мова.</li>
+                                                    <li>Kivy and KivyMD - времворк для написання графічної складової проекта.</li>
+                                                    <li>SQLite, як основна база данних.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="secondary-info-slider">
+                                                <div class="block-slider-project-page">
+                                                    <div class="slider-telegram">
+                                                        <div class="slider__wrapper-telegram">
+                                                        <div class="slider__items-telegram">
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                            <div class="slider__item-telegram">
+                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
+                                                        <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/framework-django.png' %}" alt="">
-                            <h2 class="info-text">Django</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 2+ місяців.</p>
-                                    <p>Звісно Django не міг бути оминутий мною при вивчанні різних бібліотек. Як один з найпопулярніших інструментів для
-                                        створення серверної частини сайтів, за допомогою якого я міг зреалізувати певні свої ідеї. Одною з таких ідей було створення
-                                        інтернет сервісу для вечірок друзів, де будуть заміщені різні настольні ігри.
-                                    </p>
+                            <div class="column col3 pr-website">    
+                                <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/website-icon.png' %}" alt=''>
+                                    <h2 class="icon-text">My Own Website</h2>
+                                </a>
+                                <div class="column-info">
+                                    <div class="info-text">
+                                        <div class="main-info-text">
+                                            <h3>По мірі навчання програмування вирішив спробувати веб програмування комплексово, тобто від бекенду до фронтенду і 
+                                                закінчуючи деплоїнгом. Звісно перще що впало на думку це свій сайт портфоліо. До цього часу часу я мав мінімальні знання HTML,
+                                                та нульові в JavaScript та CSS. Ну і звісно я вперше стикнувся з так популярним фремоврокм як Django. </h3>
+                                        </div>
+                                        <div class="secondary-info-block">
+                                            <div class="secondary-info-text">
+                                                <h3>Весь сайт ви звісно бачите прямо зараз перед собою але розкажу те що ви не бачите зі сторони серверної частини:</h3>
+                                                <ul>
+                                                    <li>Згідно з вимогами перевірка валідності почти при вводі в закладці контакти.</li>
+                                                    <li>Обчислення додаткової інформації.</li>
+                                                </ul>
+                                                <h3>Використані бібліотеки та інструменти в проекті:</h3>
+                                                <ul>
+                                                    <li>Django - як мова для Backend.</li>
+                                                    <li>JavaScript - мова для різних скриптів оформлення анімацій стайту (без JQuery).</li>
+                                                    <li>SQLite - як основна база данних.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="secondary-info-slider">
+                                                <div class="block-slider-project-page">
+                                                    <div class="slider-website">
+                                                        <div class="slider__wrapper-website">
+                                                        <div class="slider__items-website">
+                                                            <div class="slider__item-website">
+                                                                <img class="slider__photo-website" src="{% static 'blog/img/website-view-old1.png' %}" alt=''>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <a class="slider__control-website slider__control_prev-website" href="#" role="button"></a>
+                                                        <a class="slider__control-website slider__control_next-website" href="#" role="button"></a>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link">
-                            <img class="icon" src="{% static 'blog/img/icons/language-html.png' %}" alt="">
-                            <h2 class="icon-text">HTML5</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 2+ місяців.</p>
-                                    <p>HTML дуже легкий до вивчення, да і сильно багато вчити нема що. Аналогічно до ситуації з CSS я не збираюсь
-                                        ставати спеціалістом в HTML.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column col7 skill-col">
-                            <a class="column-link" href="#javascript-info">
-                            <img class="icon" src="{% static 'blog/img/icons/language-javascript1.png' %}" alt="">
-                            <h2 class="icon-text">JavaScript</h2>
-                            </a>
-                            <div class="column-info">
-                                <div class="info-text">
-                                    <p>Час навчання: 2+ місяців.</p>
-                                    <p>При роботі з CSS та HTML виникла необхідність в сторонньому інструменті для створення сайта, конкренто потрібний був 
-                                        більш гнучкий інструмент для анімації. Звісно JavaScript був ідеальним кандидатом. JS це третя серйозна мова програмування з якою я зустрівся. 
-                                        Після Python було досить легко ввійти в незвичну для себе по структурі мову. Мої знання по JS на даний момент 
-                                        являються базовими, я пройшов декілька інтернет курсів, дойшовши до ООП.
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="slider__item-general">
+                    <div id="hobbies_page" class="page">
+                        <div class="col-block">
+                            <div class="column col7 hobbie-ski"><img class="icon" src="{% static 'blog/img/icons/ski.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-snowboard"><img class="icon" src="{% static 'blog/img/icons/snowboard.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-rollerskate"><img class="icon" src="{% static 'blog/img/icons/skate.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-rollerblade"><img class="icon" src="{% static 'blog/img/icons/rollerblade.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-videomake"><img class="icon" src="{% static 'blog/img/icons/youtube.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-gaming"><img class="icon" src="{% static 'blog/img/icons/controller-classic.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col7 hobbie-printer3d"><img class="icon" src="{% static 'blog/img/icons/printer-3d.png' %}" alt="">
+                                <div class="column-info">
+                                    <div class="info-text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item-general">
+                    <div id="skills_page" class="page">
+                            <div class="col-block">
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/database-search.png' %}" alt="">
+                                    <h2 class="icon-text skill-col">SQLite</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 8+ місяців.</p>
+                                            <p>Статистика завжди мене притягувала, я постійно користувався таблицями Excel и Google в різни цілях.
+                                                Після вивчення основ з SQLite, я вирішив використати отримані знання на практиці в проекті калькулятора
+                                                для браузерної ігри.
+                                            <p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/git.png' %}" alt="">
+                                    <h2 class="icon-text">Git</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 12+ місяців.</p>
+                                            <p>З git я вперше познайомився на універистеті, це був предмет присвячений роботі з Linux, а конкретніше
+                                                завданням предмету було змусити користвуватися виключно терміналом. Розпочинаючи від створення папок, до
+                                                повного контролю над проектом на GitHub.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-css.png' %}" alt="">
+                                    <h2 class="icon-text">CSS3</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>На даний момент CSS вивчаю я по мірі появлень проблем з створенням сайту, або ж коли зявляється певна
+                                                ідея, яку потрібно зреалізувати використовуючи CSS. Намірів сильно поглиблюватись в функціонал не бачу,
+                                                оскільки не збираюсь ставати frontend спеціалістом.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-python.png' %}" alt="">
+                                    <h2 class="icon-text">Python</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 12+ місяців.</p>
+                                            <p>Після самостійної проби вникнути в програмування через вивчення Java, мова програмування Python
+                                                для мене було порятунком. Python був основною мовою програмування для мене на університеті і дотепер
+                                                залишається найбільш навчаємою через мене мовою. На універі більше був уклон на різні алгоритми та продуктивність,
+                                                натомість різний функціонал, включно з ООП вивчався окремо.
+                                                Список практикуємих інструментів:
+                                            </p>
+                                            <ul>
+                                                <li>NumPy</li>
+                                                <li>Pillow</li>
+                                                <li>Plotly</li>
+                                                <li>BeautifulSoup</li>
+                                                <li>Django</li>
+                                                <li>Kivy</li>
+                                                <li>KivyMD</li>
+                                                <li>Kivy</li>
+                                                <li>Telegram Bot API</li>
+                                                <li>Pyautogui</li>
+                                            </ul>
+                                            <p>В мене нема конкретного списку, що я мушу вивчити. Я стараюсь вчитись на практиці, роблячи більші або меньші проекти.
+                                                Таким чином я познаю нові різні бібліотеки та поширюю свої знання в Python. На даний момент я стараюсь поширювати свої
+                                                знання в різних сферах застосування Python.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/framework-django.png' %}" alt="">
+                                    <h2 class="info-text">Django</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>Звісно Django не міг бути оминутий мною при вивчанні різних бібліотек. Як один з найпопулярніших інструментів для
+                                                створення серверної частини сайтів, за допомогою якого я міг зреалізувати певні свої ідеї. Одною з таких ідей було створення
+                                                інтернет сервісу для вечірок друзів, де будуть заміщені різні настольні ігри.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-html.png' %}" alt="">
+                                    <h2 class="icon-text">HTML5</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>HTML дуже легкий до вивчення, да і сильно багато вчити нема що. Аналогічно до ситуації з CSS я не збираюсь
+                                                ставати спеціалістом в HTML.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link" href="#javascript-info">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-javascript1.png' %}" alt="">
+                                    <h2 class="icon-text">JavaScript</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>При роботі з CSS та HTML виникла необхідність в сторонньому інструменті для створення сайта, конкренто потрібний був 
+                                                більш гнучкий інструмент для анімації. Звісно JavaScript був ідеальним кандидатом. JS це третя серйозна мова програмування з якою я зустрівся. 
+                                                Після Python було досить легко ввійти в незвичну для себе по структурі мову. Мої знання по JS на даний момент 
+                                                являються базовими, я пройшов декілька інтернет курсів, дойшовши до ООП.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-        <a class="slider__control-general slider__control_prev-general" href="#" role="button"></a>
-        <a class="slider__control-general slider__control_next-general" href="#" role="button"></a>
+        <a class="slider__control-general slider__control_prev-general" href="#" role="button" ></a>
+        <a class="slider__control-general slider__control_next-general" href="#" role="button" ></a>
     </div>
 </div>
 

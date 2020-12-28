@@ -1,11 +1,7 @@
-from .models import Reso
-from django.forms import ModelForm, TextInput
+from django import forms
 
+class ContactForm(forms.Form):
+    your_name = forms.CharField(max_length=100)
+    your_email = forms.EmailField()
+    your_message = forms.CharField(widget=forms.Textarea)
 
-class ResoForm(ModelForm):
-    class Meta:
-        model = Reso
-        fields = ['res_name','rarest']
-        widgets = {'res_name':TextInput(attrs={'placeholder':'Назва ресурса','class':'form-control'}),
-                   'rarest':TextInput(attrs={'placeholder':'Рідкість','class':'form-control'})
-        }

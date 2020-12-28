@@ -1,35 +1,28 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Reso
-from .forms import ResoForm
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail
+from .forms import ContactForm
 
 def main(request):
     if request.method == 'POST':
-        form = ResoForm(request.POST)
+        form = ContactForm(request.POST)
+        print(form)
         if form.is_valid():
-            form.save()
-            return redirect(main)
-        else:
-            return redirect(main)
-            
-    res = Reso.objects.all()
-    form = ResoForm()
-    context = {
-        'title':'Main blog',
-        'res':res,
-        'form': form,
-         }
-        
-    return render(request, 'blog/main.html', context)
+            your_name = form.cleaned_data['your_name']
+            your_message = form.cleaned_data['your_message']
+            your_email = form.cleaned_data['your_email']
+            recipients = ['werfeteiii@gmail.com']
+            print(str(your_name) + str(your_message) + str(your_email))
+            if your_name and your_message and your_email:
+                try:
+                    send_mail(your_name, your_message, your_email, recipients)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                return HttpResponse('OKS')
+            else:
+                return HttpResponse('Make sure all fields are entered and valid.')
 
-def gallery(request):
-    return render(request, 'blog/gallery.html')
+    else:
+        form = ContactForm()
 
-def projects(request):
-    return render(request, 'blog/projects.html')
-
-def skills(request):
-    return render(request, 'blog/skills.html')
-
-def hobbies(request):
-    return render(request, 'blog/hobbies.html')
+    return render(request, 'blog/main.html')
