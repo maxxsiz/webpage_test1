@@ -30,11 +30,6 @@ body {
     height: 100vh;
   }
 
-  #aboutme_page {
-    background: rgba(128, 128, 128, 0.068) url(img/background_foto_grey.jpeg) center;
-    background-size: cover;
-  }
-
   #hobbies_page {
     background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
     background-size: cover;
@@ -84,19 +79,6 @@ body {
   }
 
   .col7:hover {
-    flex: 0 0 calc(100vw/3);
-    height: 100vh;
-    filter: grayscale(0%);
-  }
-
-  .col5 {
-    height: 100vh;
-    flex: calc(100vw/5);
-    transition: flex .7s ease;
-    filter: grayscale(100%);
-  }
-
-  .col5:hover {
     flex: 0 0 calc(100vw/3);
     height: 100vh;
     filter: grayscale(0%);
@@ -266,31 +248,89 @@ body {
   }
 
   /* setting to main page*/
+  #custom-1 {
+    position: absolute;
+    background-image: linear-gradient(-25deg, #a7a7a7 0%, rgb(63, 168, 168) 100%);
+    right:0;
+    top:0;
+    height:100vh;
+    width:100vw;
+    z-index: 0;
+  }
+
+  #custom-2 {
+    position: absolute;
+    left:0;
+    top:0;
+    height:100vh;
+    width:100vw;
+    z-index: 2;
+    background-image: linear-gradient(-25deg, #000000 0%,  rgb(31, 30, 30)00%);
+    transform: skewY(20deg);
+  }
+  
+  /*photo block and full name*/
+  .photo-block {
+    width: 25vw;
+    height: 100vh;
+  }
+
+  .photo-block span{
+    letter-spacing: 0.5vw;
+    font-size: 8em;
+    z-index: 5;
+  }
+
+  .my-photo{
+    position: absolute;
+    top: 10vh;
+    left: 1vh;
+    max-width: 25vw;
+    height: 80vh;
+  } 
+
+  .my-name{
+    position: absolute;
+    top: 64vh;
+    left: 0;
+    margin-left: 3vw;
+  }
+
+  .my-surname{
+    position: absolute;
+    top: 72vh;
+    left: 0;
+    margin-left: 3vw;
+    border-bottom: 6px solid white;
+    padding-bottom: 0;
+  }
+
+  .color-photo{
+    z-index: 3;
+  }
+
+  .monochrom-photo{
+    z-index: 4;
+    opacity: 1;
+    transition: all 1s ;
+  }
+
+  .photo-block:hover .monochrom-photo {
+    opacity: 0;
+  }
   /* main part of main page */
   /* container setting */
   .big-block-blog {
-    position: fixed;
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    height: 70vh;
-    left:10vw;
-    top:20vh;
+    width: 70vw;
+    height: 90vh;
     z-index: 3;
-    background-color: cadetblue;
-    border: 4px white solid;
   }
-
-  .photo-block {
-    position: fixed;
-    width: 14vw;
-    height: 14vw;
-    border-radius: 50%;
-    background-color: black;
-    z-index: 4;
-    left: 43vw;
-    top: calc(20vh - 7vw);
-    border: 4px white solid;
+  .top-block-blog {
+    width: 100%;
+    height: 50%;
   }
 
   .bottom-block-blog {
@@ -302,6 +342,13 @@ body {
   }
 
   /* top-block setting */
+  #base-info-aboutme {
+    transition: all .8s ease;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
   .big-block-blog h1 {
     font-size: 5em;
     margin-left: 3.65vw;
@@ -312,11 +359,124 @@ body {
     margin-left: 1.5625vw;
     font-size: 3em;
   }
+  .customline-click {
+    display: flex;
+    flex-direction: row;
+    transition: all .7s ease;
 
+  }
+
+  .customline-click p {
+    margin-right:2.5vw;
+    cursor: pointer;
+    font-size: 3em;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .typing-1, .typing-2 {
+    display: none;
+  }
+
+  .customline-click span {
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    font-size: 3em;
+    margin-top: 0;
+  }
+
+  .customline-click:hover {
+    color:rgb(63, 168, 168);
+  }
+
+  /* bottom-block-left setting */
+  #heading-list {
+    padding-left: 5vw;
+    transition: top .8 ease;
+    margin-top: 2vh;
+  }
+
+  .big-block-blog li {
+    cursor: pointer;
+    list-style: none;
+    padding-left: 2.5vw;
+    font-size: 3em;
+    height: 100%;
+    transition: color .5s ease;
+  }
+
+  #heading-1{
+    background: url(img/icons/study_icon.png) 0 0 no-repeat;
+    background-size: 2vw;
+  }
+
+  #heading-2{
+    background: url(img/icons/it_sphere_icon.png) 0 0 no-repeat;
+    background-size: 2vw;
+  }
+
+  #heading-3{
+    background: url(img/icons/workandstudy_icon.png) 0 0 no-repeat;
+    background-size: 2vw;
+  }
+
+  #heading-4{
+    background: url(img/icons/unknownperson_icon.png) 0 0 no-repeat;
+    background-size: 2vw;
+  }
+
+  #heading-5{
+    background: url(img/icons/skills_icon.png) 0 0 no-repeat; 
+    background-size: 2vw;
+  }
+
+  .aboutme {
+    display: flex;
+    align-items: center;
+    background-size: 2vw;
+    height: 2vw;
+    margin-bottom: .9vw;
+    opacity: 0;
+    transition: all 1s ease;
+    margin-left: 0;
+  }
+  .aboutme:hover li {
+    color: var(--third_color);
+  }
+  .aboutme li:after{
+    content: " ...";
+    opacity: 0;
+    transition: all .7s ease;
+  }
+
+  .aboutme:hover li:after {
+    opacity: 1;
+  }
+
+  .aboutme-full{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: all .6s ease;
+    display: none;
+  }
+
+  .aboutme-full h1{
+    border-bottom: 3px solid white;
+  }
+
+  .btnbacktomain{
+    cursor:pointer;
+    margin-top:2.75vh;
+    cursor: pointer;
+  }
+  
+  .btn-backtomain:hover{
+    color:rgb(63, 168, 168);
+  } 
   /* menu contact */
   .blog-col {
-    position: fixed;
-    right: 0;
     display: flex;
     flex-direction: column;
     width: 5vw;
