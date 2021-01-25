@@ -2,6 +2,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm
+import re
+
+def mobile(request):
+    MOBILE_AGENT_RE=re.compile(r".*(iphone|mobile|androidtouch)",re.IGNORECASE)
+
+    if MOBILE_AGENT_RE.match(request.META['HTTP_USER_AGENT']):
+        return True
+    else:
+        return False
 
 def main(request):
     if request.method == 'POST':
@@ -24,5 +33,8 @@ def main(request):
 
     else:
         form = ContactForm()
-
-    return render(request, 'blog/main.html')
+    print(mobile(request))
+    if mobile(request):
+        return render(request, 'blog/main_mobile.html')
+    else:
+        return render(request, 'blog/main.html')

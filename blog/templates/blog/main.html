@@ -1,5 +1,11 @@
 {% extends 'blog/base.html'%}
 {% load static %}
+{% block doctype %}
+<!DOCTYPE html>
+{% endblock %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+{% endblock %}
 {% block title %}
 Maksym Mishchuk - Hello world!
 {% endblock %}
@@ -11,7 +17,7 @@ Maksym Mishchuk - Hello world!
                 <div class="slider__item-general">
                     <div id="main_page" class="page">
                         <div class="big-block-blog">
-                            <h1>Hi, My name Max ...</h1>
+                            <h1>Maksym Mishchuk</h1>
                             <p>... and I am a beginner programmer. My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
                             <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
                         </div>
@@ -96,12 +102,141 @@ Maksym Mishchuk - Hello world!
                                 <div class="column col5 skill-col">
                                     <a class="column-link">
                                     <img class="icon" src="{% static 'blog/img/icons/unknownperson_icon.png' %}" alt="">
-                                    <h2 class="info-text">Work experience</h2>
+                                    <h2 class="icon-text">Work experience</h2>
                                     </a>
                                     <div class="column-info">
                                         <div class="info-text">
                                             <p>I do not have any professional practice in the field of IT.
                                                 Of course, I worked in gastronomy and also did an internship at an agronomist company as a consultant.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="slider__item-general">
+                    <div id="skills_page" class="page">
+                            <div class="col-block">
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/database-search.png' %}" alt="">
+                                    <h2 class="icon-text skill-col">SQLite</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 8+ місяців.</p>
+                                            <p>Статистика завжди мене притягувала, я постійно користувався таблицями Excel и Google в різни цілях.
+                                                Після вивчення основ з SQLite, я вирішив використати отримані знання на практиці в проекті калькулятора
+                                                для браузерної ігри.
+                                            <p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/git.png' %}" alt="">
+                                    <h2 class="icon-text">Git</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 12+ місяців.</p>
+                                            <p>З git я вперше познайомився на універистеті, це був предмет присвячений роботі з Linux, а конкретніше
+                                                завданням предмету було змусити користвуватися виключно терміналом. Розпочинаючи від створення папок, до
+                                                повного контролю над проектом на GitHub.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-css.png' %}" alt="">
+                                    <h2 class="icon-text">CSS3</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>На даний момент CSS вивчаю я по мірі появлень проблем з створенням сайту, або ж коли зявляється певна
+                                                ідея, яку потрібно зреалізувати використовуючи CSS. Намірів сильно поглиблюватись в функціонал не бачу,
+                                                оскільки не збираюсь ставати frontend спеціалістом.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-python.png' %}" alt="">
+                                    <h2 class="icon-text">Python</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 12+ місяців.</p>
+                                            <p>Після самостійної проби вникнути в програмування через вивчення Java, мова програмування Python
+                                                для мене було порятунком. Python був основною мовою програмування для мене на університеті і дотепер
+                                                залишається найбільш навчаємою через мене мовою. На універі більше був уклон на різні алгоритми та продуктивність,
+                                                натомість різний функціонал, включно з ООП вивчався окремо.
+                                                Список практикуємих інструментів:
+                                            </p>
+                                            <ul>
+                                                <li>NumPy</li>
+                                                <li>Pillow</li>
+                                                <li>Plotly</li>
+                                                <li>BeautifulSoup</li>
+                                                <li>Django</li>
+                                                <li>Kivy</li>
+                                                <li>KivyMD</li>
+                                                <li>Kivy</li>
+                                                <li>Telegram Bot API</li>
+                                                <li>Pyautogui</li>
+                                            </ul>
+                                            <p>В мене нема конкретного списку, що я мушу вивчити. Я стараюсь вчитись на практиці, роблячи більші або меньші проекти.
+                                                Таким чином я познаю нові різні бібліотеки та поширюю свої знання в Python. На даний момент я стараюсь поширювати свої
+                                                знання в різних сферах застосування Python.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/framework-django.png' %}" alt="">
+                                    <h2 class="info-text">Django</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>Звісно Django не міг бути оминутий мною при вивчанні різних бібліотек. Як один з найпопулярніших інструментів для
+                                                створення серверної частини сайтів, за допомогою якого я міг зреалізувати певні свої ідеї. Одною з таких ідей було створення
+                                                інтернет сервісу для вечірок друзів, де будуть заміщені різні настольні ігри.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-html.png' %}" alt="">
+                                    <h2 class="icon-text">HTML5</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>HTML дуже легкий до вивчення, да і сильно багато вчити нема що. Аналогічно до ситуації з CSS я не збираюсь
+                                                ставати спеціалістом в HTML.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column col7 skill-col">
+                                    <a class="column-link" href="#javascript-info">
+                                    <img class="icon" src="{% static 'blog/img/icons/language-javascript1.png' %}" alt="">
+                                    <h2 class="icon-text">JavaScript</h2>
+                                    </a>
+                                    <div class="column-info">
+                                        <div class="info-text">
+                                            <p>Час навчання: 2+ місяців.</p>
+                                            <p>При роботі з CSS та HTML виникла необхідність в сторонньому інструменті для створення сайта, конкренто потрібний був 
+                                                більш гнучкий інструмент для анімації. Звісно JavaScript був ідеальним кандидатом. JS це третя серйозна мова програмування з якою я зустрівся. 
+                                                Після Python було досить легко ввійти в незвичну для себе по структурі мову. Мої знання по JS на даний момент 
+                                                являються базовими, я пройшов декілька інтернет курсів, дойшовши до ООП.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -320,139 +455,14 @@ Maksym Mishchuk - Hello world!
                         </div>
                     </div>
                 </div>
-                <div class="slider__item-general">
-                    <div id="skills_page" class="page">
-                            <div class="col-block">
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/database-search.png' %}" alt="">
-                                    <h2 class="icon-text skill-col">SQLite</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 8+ місяців.</p>
-                                            <p>Статистика завжди мене притягувала, я постійно користувався таблицями Excel и Google в різни цілях.
-                                                Після вивчення основ з SQLite, я вирішив використати отримані знання на практиці в проекті калькулятора
-                                                для браузерної ігри.
-                                            <p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/git.png' %}" alt="">
-                                    <h2 class="icon-text">Git</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 12+ місяців.</p>
-                                            <p>З git я вперше познайомився на універистеті, це був предмет присвячений роботі з Linux, а конкретніше
-                                                завданням предмету було змусити користвуватися виключно терміналом. Розпочинаючи від створення папок, до
-                                                повного контролю над проектом на GitHub.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/language-css.png' %}" alt="">
-                                    <h2 class="icon-text">CSS3</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 2+ місяців.</p>
-                                            <p>На даний момент CSS вивчаю я по мірі появлень проблем з створенням сайту, або ж коли зявляється певна
-                                                ідея, яку потрібно зреалізувати використовуючи CSS. Намірів сильно поглиблюватись в функціонал не бачу,
-                                                оскільки не збираюсь ставати frontend спеціалістом.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/language-python.png' %}" alt="">
-                                    <h2 class="icon-text">Python</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 12+ місяців.</p>
-                                            <p>Після самостійної проби вникнути в програмування через вивчення Java, мова програмування Python
-                                                для мене було порятунком. Python був основною мовою програмування для мене на університеті і дотепер
-                                                залишається найбільш навчаємою через мене мовою. На універі більше був уклон на різні алгоритми та продуктивність,
-                                                натомість різний функціонал, включно з ООП вивчався окремо.
-                                                Список практикуємих інструментів:
-                                            </p>
-                                            <ul>
-                                                <li>NumPy</li>
-                                                <li>Pillow</li>
-                                                <li>Plotly</li>
-                                                <li>BeautifulSoup</li>
-                                                <li>Django</li>
-                                                <li>Kivy</li>
-                                                <li>KivyMD</li>
-                                                <li>Kivy</li>
-                                                <li>Telegram Bot API</li>
-                                                <li>Pyautogui</li>
-                                            </ul>
-                                            <p>В мене нема конкретного списку, що я мушу вивчити. Я стараюсь вчитись на практиці, роблячи більші або меньші проекти.
-                                                Таким чином я познаю нові різні бібліотеки та поширюю свої знання в Python. На даний момент я стараюсь поширювати свої
-                                                знання в різних сферах застосування Python.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/framework-django.png' %}" alt="">
-                                    <h2 class="info-text">Django</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 2+ місяців.</p>
-                                            <p>Звісно Django не міг бути оминутий мною при вивчанні різних бібліотек. Як один з найпопулярніших інструментів для
-                                                створення серверної частини сайтів, за допомогою якого я міг зреалізувати певні свої ідеї. Одною з таких ідей було створення
-                                                інтернет сервісу для вечірок друзів, де будуть заміщені різні настольні ігри.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link">
-                                    <img class="icon" src="{% static 'blog/img/icons/language-html.png' %}" alt="">
-                                    <h2 class="icon-text">HTML5</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 2+ місяців.</p>
-                                            <p>HTML дуже легкий до вивчення, да і сильно багато вчити нема що. Аналогічно до ситуації з CSS я не збираюсь
-                                                ставати спеціалістом в HTML.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col7 skill-col">
-                                    <a class="column-link" href="#javascript-info">
-                                    <img class="icon" src="{% static 'blog/img/icons/language-javascript1.png' %}" alt="">
-                                    <h2 class="icon-text">JavaScript</h2>
-                                    </a>
-                                    <div class="column-info">
-                                        <div class="info-text">
-                                            <p>Час навчання: 2+ місяців.</p>
-                                            <p>При роботі з CSS та HTML виникла необхідність в сторонньому інструменті для створення сайта, конкренто потрібний був 
-                                                більш гнучкий інструмент для анімації. Звісно JavaScript був ідеальним кандидатом. JS це третя серйозна мова програмування з якою я зустрівся. 
-                                                Після Python було досить легко ввійти в незвичну для себе по структурі мову. Мої знання по JS на даний момент 
-                                                являються базовими, я пройшов декілька інтернет курсів, дойшовши до ООП.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
             </div>
         </div>
         <a class="slider__control-general slider__control_prev-general" href="#" role="button" ></a>
         <a class="slider__control-general slider__control_next-general" href="#" role="button" ></a>
     </div>
 </div>
-{% endblock %}  
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript" src="{% static 'blog/js/script_1.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
+{% endblock %}

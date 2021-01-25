@@ -9,21 +9,6 @@ body {
     border: 0;
     font-size: 16px;
   }
-  @media screen and (max-width:1023px) {
-    body {font-size: 30%;}
-  }
-
-  @media screen and (min-width:1024px) {
-    body {font-size: 55%;}
-  }
-
-  @media screen and (min-width:1440px) {
-    body {font-size: 75%;}
-  }
-
-  @media screen and (min-width:1920px) {
-    body {font-size: 100%;}
-  }
   /* page settigns */
   .page {
     display: flex;
@@ -53,232 +38,18 @@ body {
     background-size: cover;
   }
 
-/* column page setting */
-  .col-block {
-    display: flex;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-  }
-  .column { 
-    display: flex;  
-    position: relative;
-    justify-content: center;
-    border: 1px black solid;
-    flex-direction: column;
-  }
 
-  .col7 {
-    height: 100vh;
-    flex: calc(100vw/7);
-    transition: flex .7s ease;
-    filter: grayscale(1);
-  }
-
-  .col7:hover {
-    flex: 0 0 calc(100vw/3);
-    height: 100vh;
-    filter: grayscale(0);
-  }
-
-  .col5 {
-    height: 100vh;
-    flex: calc(100vw/5);
-    transition: flex .7s ease;
-    filter: grayscale(1);
-  }
-
-  .col5:hover {
-    flex: 0 0 calc(100vw/3);
-    height: 100vh;
-    filter: grayscale(0);
-  }
-
-  .col3 {
-    flex: calc(100vw/3);
-    height: 100vh;
-    transition: flex .7s ease;
-    filter: grayscale(1);
-  }
-
-  .col3:hover {
-    flex: 0 0 calc(100vw*0.7);
-    height: 100vh;
-    filter: grayscale(0);
-  }
-
-/* column blocks setting */
-
-  .column-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 3vh auto;
-    text-decoration: none;
-    height: 30vh;
-  }
-
-  .icon {
-    margin-bottom:3vh;
-    width: 5vw;
-    height: 5vw;
-    align-self:center;
-    transition: all .5s ease-in-out;
-    filter: grayscale(1);
-  }
-
-  .icon-text{
-    position: relative;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    opacity: 0%;
-    transition: all .5s ease-in-out;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2em;
-  }
-
-  .column-info{
-    margin: 0 1vw 3vh 1vw;
-    width: calc(100% - 3vw);
-    height: 0;
-    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-    overflow: hidden;
-    font-size: 1.5em;
-  }
-
-  /* setting how to show a column info*/
-  .column:hover .icon {
-    transform: scale(2);
-    filter: grayscale(0);
-  }
-
-  .column:hover .icon-text {
-    opacity: 100%;
-  }
-
-  .icon-text:after {
-    content: '';
-    position: absolute;
-    bottom:0;
-    transition: inherit;
-    left: 50%;
-    width: 0;
-    border-bottom: var(--whiteborder);
-    transition: all .5s ease-in-out;
-    transition-delay: .85s;
-  }
-
-  .column:hover .icon-text::after{
-    left: 0;
-    width: 100%;
-  }
-
-  .column:hover .column-info {
-    height: 67vh;
-    transition-delay: .5s;
-  }
-
-  .column-info:before, .column-info:after {
-    content: '';
-    position: absolute;
-    transition: inherit;
-    z-index: -1;
-  }
-       
-  .column-info:hover:before {
-    transition-delay: 0s;
-  }
-    
-  .column-info:hover:after {
-    background-image: linear-gradient(-25deg, #161515d0 0%, #b8bcbed0 100%);
-    transition-delay: .35s;
-  }
-
-  .column-info:before {
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 0;
-    border: var(--whiteborder);
-    border-left: 0;
-    border-right: 0;
-  }
-      
-  .column-info:after {
-    bottom: 0;
-    left: 0;
-    height: 0;
-    width: 100%;
-    background-image: linear-gradient(-25deg, #161515d0 0%, #b8bcbed0 100%);
-  }
-      
-  .column-info:hover:before {
-    left: 0;
-    width: 100%;
-  }
-      
-  .column-info:hover:after {
-    top: 0;
-    height: 100%;
-  }
-
-  .info-text {
-    color: #ffffff;
-    opacity: 0;
-    margin: 1.5vw;
-    font-size: 1em;
-    font-family: 'Montserrat Alternates', sans-serif;
-  }
-
-  .main-info-text {
-    width: 100%;
-  }
-
-  .secondary-info-block {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    left:0;
-    width: 100%;
-  }
-
-  .column-info:hover .info-text {
-    transition-delay: .85s;
-    opacity: 1;
-    transition: all 1s ease-in-out;
-  }
-
-  .info-text ul {
-    list-style: none;
-    padding-left: 2vw;
-    font-weight: bold;
-  }
-
-  .secondary-info-text li:before {
-    padding-right:0.5vw;
-    font-weight: bold;
-    color: white;
-    content: "\2714";
-    transition-duration: 0.5s;
-  }
-
-  .secondary-info-text li:hover:before {
-    color: rgb(24, 11, 98);
-    content: "\2714";
-  }
-
-  /* setting to main page*/
+/* setting to main page*/
   /* main part of main page */
   /* container setting */
   .big-block-blog {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 80vw;
-    height: 70vh;
+    height: 75vh;
     left:10vw;
-    top:20vh;
+    top:14vh;
     z-index: 3;
     background-color: rgba(128, 128, 128, 0.575);
     border: 3px white solid;
@@ -286,13 +57,13 @@ body {
 
   .photo-block {
     position: fixed;
-    width: 14vw;
-    height: 14vw;
+    width: 25vw;
+    height: 25vw;
     border-radius: 50%;
     background-color: black;
     z-index: 4;
     left: 15vw;
-    top: calc(20vh - 7vw);
+    top: calc(14vh - 12.5vw);
     border: 3px white solid;
     background: url(img/main_me_foto.png) center;
     background-size: cover;
@@ -307,35 +78,36 @@ body {
 
   /* top-block setting */
   .big-block-blog h1 {
-    margin-left: 20vw;
+    margin-left: 30vw;
     margin-right: auto;
     width: auto;
-    font-size: 6em;
+    font-size: 2em;
     border-bottom: var(--whiteborder);
   }
 
   .big-block-blog p {
-    margin-left: 1.5625vw;
-    font-size: 3em;
+    margin-left: 2vw;
+    font-size: 1em;
   }
 
   /* menu contact */
   .blog-col {
-    position: fixed;
+    position: relative;
     right: 0;
+    bottom: 0;
     display: flex;
-    flex-direction: column;
-    width: 5vw;
-    height: 100vh;
-    z-index: 3;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    z-index: 11;
     justify-content: center;
   }
 
 
   .icon-contact {
-    width: 2vw;
-    height: 2vw;
-    margin:3vh 1.5vw;
+    width: 8vw;
+    height: 8vw;
+    margin:1vh 2vw;
   }
 
   .btn-icon-contact {
@@ -405,6 +177,7 @@ body {
     border-radius: 50%;
     background-color: var(--third_color);
   }
+
   /* contact form settings*/
   .input-block {
 		font-weight: 700;
@@ -440,8 +213,90 @@ body {
     resize: none;
     columns: 60;
   }
+/* column page setting */
+  .column { 
+    width: 100vw;
+    height: 100vh;
+  }
 
-   /* setting to projects page*/
+  .column-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vh auto;
+    text-decoration: none;
+    height: 24vh;
+  }
+
+  .icon {
+    margin-bottom:3vh;
+    width: 15vw;
+    height: 15vw;
+    align-self:center;
+    transition: all .5s ease-in-out;
+    filter: grayscale(1);
+  }
+
+  .icon-text {
+    position: relative;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3em;
+  }
+
+  .column-info {
+    margin: auto auto;
+    width: 94vw;
+    height: 66vh;
+    overflow: hidden;
+    font-size: 1em;
+    background-color: rgba(2, 26, 26, 0.404);
+    border: var(--whiteborder);
+  }
+  .info-text p {
+    margin: 1vh 3vw;
+  }
+
+  .secondary-info-block {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    left:0;
+    width: 100%;
+  }
+  .info-text ul {
+    list-style: none;
+    padding-left: 2vw;
+    font-weight: bold;
+  }
+
+  .secondary-info-text li:before {
+    padding-right:0.5vw;
+    font-weight: bold;
+    color: white;
+    content: "\2714";
+    transition-duration: 0.5s;
+  }
+
+  .secondary-info-text li:hover:before {
+    color: rgb(24, 11, 98);
+    content: "\2714";
+  }
+  /* first_slider setting */
+
+  .first_slider-aboutme {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(27, 27, 27, 0.952);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+   /* settings to projects page*/
 
   .pr-telbot {
     background: url(img/backgrounds/bc_telbot.jpg) 0 0 repeat;
@@ -504,31 +359,12 @@ body {
    }
 
    /* slider for photo */
-   .block-slider-main-page {
-    position: absolute;
-    width: 30vw;
-    height: 40vh;
-    right: 2.5vw;
-    bottom: 2.5vh;
-    z-index: 4;
-    margin-right: 1.56vw;
-   }
-   .block-slider-project-page {
-    position: absolute;
-    width: 30vw;
-    height: 40vh;
-    right: 0;
-    top: 0;
-    z-index: 4;
-    margin: 5.555vh auto;
+   .slider-aboutme, .slider-skills, .slider-projects {
+    width: 100vw;
+    height: 100vh;
    }
 
-   .slider, .slider-telegram, .slider-website {
-    width: 30vw;
-    height: 40vh;
-   }
-
-  .slider__wrapper,
+  .slider__wrapper-aboutme,
   .slider__wrapper-telegram,
   .slider__wrapper-website
    {
@@ -536,31 +372,31 @@ body {
     overflow: hidden;
   }
 
-  .slider__items,
+  .slider__items-aboutme,
   .slider__items-telegram,
   .slider__items-website {
     display: flex;
     transition: transform 0.6s ease;
   }
 
-  .slider__item,
+  .slider__item-aboutme,
   .slider__item-telegram,
   .slider__item-website {
     flex: 0 0 100%;
-    max-width: 30vw;
+    max-width: 100vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .slider__photo,
+  .slider__photo-aboutme,
   .slider__photo-telegram,
   .slider__photo-website {
-    height: 40vh;
+    height: 100vh;
   }
   
-  .slider__control,
+  .slider__control-aboutme,
   .slider__control-telegram,
   .slider__control-website {
     position: absolute;
@@ -578,14 +414,14 @@ body {
     z-index: 10;
   }
 
-  .slider__control_show,
+  .slider__control_show-aboutme,
   .slider__control_show-telegram,
   .slider__control_show-website {
     display: flex;
   }
 
-  .slider__control:hover,
-  .slider__control:focus,
+  .slider__control-aboutme:hover,
+  .slider__control-aboutme:focus,
   .slider__control-telegram:hover,
   .slider__control-telegram:focus,
   .slider__control-website:hover,
@@ -596,19 +432,19 @@ body {
     opacity: 0.9;
   }
 
-  .slider__control_prev,
+  .slider__control_prev-aboutme,
   .slider__control_prev-telegram,
   .slider__control_prev-website {
     left: 0;
   }
 
-  .slider__control_next,
+  .slider__control_next-aboutme,
   .slider__control_next-telegram,
   .slider__control_next-website {
     right: 0;
   }
 
-  .slider__control::before,
+  .slider__control-aboutme::before,
   .slider__control-telegram::before,
   .slider__control-website::before  {
     content: '';
@@ -619,19 +455,19 @@ body {
     background-size: 100% 100%;
   }
 
-  .slider__control_prev::before,
+  .slider__control_prev-aboutme::before,
   .slider__control_prev-telegram::before,
   .slider__control_prev-website::before {
     background-image: url(img/previous-btn.png);
   }
 
-  .slider__control_next::before,
+  .slider__control_next-aboutme::before,
   .slider__control_next-telegram::before,
   .slider__control_next-website::before {
     background-image: url(img/next-btn.png);
   }
 
-  .slider__indicators,
+  .slider__indicators-aboutme,
   .slider__indicators-telegram,
   .slider__indicators-website {
     position: absolute;
@@ -649,7 +485,7 @@ body {
     margin-bottom: 0;
   }
 
-  .slider__indicators li ,
+  .slider__indicators-aboutme li ,
   .slider__indicators-telegram li,
   .slider__indicators-website li {
     width: 1vw;
@@ -664,13 +500,13 @@ body {
     padding-left: 0;
   }
 
-  .slider__indicators li.active,
+  .slider__indicators-aboutme li.active,
   .slider__indicators-telegram li.active,
   .slider__indicators-website li.active {
     background-color: var(--third_color);
   }
 
-  .img-fluid, .img-fluid-telegram, .img-fluid-website {
+  .img-fluid-aboutme, .img-fluid-telegram, .img-fluid-website {
     display: inline-block;
     height: auto;
     max-width: 100%;
@@ -678,19 +514,11 @@ body {
 
 /* slider between pages */
 
-.block-slider-page-changing {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  right: 0;
-  top: 0;
-  margin: 0;
- }
 
- .slider-general {
+.slider-general {
    width: 100%;
    height: 100%;
- }
+}
 
 .slider__wrapper-general {
   position: relative;
