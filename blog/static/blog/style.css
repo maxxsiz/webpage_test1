@@ -1,7 +1,7 @@
 body {
     --third_color: #6cc0e2; 
     --inv: #fff;
-    --whiteborder: 3px white solid;
+    --whiteborder: 10px white solid;
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
     padding: 0;
@@ -10,19 +10,19 @@ body {
     font-size: 16px;
   }
   @media screen and (max-width:1023px) {
-    body {font-size: 30%;}
+    body {font-size: 100%;}
   }
 
   @media screen and (min-width:1024px) {
-    body {font-size: 55%;}
+    body {font-size: 120%;}
   }
 
   @media screen and (min-width:1440px) {
-    body {font-size: 75%;}
+    body {font-size: 135%;}
   }
 
   @media screen and (min-width:1920px) {
-    body {font-size: 100%;}
+    body {font-size: 150%;}
   }
   /* page settigns */
   .page {
@@ -281,7 +281,7 @@ body {
     top:20vh;
     z-index: 3;
     background-color: rgba(128, 128, 128, 0.575);
-    border: 3px white solid;
+    border: var(--whiteborder);
   }
 
   .photo-block {
@@ -293,7 +293,7 @@ body {
     z-index: 4;
     left: 15vw;
     top: calc(20vh - 7vw);
-    border: 3px white solid;
+    border: var(--whiteborder);
     background: url(img/main_me_foto.png) center;
     background-size: cover;
   }
