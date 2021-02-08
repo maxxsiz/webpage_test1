@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,7 +18,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
 
@@ -127,6 +129,6 @@ EMAIL_HOST_USER = 'maksym.mishchuk.py@gmail.com'
 EMAIL_HOST_PASSWORD = 'Python_roza1120'
 
 
-import dj_database_url 
+
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
