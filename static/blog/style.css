@@ -8,6 +8,7 @@ body {
     margin: 0;
     border: 0;
     font-size: 16px;
+    user-select: none;
   }
   @media screen and (max-width:1023px) {
     body {font-size: 30%;}
@@ -34,7 +35,7 @@ body {
     display: flex;
     flex-direction: row;
     background: rgba(128, 128, 128, 0.068) url(img/backgrounds/szklarska_mountain.JPG) center;
-    filter: grayscale(100%);
+    filter: grayscale(0%);
     background-size: cover;
   }
 
@@ -157,23 +158,6 @@ body {
     opacity: 100%;
   }
 
-  .icon-text:after {
-    content: '';
-    position: absolute;
-    bottom:0;
-    transition: inherit;
-    left: 50%;
-    width: 0;
-    border-bottom: var(--whiteborder);
-    transition: all .5s ease-in-out;
-    transition-delay: .85s;
-  }
-
-  .column:hover .icon-text::after{
-    left: 0;
-    width: 100%;
-  }
-
   .column:hover .column-info {
     height: 67vh;
     transition-delay: .5s;
@@ -200,7 +184,7 @@ body {
     left: 50%;
     height: 100%;
     width: 0;
-    border: var(--whiteborder);
+    border: 2px white solid;
     border-left: 0;
     border-right: 0;
   }
@@ -280,8 +264,8 @@ body {
     left:10vw;
     top:20vh;
     z-index: 3;
-    background-color: rgba(128, 128, 128, 0.575);
-    border: var(--whiteborder);
+    border-top: var(--whiteborder);
+    border-bottom: var(--whiteborder);
   }
 
   .photo-block {
@@ -310,13 +294,13 @@ body {
     margin-left: 20vw;
     margin-right: auto;
     width: auto;
-    font-size: 6em;
+    font-size: 5em;
     border-bottom: var(--whiteborder);
   }
 
   .big-block-blog p {
     margin-left: 1.5625vw;
-    font-size: 3em;
+    font-size: 2em;
   }
 
   /* menu contact */
@@ -408,7 +392,7 @@ body {
   /* contact form settings*/
   .input-block {
 		font-weight: 700;
-		font-size: 1.4em;
+		font-size: 1.3em;
 		padding: 0.5vw;
 		border: 0.625vw rgba(247, 247, 247, .3) solid;
     background: url('transparent');
@@ -423,7 +407,7 @@ body {
 
   .btn-submit-contact {
     font-weight: 700;
-		font-size: 1.8em;
+		font-size: 1.5em;
     height: 10%;
     width: 50%;
     background: url('transparent');
@@ -435,7 +419,7 @@ body {
   }
 
   .textarea-form {
-    font-size: 1.3em;
+    font-size: 1.2em;
     height: 40%;
     resize: none;
     columns: 60;
@@ -783,8 +767,8 @@ body {
   align-items:center;
   justify-content: center;
   width: 5vw;
-  height: 0;
-  border-bottom: 0.5vw white solid;
+  height: 3vh;
+  border-bottom: 0.9vh white solid;
   transition: all .5s ease-in-out;
   cursor: pointer;
   margin: 0 1.5vw;
@@ -805,13 +789,13 @@ body {
 .slider__indicators__name-general {
   z-index: 5;
   overflow: hidden;
-  font-size: 1.3em;
-  transform: translateY(.5vh);
+  font-size: 1.1em;
+  transform: translateY(.9vh);
   opacity: 0;
 }
 .slider__indicators-general li:hover .slider__indicators__name-general{
   transition: all .5s ease-in-out;
-  transform: translateY(-1vh);
+  transform: translateY(-.1vh);
   opacity: 1;
 }
 
