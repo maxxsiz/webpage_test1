@@ -25,6 +25,39 @@ body {
   @media screen and (min-width:1920px) {
     body {font-size: 100%;}
   }
+
+  @keyframes show_load_block {
+    from { opacity: 1;}
+    to { opacity: 0;
+        display: none;}
+  }
+
+  @keyframes show_load_block {
+    from { opacity: 1;}
+    to { opacity: 0;
+        display: none;}
+  }
+
+  @keyframes logo-left-part {
+    from {transform: translate(20px,-5px);}
+    20% {transform: translate(20px,-5px);}
+    40% {transform: translate(0,0);}
+    to {transform: translate(0,0);}
+  }
+
+  @keyframes logo-bottom-part {
+    from {transform: translateY(-20px);}
+    20% {transform: translateY(-20px);}
+    40% {transform: translateY(0px);}
+    to {transform: translateY(0px);}
+  }
+
+  @keyframes logo-right-part {
+    from {transform: translate(-20px,-5px);}
+    20% {transform: translate(-20px,-5px);}
+    40% {transform: translate(0,0);}
+    to {transform: translate(0,0);}
+  }
   /* page settigns */
   .page {
     display: flex;
@@ -754,7 +787,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  bottom: 3.06vh;
+  bottom: 0;
   z-index: 30;
   list-style: none;
   margin-top: 0;
@@ -767,7 +800,7 @@ body {
   align-items:center;
   justify-content: center;
   width: 5vw;
-  height: 3vh;
+  height: 6vh;
   border-bottom: 0.9vh white solid;
   transition: all .5s ease-in-out;
   cursor: pointer;
@@ -805,3 +838,54 @@ body {
 }
 
 
+/* Loag block and logo settings*/
+.load-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: white;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  animation:show_load_block 2s ease-in forwards;
+  animation-delay: 5s;
+  justify-content: center;
+  align-items:center;
+}
+
+.logo-bottom-part {
+  animation: logo-bottom-part 2s ease-in forwards;
+}
+
+.logo-left-part {
+  animation: logo-left-part 2s ease-in forwards;
+}
+
+.logo-right-part {
+  animation: logo-right-part 2s ease-in forwards;
+}
+
+.typewriter p {
+  font-size: 2em;
+  color: black;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: .15em solid var(--third_color);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--third_color) }
+}
