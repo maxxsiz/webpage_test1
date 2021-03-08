@@ -490,7 +490,6 @@ var slideShow = (function () {
       }
     };
 
-    // функция, выполняющая смену слайда в указанном направлении
     var _move = function (direction) {
       var nextItem, currentIndicator = _indicatorIndex;;
       if (direction === 'next') {
@@ -525,7 +524,6 @@ var slideShow = (function () {
       _indicatorItems[_indicatorIndex].classList.add('active');
     };
 
-    // функция, осуществляющая переход к слайду по его порядковому номеру
     var _moveTo = function (index) {
       var i = 0, direction = (index > _indicatorIndex) ? 'next' : 'prev';
       while (index !== _indicatorIndex && i <= _indicatorIndexMax) {
@@ -534,7 +532,6 @@ var slideShow = (function () {
       }
     };
 
-    // функция для запуска автоматической смены слайдов через промежутки времени
     var _startAutoplay = function () {
       if (!_config.isAutoplay) {
         return;
@@ -545,12 +542,10 @@ var slideShow = (function () {
       }, _config.delayAutoplay);
     };
 
-    // функция, отключающая автоматическую смену слайдов
     var _stopAutoplay = function () {
       clearInterval(_timerId);
     };
 
-    // функция, добавляющая индикаторы к слайдеру
     var _addIndicators = function () {
       var indicatorsContainer = document.createElement('ol');
       indicatorsContainer.classList.add('slider__indicators-general');
@@ -562,6 +557,7 @@ var slideShow = (function () {
         var sliderIndicatorsItemName = document.createElement('span');
         sliderIndicatorsItemName.classList.add('slider__indicators__name-general');
         sliderIndicatorsItemName.textContent = _itemsName[i];
+        sliderIndicatorsItemName.setAttribute("data-slide-to-general", i);
         sliderIndicatorsItem.setAttribute("data-slide-to-general", i);
         indicatorsContainer.appendChild(sliderIndicatorsItem);
         sliderIndicatorsItem.appendChild(sliderIndicatorsItemName);
@@ -574,7 +570,6 @@ var slideShow = (function () {
       return !!('ontouchstart' in window || navigator.maxTouchPoints);
     };
 
-    // функция, осуществляющая установку обработчиков для событий 
     var _setUpListeners = function () {
       var _startX = 0;
       if (_isTouchDevice()) {
@@ -626,28 +621,21 @@ var slideShow = (function () {
       }
     };
 
-    // добавляем индикаторы к слайдеру
     _addIndicators();
-    // установливаем обработчики для событий
     _setUpListeners();
-    // запускаем автоматическую смену слайдов, если установлен соответствующий ключ
     _startAutoplay();
 
     return {
-      // метод слайдера для перехода к следующему слайду
       next: function () {
         _move('next');
-      },
-      // метод слайдера для перехода к предыдущему слайду          
+      },        
       left: function () {
         _move('prev');
       },
-      // метод отключающий автоматическую смену слайдов
       stop: function () {
         _config.isAutoplay = false;
         _stopAutoplay();
       },
-      // метод запускающий автоматическую смену слайдов
       cycle: function () {
         _config.isAutoplay = false;
         _startAutoplay();
@@ -659,3 +647,8 @@ var slideShow = (function () {
 slideShow('.slider-general', {
   isAutoplay: false
 });
+
+
+setTimeout(function(){
+	document.getElementById('load-block').style.display = 'none';
+}, 7000);
