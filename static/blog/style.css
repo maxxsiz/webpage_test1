@@ -11,11 +11,11 @@ body {
     user-select: none;
   }
   @media screen and (max-width:1023px) {
-    body {font-size: 30%;}
+    body {font-size: 50%;}
   }
 
   @media screen and (min-width:1024px) {
-    body {font-size: 50%;}
+    body {font-size: 65%;}
   }
 
   @media screen and (min-width:1440px) {
@@ -30,7 +30,10 @@ body {
     from { opacity: 1;}
     to { opacity: 0;}
   }
-
+  @keyframes change-color {
+    from {background-color: #6cc1e200;}
+    to {background-color: var(--third_color);}
+  }
   @keyframes logo-left-part {
     from {transform: translate(20px,-5px);}
     20% {transform: translate(20px,-5px);}
@@ -175,7 +178,7 @@ body {
 
   /* setting how to show a column info*/
   .column:hover .icon {
-    transform: scale(2);
+    transform: scale(1.5);
     filter: grayscale(0);
   }
 
@@ -277,13 +280,13 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 50vw;
     height: 100vh;
     left:5vw;
     top:0;
     padding:10vh 5vw 20vh 5vw;
     z-index: 3;
-    background-color: rgba(71, 71, 71, 0.541);
+    background-color: rgba(71, 71, 71, 0.596);
   }
   
   .big-block-blog::after {
@@ -304,20 +307,6 @@ body {
     width:4px;
     height:30vh;
     background:rgb(255, 255, 255)
-  }
-
-  .photo-block {
-    position: fixed;
-    width: 14vw;
-    height: 14vw;
-    border-radius: 50%;
-    background-color: black;
-    z-index: 4;
-    left: 15vw;
-    top: calc(20vh - 7vw);
-    border: var(--whiteborder);
-    background: url(img/main_me_foto.png) center;
-    background-size: cover;
   }
 
   .bottom-block-blog {
@@ -349,11 +338,23 @@ body {
     justify-content: center;
   }
 
+  .blog-col a {
+    margin: 1.25vw; 
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color: #6cc1e200;
+    border-radius: 50%;
+  }
 
   .icon-contact {
     width: 2vw;
     height: 2vw;
-    margin:3vh 1.5vw;
+    margin: .25vw;
+  }
+
+  .blog-col a:hover{
+    animation-iteration-count: 1;
+    animation: change-color 1s both;
   }
 
   .btn-icon-contact {
