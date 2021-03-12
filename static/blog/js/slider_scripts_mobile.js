@@ -1095,7 +1095,3 @@ slideShow('.slider-hobbies', {
   isAutoplay: false
 });
 
-
-setTimeout(function(){
-	document.getElementById('load-block').style.display = 'none';
-}, 7000);

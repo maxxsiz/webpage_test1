@@ -647,8 +647,3 @@ var slideShow = (function () {
 slideShow('.slider-general', {
   isAutoplay: false
 });
-
-
-setTimeout(function(){
-	document.getElementById('load-block').style.display = 'none';
-}, 7000);

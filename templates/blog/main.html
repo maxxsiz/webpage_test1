@@ -10,7 +10,7 @@
 Maksym Mishchuk - Hello world!
 {% endblock %}
 {% block content %}
-<div id="load-block">
+<div id="preloader">
     <svg class="logo-load" width="160px" height="160px">
         <path class="logo-left-part" d="M32 124 L20 115 L20 35 L37 48 L37 64 L32 60 z" fill="white"></path>
         <path class="logo-bottom-part" d="M55 77 L55 61 L80 80 L105 61 L105 77 L80 96 z" fill="white"></path>
@@ -473,6 +473,92 @@ Maksym Mishchuk - Hello world!
 </div>
 {% endblock %}
 {% block javascript %}
+<style type="text/css">
+    #preloader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background-color: rgb(54, 54, 54);
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        animation:show_load_block 2s ease-in forwards;
+        animation-delay: 5s;
+        justify-content: center;
+        align-items:center;
+      }
+      
+      .logo-bottom-part {
+        animation: logo-bottom-part 2s ease-in forwards;
+      }
+      
+      .logo-left-part {
+        animation: logo-left-part 2s ease-in forwards;
+      }
+      
+      .logo-right-part {
+        animation: logo-right-part 2s ease-in forwards;
+      }
+      
+      .typewriter p {
+        font-size: 2em;
+        color: white;
+        font-family: monospace;
+        overflow: hidden;
+        border-right: .15em solid #6cc0e2;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #6cc0e2 }
+      }
+      @keyframes logo-left-part {
+        from {transform: translate(20px,-5px);}
+        20% {transform: translate(20px,-5px);}
+        40% {transform: translate(0,0);}
+        to {transform: translate(0,0);}
+      }
+    
+      @keyframes logo-bottom-part {
+        from {transform: translateY(-20px);}
+        20% {transform: translateY(-20px);}
+        40% {transform: translateY(0px);}
+        to {transform: translateY(0px);}
+      }
+    
+      @keyframes logo-right-part {
+        from {transform: translate(-20px,-5px);}
+        20% {transform: translate(-20px,-5px);}
+        40% {transform: translate(0,0);}
+        to {transform: translate(0,0);}
+      }
+</style>
+<script type="text/javascript">
+    var time_start = performance.now();
+    var loader_time = 7000;
+	window.onload = function() {
+        var time_end = performance.now();
+        var last_time = loader_time - (time_end - time_start);
+        if ( last_time < 7000 ) {
+            last_time == 0;
+        }
+		setTimeout(function() {
+			document.getElementById("preloader").style.display = "none";
+		},last_time );
+	};
+</script>
 <script type="text/javascript" src="{% static 'blog/js/script_1.js' %}"></script>
 <script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
 {% endblock %}
