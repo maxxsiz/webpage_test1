@@ -42,6 +42,7 @@ body {
     to {opacity: 1;}
   }
 
+
   /* page settigns */
   .page {
     display: flex;
@@ -865,23 +866,26 @@ body {
   justify-content: center;
   height: 3vh;
   width: 60%;
-  margin: .5vh auto;
+  margin: 1vh auto;
   border-radius: 3px; 
   background-color: rgba(128, 128, 128, 0.767);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.589) inset, 0 1px 0 rgba(68, 68, 68, 0.555);
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
 }
 
 .progress-bar div {
   display: inline-block;
+  width: 31%;
   height: 2vh;
-  width: 30%;
-  margin: .5vh .5vh;
+  border-radius: 3px;
+  margin: .5vh .25vh .5vh .25vh;
 }
 
 .progress-bar span {
  display: inline-block;
  height: 2vh;
  border-radius: 3px;  
- box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
  transition: width .4s ease-in-out;
+ overflow: hidden;
+ box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+
 }
