@@ -9,6 +9,7 @@ body {
     border: 0;
     font-size: 16px;
     user-select: none;
+    font-weight: bold;
   }
 
   @media screen and (max-width:1023px) {
@@ -173,7 +174,7 @@ body {
     justify-content: center;
     opacity: 0;
     height: 100vh;
-    background-color: rgba(94, 93, 93, 0.685);
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
   }
 
   /* setting how to show a column info*/
@@ -246,6 +247,7 @@ body {
     margin: 1.5vw;
     font-size: .7em;
     font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
   }
 
   .main-info-text {
@@ -278,11 +280,43 @@ body {
     transition-duration: 0.5s;
   }
 
+  /* hobbies setting page */
+
+  .hobbies-info:before, .hobbies-info:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+    background-color: rgba(94, 93, 93, 0.685);
+    transition-delay: .85s;
+  }
+
+  .hobbies-info:before {
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 50%;
+  }
+      
+  .hobbies-info:after {
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 50%;
+  }
+      
+  .hobbies-info:hover:before {
+    height: 100%;
+  }
+      
+  .hobbies-info:hover:after {
+    height: 100%;
+  }
+
   .hobbies-info p {
     text-align: justify;
     margin: 0 3vw;
     font-size: 1.2em;
-
   }
 
   /* setting to main page*/
@@ -857,7 +891,6 @@ body {
 .progress-block p {
   text-align: center;
   font-size: 1.2em;
-  font-weight: bold;
   margin-bottom: 0;
 }
 .progress-bar {
@@ -884,8 +917,73 @@ body {
  display: inline-block;
  height: 2vh;
  border-radius: 3px;  
- transition: width .4s ease-in-out;
  overflow: hidden;
  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+ width: 0;
+}
 
+.progress-red {
+  background-color:rgba(255, 0, 0, 0.4);
+  transition: all .4s ease-in-out;
+  transition-delay: 1s;
+}
+
+.progress-orange {
+  background-color:rgba(255, 166, 0, 0.4);
+  transition: all .4s ease-in-out;
+  transition-delay: 1.5s;
+}
+
+.progress-green {
+  background-color:rgba(0, 128, 0, 0.4);
+  transition: all .4s ease-in-out;
+  transition-delay: 2s;
+}
+
+.sqlite:hover .progress-red {
+  width: 100%;
+}
+
+.sqlite:hover .progress-orange {
+  width: 50%;
+}
+
+.git:hover .progress-red {
+  width: 100%;
+}
+
+.git:hover .progress-orange {
+  width: 100%;
+}
+
+.CSS3:hover .progress-red {
+  width: 100%;
+}
+
+.CSS3:hover .progress-orange {
+  width: 100%;
+}
+
+.python:hover .progress-red {
+  width: 100%;
+}
+
+.python:hover .progress-orange {
+  width: 50%;
+}
+
+.django:hover .progress-red {
+  width: 75%;
+}
+
+.html:hover .progress-red {
+  width: 100%;
+}
+
+.html:hover .progress-orange {
+  width: 100%;
+}
+
+.javasctipt:hover .progress-red {
+  width: 50%;
 }
