@@ -1094,4 +1094,3 @@ var slideShow = (function () {
 slideShow('.slider-hobbies', {
   isAutoplay: false
 });
-

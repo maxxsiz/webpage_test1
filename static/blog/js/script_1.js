@@ -118,4 +118,15 @@
         }
     }
 
+    function getCoords(elem) {
+        var box = elem.getBoundingClientRect();
+        console.log(getCoords(document.getElementById("first_slider-aboutme")))
+        console.log(getCoords(document.getElementById("first_slider-skills")))
+        alert( document.documentElement.clientWidth );
+        return {
+          top: box.top + pageYOffset,
+          left: box.left + pageXOffset
+        };
+      
+      }
     
