@@ -323,18 +323,6 @@ body {
     color: rgb(24, 11, 98);
     content: "\2714";
   }
-  /* first_slider setting */
-
-  .first_slider {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(27, 27, 27, 0.952);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items:center;
-  }
 
    /* settings to projects page*/
 
@@ -350,41 +338,6 @@ body {
 
   .pr-calc{
     background: url(img/backgrounds/bc_calculator.jpg) 0 0 repeat;
-    background-size:auto 100vh;
-  }
-
-   /* setting to hobbies page*/
-   .hobbie-ski {
-    background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-snowboard{
-    background: url(img/backgrounds/bg_snowboard.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-rollerskate{
-    background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-rollerblade {
-    background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-videomake{
-    background: url(img/backgrounds/bg_gopro.jpg) 0 0 no-repeat;
-    background-size:auto 130vh;
-  }
-
-  .hobbie-gaming{
-    background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
-  }
-
-  .hobbie-printer3d{
-    background: url(img/backgrounds/bg_printing.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
 
@@ -568,7 +521,20 @@ body {
   max-height: 100%;
 }
  
-/* animation for slider */
+  /* first_slider setting */
+
+.first_slider {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(27, 27, 27, 0.952);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
 .circle-3 {
   animation: show_pointer 8s infinite ease-in-out;
   animation-delay: 300ms;
@@ -583,37 +549,65 @@ body {
   animation: show_pointer 8s infinite ease-in-out;
   animation-delay: 0ms ;
 }
-
-.slider-direction {
-  position: absolute;
-  left: 30vw;
-  height: 10vw;
-  width: 10vw;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  animation: show_direction 3s infinite;
-  z-index: 1;
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
-.page_title{
-  z-index: 10;
-  opacity: 0;
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
-.swipe_me {
+.animated-title {
+  font-family: Roboto, Arial, sans-serif;
+  height: 45vmin;
+  left: 50%;
   position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 45vmin;
+}
+.animated-title > div {
+  height: 50%;
   overflow: hidden;
-  width: 100vw;
-  z-index: 10;
-  margin-left: auto;
-  margin-right: auto;
-  animation: typing 5s steps(30, end) infinite;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
+  position: absolute;
+  width: 100%;
 }
-
+.animated-title > div div {
+  font-size: 6vmin;
+  padding: 1vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid rgb(255, 255, 255);
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #b6b6b6;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
 /* progress bar */
 .progress-block {
   display: flex;
@@ -717,4 +711,47 @@ body {
 
 .javasctipt .progress-red {
   width: 50%;
+}
+
+
+/* hobbies photos */
+.slider__item-hobbies > div{
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+}
+
+.hobbie-ski-snowboard {
+  background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
+  background-size:auto 100vh;
+}
+
+.hobbie-paintball {
+  background: url(img/hobbies/paintball_brothers.JPG) 0 0 no-repeat;
+  background-size:auto 100vh;
+}
+
+.hobbie-rollerblade {
+  background: url(img/hobbies/me_friends_icering.JPG) 0 0 no-repeat;
+  background-size:auto 100vh;
+}
+
+.hobbie-rollerskate {
+  background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
+  background-size:auto 100vh;
+}
+
+.hobbie-videomake {
+  background: url(img/backgrounds/bg_gopro.jpg) 0 0 no-repeat;
+  background-size:auto 130vh;
+}
+
+.hobbie-gaming {
+  background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
+  background-size:auto 100vh;
+}
+
+.hobbie-printer3d {
+  background: url(img/backgrounds/bg_printing.jpg) 0 0 no-repeat;
+  background-size:auto 100vh;
 }
