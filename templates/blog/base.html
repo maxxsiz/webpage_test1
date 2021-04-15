@@ -10,7 +10,61 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<div id="preloader">
+    <svg class="logo-load" width="160px" height="160px">
+        <path class="logo-left-part" d="M32 124 L20 115 L20 35 L37 48 L37 64 L32 60 z" fill="white"></path>
+        <path class="logo-bottom-part" d="M55 77 L55 61 L80 80 L105 61 L105 77 L80 96 z" fill="white"></path>
+        <path class="logo-right-part" d="M128 124 L140 115 L140 35 L123 48 L123 64 L128 60 z" fill="white"></path>
+        <path class="logo-main-part" d="M40 30 L80 60 L120 30 L120 130 L108 140 L108 55 L80 76 L52 55 L52 140 L40 130 z" fill="#6cc0e2"></path>
+    </svg>
+    <div class="typewriter">
+        <p>Maksym Mishchuk</p>
+    </div>
+</div>
 {% block content %} {% endblock %}
+<script type="text/javascript">
+    var time_start = performance.now();
+    var loader_time = 7000;
+	window.onload = function() {
+        var time_end = performance.now();
+        var last_time = loader_time - (time_end - time_start);
+        if ( last_time < 7000 ) {
+            last_time == 0;
+        }
+		setTimeout(function() {
+			document.getElementById("preloader").style.display = "none";
+		},last_time );
+	};
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#email-contact-small-block').submit(function() { // On form submit event
+            $.ajax({ // create an AJAX call...
+                data: $(this).serialize(), // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call
+                success: function(response) { // on success..
+                    $('#email-show-result-text').html(response["message"]); // update the DIV
+                    $("#email-show-result").fadeIn("400");
+                    setTimeout(function(){
+                        $('#email-contact-small-block')[0].reset();
+                        $("#email-show-result").fadeOut("400");
+                    }, 5000);
+                },
+                error: function(e, x, r) { // on error..
+                    $('#email-show-result-text').html(response["message"]); // update the DIV
+                    $("#email-show-result").fadeIn("400");
+                    setTimeout(function(){
+                        $('#email-contact-small-block')[0].reset();
+                        $("#email-show-result").fadeOut("400");
+                    }, 5000);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+<script type="text/javascript" src="{% static 'blog/js/other_scripts.js' %}"></script>
 {% block javascript %} {% endblock %}
 </body>
 </html>

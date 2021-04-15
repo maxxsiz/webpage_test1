@@ -10,17 +10,6 @@
 Maksym Mishchuk - Hello world!
 {% endblock %}
 {% block content %}
-<div id="preloader">
-    <svg class="logo-load" width="160px" height="160px">
-        <path class="logo-left-part" d="M32 124 L20 115 L20 35 L37 48 L37 64 L32 60 z" fill="white"></path>
-        <path class="logo-bottom-part" d="M55 77 L55 61 L80 80 L105 61 L105 77 L80 96 z" fill="white"></path>
-        <path class="logo-right-part" d="M128 124 L140 115 L140 35 L123 48 L123 64 L128 60 z" fill="white"></path>
-        <path class="logo-main-part" d="M40 30 L80 60 L120 30 L120 130 L108 140 L108 55 L80 76 L52 55 L52 140 L40 130 z" fill="#6cc0e2"></path>
-    </svg>
-    <div class="typewriter">
-        <p>Maksym Mishchuk</p>
-    </div>
-</div>
 <div class="block-slider-page-changing">
     <div class="slider-general">
         <div class="slider__wrapper-general">
@@ -40,21 +29,23 @@ Maksym Mishchuk - Hello world!
                             <a href="https://github.com/maxxsiz"><img class="icon-contact" src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a>
                             <a href="https://www.facebook.com/maks.miszczuk.1"><img class="icon-contact" src="{% static 'blog/img/icons/facebook_white.png' %}" alt=""></a>
                             <a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA"><img class="icon-contact" src="{% static 'blog/img/icons/youtube_white.png' %}" alt=""></a>
+                            <a href="https://www.linkedin.c om/in/maksym-mishchuk-a65324205/"><img class="icon-contact" src="{% static 'blog/img/icons/linked_in_icon.png' %}" alt=""></a>
                             <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/mail_icon_white.png' %}" alt=""></a>
                         </div>
                         <div id="email-contact-big-block">
                             <div class="email-contact-medium-block">
-                                <form class="email-contact-small-block" method="post">
-                                    {% csrf_token %}
-                                    {{ form }}
-                                    <input class="input-block" id="your_name" placeholder="Name" type="text">
-                                    <input class="input-block" id="your_email" placeholder="E-mail" type="email">
-                                    <textarea class="input-block textarea-form" id="your_message" placeholder="Enter text here..." type="text" required></textarea>
-                                    <button class="btn-submit-contact" type="submit">Send</button>
-                                    <div class="btn-exit-from-contact">
-                                        <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                                <form id="email-contact-small-block" method="post">{% csrf_token %}
+                                    <input class="input-block" id="your_name" name="your_name" placeholder="Name" type="text">
+                                    <input class="input-block" id="your_email" name="your_email" placeholder="E-mail" type="email">
+                                    <textarea class="input-block textarea-form" id="your_message" name="your_message" placeholder="Enter text here..." type="text" required></textarea>
+                                    <button id="btn-submit-contact" type="submit">Send</button>
+                                    <div id="email-show-result">
+                                        <p id="email-show-result-text">RESULT</p>
                                     </div>
                                 </form>
+                                <div class="btn-exit-from-contact">
+                                    <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -386,22 +377,17 @@ Maksym Mishchuk - Hello world!
                                                 <div class="block-slider-project-page">
                                                     <div class="slider-telegram">
                                                         <div class="slider__wrapper-telegram">
-                                                        <div class="slider__items-telegram">
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                            </div>
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                            </div>
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                            <div class="slider__items-telegram">
+                                                                <div class="slider__item-telegram">
+                                                                    <img class="slider__photo-telegram" src="{% static 'blog/img/projects/telegram_bot_1photo.png' %}" alt=''>
+                                                                </div>
+                                                                <div class="slider__item-telegram">
+                                                                    <img class="slider__photo-telegram" src="{% static 'blog/img/projects/telegram_bot_2photo.png' %}" alt=''>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        </div>
-                                                        <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
-                                                        <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                 </div>
@@ -415,9 +401,9 @@ Maksym Mishchuk - Hello world!
                                 <div class="column-info">
                                     <div class="info-text">
                                         <div class="main-info-text">
-                                            <p>Travian Calculator is a mini algorithm with a graphical shell for the Travian browser game. The project was
+                                            <p>Travian Calculator is a small algorithm with a graphical shell for the Travian browser game. The project was
                                                 created at the request of a friend. The task was to calculate how many resources are needed to create a certain amount
-                                                soldiers of a certain type, a certain faction.
+                                                soldiers of some type and some faction.
                                             </p>
                                         </div>
                                         <div class="secondary-info-block">
@@ -429,6 +415,7 @@ Maksym Mishchuk - Hello world!
                                                     <li>Taking into account additional bonuses.</li>
                                                     <li>Different languages.</li>
                                                     <li>Ability to create both .exe and .apk versions.</li>
+                                                    <li>App remember the last selected data (language or nation).</li>
                                                 </ul>
                                                 <p>Libraries and tools used in the project:</p>
                                                 <ul>
@@ -439,24 +426,19 @@ Maksym Mishchuk - Hello world!
                                             </div>
                                             <div class="secondary-info-slider">
                                                 <div class="block-slider-project-page">
-                                                    <div class="slider-telegram">
-                                                        <div class="slider__wrapper-telegram">
-                                                        <div class="slider__items-telegram">
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                            </div>
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
-                                                            </div>
-                                                            <div class="slider__item-telegram">
-                                                                <img class="slider__photo-telegram" src="{% static 'blog/img/telegram_bot_1photo.png' %}" alt=''>
+                                                    <div class="slider-website">
+                                                        <div class="slider__wrapper-website">
+                                                            <div class="slider__items-website">
+                                                                <div class="slider__item-website">
+                                                                    <img class="slider__photo-website" src="{% static 'blog/img/projects/travian_show_1.png' %}" alt=''>
+                                                                </div>
+                                                                <div class="slider__item-website">
+                                                                    <img class="slider__photo-website" src="{% static 'blog/img/projects/travian_show_2.png' %}" alt=''>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        </div>
-                                                        <a class="slider__control-telegram slider__control_prev-telegram" href="#" role="button"></a>
-                                                        <a class="slider__control-telegram slider__control_next-telegram" href="#" role="button"></a>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                 </div>
@@ -465,7 +447,7 @@ Maksym Mishchuk - Hello world!
                             <div class="column col3 pr-website">    
                                 <a class="column-link">
                                     <img class="icon" src="{% static 'blog/img/icons/website-icon.png' %}" alt=''>
-                                    <h2 class="icon-text">My Own Website</h2>
+                                    <h2 class="icon-text">My own website</h2>
                                 </a>
                                 <div class="column-info">
                                     <div class="info-text">
@@ -479,23 +461,9 @@ Maksym Mishchuk - Hello world!
                                                 <p>Libraries and tools used in the project:</p>
                                                 <ul>
                                                     <li>Django - backend part of project.</li>
-                                                    <li>JavaScript - different scripts for sliders and animations (without JQuery).</li>
+                                                    <li>JavaScript - different scripts for sliders and animations.</li>
+                                                    <li>AJAX - asynchronous sending contact emails and feedbacks.</li>
                                                 </ul>
-                                            </div>
-                                            <div class="secondary-info-slider">
-                                                <div class="block-slider-project-page">
-                                                    <div class="slider-website">
-                                                        <div class="slider__wrapper-website">
-                                                        <div class="slider__items-website">
-                                                            <div class="slider__item-website">
-                                                                <img class="slider__photo-website" src="{% static 'blog/img/website-view-old1.png' %}" alt=''>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                        <a class="slider__control-website slider__control_prev-website" href="#" role="button"></a>
-                                                        <a class="slider__control-website slider__control_next-website" href="#" role="button"></a>
-                                                </div>
-                                                </div>
                                             </div>
                                         </div>
                                 </div>
@@ -589,7 +557,7 @@ Maksym Mishchuk - Hello world!
       }
       
       .typewriter p {
-        font-size: 2em;
+        font-size: calc(1.5em + 0.5vw);
         color: white;
         font-family: monospace;
         overflow: hidden;
@@ -630,20 +598,5 @@ Maksym Mishchuk - Hello world!
         to {transform: translate(0,0);}
       }
 </style>
-<script type="text/javascript">
-    var time_start = performance.now();
-    var loader_time = 7000;
-	window.onload = function() {
-        var time_end = performance.now();
-        var last_time = loader_time - (time_end - time_start);
-        if ( last_time < 7000 ) {
-            last_time == 0;
-        }
-		setTimeout(function() {
-			document.getElementById("preloader").style.display = "none";
-		},last_time );
-	};
-</script>
-<script type="text/javascript" src="{% static 'blog/js/script_1.js' %}"></script>
 <script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
 {% endblock %}

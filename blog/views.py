@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm
 import re
@@ -15,25 +15,27 @@ def mobile(request):
 def main(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        print(form)
         if form.is_valid():
+            print("valid")
             your_name = form.cleaned_data['your_name']
             your_message = form.cleaned_data['your_message']
             your_email = form.cleaned_data['your_email']
             recipients = ['werfeteiii@gmail.com']
-            print(str(your_name) + str(your_message) + str(your_email))
+            print("Name: " + str(your_name) + " Email: " + str(your_email) + "Text: " + str(your_message))
             if your_name and your_message and your_email:
+                text = 'Hi, my name {0}, my email is {1} and this is my message: "{2}"'.format(your_name, your_email, your_message)
                 try:
-                    send_mail(your_name, your_message, your_email, recipients)
+                    send_mail(your_name, text, your_email, recipients)
                 except BadHeaderError:
-                    return HttpResponse('Invalid header found.')
-                return HttpResponse('OKS')
+                    return JsonResponse({"error": 'Invalid header found.'})
+                return JsonResponse({"message": 'Your message successfully sent.'})
             else:
-                return HttpResponse('Make sure all fields are entered and valid.')
-
+                return JsonResponse({"message": 'Make sure all fields are entered and valid.'})
+        else:
+            return JsonResponse({"message": 'Make sure all fields are entered and valid.'})
     else:
         form = ContactForm()
-    print(mobile(request))
+
     if mobile(request):
         return render(request, 'blog/main_mobile.html')
     else:

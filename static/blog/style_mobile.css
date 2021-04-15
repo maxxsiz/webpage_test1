@@ -7,20 +7,40 @@ body {
     padding: 0;
     margin: 0;
     border: 0;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
   }
 
-  @media (max-width: 500px) {
-    body { font-size: 16px; } 
+  @media only screen and (max-width: 500px) {
+    p, li { font-size: 1em; }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    .progress-block p { font-size: 1.2em; }  
+    .typewriter p { font-size: 2em; }  
   }
 
-  @media (min-width: 501px) {
-    body { font-size: 24px; } 
+  @media only screen and (min-width: 501px) {
+    p, li { font-size: 1.2em; }
+    h1 { font-size: 2.3em; }
+    h2 { font-size: 1.7em; }
+    .progress-block p { font-size: 1.4em; }  
+    .typewriter p { font-size: 2.3em; } 
   }
 
-  @media (min-width: 1020px) {
-    body { font-size: 36px; } 
+  @media only screen and (min-width: 1024px) {
+    p, li { font-size: 1.5em; }
+    h1 { font-size: 2.6em; }
+    h2 { font-size: 2em; }
+    .progress-block p { font-size: 1.8em; } 
+    .typewriter p { font-size: 2.6em; }  
+  }
+
+  @media only screen and (min-width: 1440px) {
+    p, li { font-size: 2.2em; }
+    h1 { font-size: 4em; }
+    h2 { font-size: 2.7em; }
+    .progress-block p { font-size: 2.3em; } 
+    .typewriter p { font-size: 3em; }   
   }
 
   @keyframes show_pointer {
@@ -111,14 +131,12 @@ body {
   .big-block-blog h1 {
     margin-left: 12vw;
     margin-right: 10vw;
-    font-size: 2em;
     color: var(--third_color);
   }
 
   .big-block-blog p {
     margin-left: 12vw;
     margin-right: 10vw;
-    font-size: 1em;
   }
 
   /* menu contact */
@@ -136,8 +154,8 @@ body {
 
 
   .icon-contact {
-    width: 8vw;
-    height: 8vw;
+    width: 8vmin;
+    height: 8vmin;
     margin:1vh 2vw;
   }
 
@@ -145,7 +163,6 @@ body {
     cursor:pointer;
   }
   /* email contact block*/
-
   #email-contact-big-block {
     position: absolute;
     display: none;
@@ -158,7 +175,9 @@ body {
     z-index: 20;
     margin: 0;
     transition: all 1s ease;
+    z-index: 100;
   }
+
   .email-contact-medium-block {
     position: relative;
     display: flex;
@@ -170,28 +189,45 @@ body {
     margin: 10vh 10vw;
     border-radius: 5vw;
     border: var(--whiteborder);
-    border-radius: 20px;
     background: url(img/backgrounds/contact-background.jpg) 0 0 repeat;
     background-size:100vw 100vh;
   }
 
-  .email-contact-small-block {
+  #email-contact-small-block {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgb(167, 206, 224);
     height: 70vh;
-    width: 70vw;
     margin: 5vh auto;
-    border-radius: 5vw 0 5vw 0;
-    font-size: 1em;
-    font-weight: 900;
+    border-radius: 1vw;
+    font-weight: 700;
     border: var(--whiteborder);
   }
 
+  #email-show-result {
+    position: absolute;
+    display: none;  
+    height: 100%;
+    width: 100%;
+    background-color: var(--third_color);
+    border-radius: 1vw 0 1vw 0;
+    font-weight: 600;
+  }
+  
+  #email-show-result-text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
   .icon-exit-contact {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 2vw;
+    height: 2vw;
     cursor: pointer;
     margin: auto;
   }
@@ -201,10 +237,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -2.5vw;
-    right:-2.5vw;
-    width: 5vw;
-    height: 5vw;
+    top: -2vw;
+    right:-2vw;
+    width: 4vw;
+    height: 4vw;
     border: var(--whiteborder);
     border-radius: 50%;
     background-color: var(--third_color);
@@ -213,9 +249,9 @@ body {
   /* contact form settings*/
   .input-block {
 		font-weight: 700;
-		font-size: 1.4em;
+		font-size: 1.2em;
 		padding: 0.5vw;
-		border: 0.625vw rgb(255, 255, 255) solid;
+		border: 1vw rgba(247, 247, 247, 0.45) solid;
     background: url('transparent');
     margin: 0 1.56vw 1.56vw 1.56vw;
   }
@@ -226,25 +262,26 @@ body {
 		color: #222;
   }
 
-  .btn-submit-contact {
-    font-weight: 700;
-		font-size: 1.5em;
+  #btn-submit-contact {
+    font-weight: 600;
+		font-size: 1.4em;
     height: 10%;
     width: 50%;
     background: url('transparent');
-    border: 0.625vw rgb(255, 255, 255) solid;
+    border: 1vw rgba(247, 247, 247, 0.45) solid;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 auto;
     color:rgb(44, 43, 43);
+    text-align: center;
   }
 
   .textarea-form {
-    font-size: 1.3em;
     height: 40%;
     resize: none;
     columns: 60;
   }
+
 /* column page setting */
   .column {
     position: absolute;
@@ -262,19 +299,19 @@ body {
   }
 
   .icon {
-    margin-bottom:3vh;
-    width: 20vw;
-    height: 20vw;
+    width: 20vmin;
+    height: 20vmin;
     align-self:center;
     transition: all .5s ease-in-out;
   }
 
   .icon-text {
+    margin-top:1vh;
+    margin-bottom:3vh;
     text-decoration: none;
     color: rgb(255, 255, 255);
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.3em;
   }
 
   .column-info {
@@ -284,11 +321,12 @@ body {
   }
   
   .info-text {
+    max-height: 66vh;
+    overflow: scroll;
     position: relative;
     margin-left:auto;
     margin-right: 0;
     width: calc(100vw - 2vw - 2vh - 4vw);
-    font-size: 1em;
     background-color: rgba(82, 82, 82, 0.7) ;
     border-top: var(--whiteborder);
     border-bottom: var(--whiteborder);
@@ -305,10 +343,16 @@ body {
     left:0;
     width: 100%;
   }
+
   .info-text ul {
     list-style: none;
     padding-left: 2vw;
     font-weight: bold;
+  }
+
+  .info-text li {
+    list-style-type: square;
+    margin: 1vh 3vw;
   }
 
   .secondary-info-text li:before {
@@ -616,13 +660,12 @@ body {
 
 .progress-block p {
   text-align: center;
-  font-size: 1.2em;
   margin-bottom: 0;
 }
 .progress-bar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 3vh;
   width: 60%;
   margin: 1vh auto;
@@ -632,16 +675,16 @@ body {
 }
 
 .progress-bar div {
-  display: inline-block;
-  width: 31%;
+  width: 32%;
   height: 2vh;
   border-radius: 3px;
-  margin: .5vh .25vh .5vh .25vh;
+  margin: 0.5vh 0 0.5vh 0;
 }
 
 .progress-bar span {
- display: inline-block;
+ display: block;
  height: 2vh;
+ display: block;
  border-radius: 3px;  
  overflow: hidden;
  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
@@ -673,12 +716,20 @@ body {
   width: 50%;
 }
 
+.sqlite .progress-green {
+  width: 0%;
+}
+
 .git .progress-red {
   width: 100%;
 }
 
 .git .progress-orange {
   width: 100%;
+}
+
+.git .progress-green {
+  width: 0%;
 }
 
 .CSS3 .progress-red {
@@ -689,6 +740,10 @@ body {
   width: 100%;
 }
 
+.CSS3 .progress-green {
+  width: 0%;
+}
+
 .python .progress-red {
   width: 100%;
 }
@@ -697,8 +752,20 @@ body {
   width: 50%;
 }
 
+.python .progress-green {
+  width: 0%;
+}
+
 .django .progress-red {
   width: 75%;
+}
+
+.django .progress-orange {
+  width: 0%;
+}
+
+.django .progress-green {
+  width: 0%;
 }
 
 .html .progress-red {
@@ -709,10 +776,21 @@ body {
   width: 100%;
 }
 
+.html .progress-green {
+  width: 0%;
+}
+
 .javasctipt .progress-red {
   width: 50%;
 }
 
+.javasctipt .progress-orange {
+  width: 0%;
+}
+
+.javasctipt .progress-green {
+  width: 0%;
+}
 
 /* hobbies photos */
 .slider__item-hobbies > div{
