@@ -52,7 +52,5 @@ window.addEventListener('touchmove', function() {
 
 Visible (element);
     
-function show_big_img(){
-  
-  
-}
+
+

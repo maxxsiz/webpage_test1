@@ -23,17 +23,19 @@
 </div>
 {% block content %} {% endblock %}
 <script type="text/javascript">
-    var time_start = performance.now();
+    var IsAlreadyLoad = function() {
+        if ( document.readyState === "complete" ) {
+            document.getElementById("preloader").style.display = "none";
+        } else {
+            IsAlreadyLoad()
+        };
+    };
     var loader_time = 7000;
 	window.onload = function() {
         var time_end = performance.now();
-        var last_time = loader_time - (time_end - time_start);
-        if ( last_time < 7000 ) {
-            last_time == 0;
-        }
 		setTimeout(function() {
-			document.getElementById("preloader").style.display = "none";
-		},last_time );
+			    IsAlreadyLoad();
+		},loader_time );
 	};
 </script>
 <script type="text/javascript">
