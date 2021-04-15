@@ -84,7 +84,7 @@ body {
   #main_page {
     display: flex;
     flex-direction: row;
-    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/szklarska_mountain_gray.png) center;
+    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/mountain_gray.png) center;
     background-size: cover;
   }
 
@@ -99,7 +99,7 @@ body {
   }
 
   #skills_page {
-    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/szklarska_mountain_gray.png) center;
+    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/mountain_gray.png) center;
     background-size: cover;
   }
 
@@ -805,12 +805,12 @@ body {
 }
 
 .hobbie-paintball {
-  background: url(img/hobbies/paintball_brothers.JPG) 0 0 no-repeat;
+  background: url(img/hobbies/paintball_hobbies.jpg) 0 0 no-repeat;
   background-size:auto 100vh;
 }
 
 .hobbie-rollerblade {
-  background: url(img/hobbies/me_friends_icering.JPG) 0 0 no-repeat;
+  background: url(img/hobbies/icering_hobbies.JPG) 0 0 no-repeat;
   background-size:auto 100vh;
 }
 
