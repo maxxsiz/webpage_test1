@@ -1,0 +1,654 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+{% block doctype %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+{% endblock %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'blog/style_mobile.css' %}">
+{% endblock %}
+{% block title %}
+Maksym Mishchuk - Hello world!
+{% endblock %}
+{% block content %}
+<div class="slider">
+    <div class="slider__wrapper">
+        <div class="slider__items">
+            <div class="slider__item">
+                <div id="main_page" class="page">
+                    <div class="big-block-blog">
+                        <h1>Hi, I am Maks</h1>
+                        <p>... and I am a beginner <span style="color: #6cc0e2">Python</span> programmer. 
+                            My path as a programmer began in 2019 when I realized that I was going the wrong way.</p>
+                        <p>Right now I'm trying to expand and improve my programming skills by writing different sometimes banal, sometimes unique projects.</p>
+                        <p>I also study the <span style="color: #6cc0e2">economic</span> component, which gives me a more professional vision of the various processes. 
+                            In the future I want to do my private projects in this direction.</p>
+                        <div class="blog-col">
+                            <a href="https://www.instagram.com/maxxsiz/"><img class="icon-contact" src="{% static 'blog/img/icons/instagram_white.png' %}" alt=""></a>
+                            <a href="https://github.com/maxxsiz"><img class="icon-contact" src="{% static 'blog/img/icons/github_white.png' %}" alt=''></a>
+                            <a href="https://www.facebook.com/maks.miszczuk.1"><img class="icon-contact" src="{% static 'blog/img/icons/facebook_white.png' %}" alt=""></a>
+                            <a href="https://www.youtube.com/channel/UCNp3ltUUB9vcJ9yAvSN0tyA"><img class="icon-contact" src="{% static 'blog/img/icons/youtube_white.png' %}" alt=""></a>
+                            <a href="https://www.linkedin.c om/in/maksym-mishchuk-a65324205/"><img class="icon-contact" src="{% static 'blog/img/icons/linked_in_icon.png' %}" alt=""></a>
+                            <a class="btn-icon-contact" role="button" onclick="contact_email()"><img class="icon-contact" src="{% static 'blog/img/icons/mail_icon_white.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div id="email-contact-big-block">
+                        <div class="email-contact-medium-block">
+                            <form id="email-contact-small-block" method="post">{% csrf_token %}
+                                <input class="input-block" id="your_name" name="your_name" placeholder="Name" type="text">
+                                <input class="input-block" id="your_email" name="your_email" placeholder="E-mail" type="email">
+                                <textarea class="input-block textarea-form" id="your_message" name="your_message" placeholder="Enter text here..." type="text" required></textarea>
+                                <button id="btn-submit-contact" type="submit">Send</button>
+                                <div id="email-show-result">
+                                    <p id="email-show-result-text">RESULT</p>
+                                </div>
+                            </form>
+                            <div class="btn-exit-from-contact">
+                                <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div id="aboutme_page" class="page">
+                    <div class="slider-aboutme">
+                        <div class="slider__wrapper-aboutme">
+                            <div class="slider__items-aboutme">
+                                <div class="slider__item-aboutme">
+                                    <div id="first_slider-aboutme" class="first_slider">
+                                        <span class="slider-direction"></span>
+                                        <div class="animated-title">
+                                            <div class="text-top">
+                                              <div>
+                                                <span>About me.</span>
+                                                <span>And my life.</span>
+                                              </div>
+                                            </div>
+                                            <div class="text-bottom">
+                                                <div>Swipe me left...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-aboutme">
+                                    <div class="column">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/study_icon.png' %}" alt="">
+                                            <h2 class="icon-text skill-col">My studies</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>At the very beginning, I entered the Krakow Polytechnic at the Faculty of Biotechnology. The reason 
+                                                    for this decision was my father's willingness to continue his career. Two years later, I realized that this way wasn`t appropriate for me.</p>
+                                                <p>Then I entered the University of Wroclaw at the Faculty of Informatics, and now I develop my skills independently. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-aboutme">
+                                    <div class="column col5 skill-col">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/it_sphere_icon.png' %}" alt="">
+                                            <h2 class="icon-text">Why IT world?</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>I always spent a lot of time with computer, that is why I was offten approached by my teachers and classmates in order to solve various problems.
+                                                When I got bored of biotechnology, I began to consider different options in areas which I liked the most. So I chose on IT.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-aboutme">
+                                    <div class="column col5 skill-col">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/workandstudy_icon.png' %}" alt="">
+                                            <h2 class="icon-text">How i Code?</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>I am currently learning programming languages ​​on my own.
+                                                    The learning process is about trying to create larger or smaller projects. While achieving my goals, 
+                                                    I face new problems and try to find tools to solve them.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-aboutme">
+                                    <div class="column col5 skill-col">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/skills_icon.png' %}" alt="">
+                                            <h2 class="icon-text">My personality</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>First of all, I am introvert kind of person, I prefer to spend free time at the computer than walking in the city.</p> 
+                                                <p>In addition, I consider myself as a very responsible person, this refers to both private and professional parts of my life.</p>
+                                                <p>I can be a leader in teamwork, but only when I am confident of my professional abilities. 
+                                                    But if I am only an ordinary member of the group, I am always trying to do my best.</p>
+                                                <p>As a rule I am always trying to find solutions in emerging problems without bothering my supervisors.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-aboutme">
+                                    <div class="column col5 skill-col">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/unknownperson_icon.png' %}" alt="">
+                                            <h2 class="icon-text">Work experience</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>I do not have any professional practice in the field of IT. Before start working I wanted to be confident in my abilities as a programmer that's 
+                                                why I didn't start looking for a job after three months of studing like most do.</p> 
+                                                <p>Of course, I worked in gastronomy like most students and also did an internship at an agronomiс company as a consultant.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="slider__control-aboutme slider__control_next-aboutme" href="#" role="button" ></a>
+                        <a class="slider__control-aboutme slider__control_next-aboutme" href="#" role="button" ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div id="skills_page" class="page">
+                    <div class="slider-skills">
+                        <div class="slider__wrapper-skills">
+                            <div class="slider__items-skills">
+                                <div class="slider__item-skills">
+                                    <div class="first_slider">
+                                        <span class="slider-direction"></span>
+                                        <div class="animated-title">
+                                            <div class="text-top">
+                                              <div>
+                                                <span>My skills.</span>
+                                                <span>In detail.</span>
+                                              </div>
+                                            </div>
+                                            <div class="text-bottom">
+                                                <div>Swipe me left...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column sqlite">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/database.png' %}" alt="">
+                                            <h2 class="icon-text skill-col">SQLite</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 10+ months.</p>
+                                                <p>Statistics has always attracted me, recently I used Excel and Google spreadsheets for various purposes.
+                                                    After learning the basics of <span style="color: #6cc0e2">SQLite</span>, I decided to use the knowledge gained in practice in the project of the calculator
+                                                    for browser game and processing of information on cryptocurrency rates.</p>
+                                                <div class="progress-block">
+                                                    <p class="typewriter">Advanced beginner</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column git">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/git.png' %}" alt="">
+                                            <h2 class="icon-text">Git</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 15+ months.</p>
+                                                <p>I first met <span style="color: #6cc0e2">GIT</span> at university, it was a class dedicated to working with Linux. The more specific
+                                                    task was to force us to <span style="color: #6cc0e2">use only the terminal</span>, from creating folders to
+                                                    full control over the project on GitHub.</p>
+                                                <div class="progress-block">
+                                                    <p>Advanced beginner</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column CSS3">
+                                        <a class="column-link">
+                                        <img class="icon" src="{% static 'blog/img/icons/language-css.png' %}" alt="">
+                                        <h2 class="icon-text">CSS3</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 3+ months.</p>
+                                                <p>Now I am studing <span style="color: #6cc0e2">CSS</span> parallel to creating my portfolio. I do not see any intentions to go much deeper into the functionality,
+                                                    since I'm not going to become a frontend specialist.</p>
+                                                <div class="progress-block">
+                                                    <p>Advanced beginner</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column python">
+                                        <a class="column-link">
+                                        <img class="icon" src="{% static 'blog/img/icons/language-python.png' %}" alt="">
+                                        <h2 class="icon-text">Python</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 15+ months.</p>
+                                                <p><span style="color: #6cc0e2">Python</span> is the main programming language for me.
+                                                I started learning him at the university, but now I do it mostly by myself, 
+                                                because the university was more inclined to teach us different algorithms and performance,
+                                                instead of various functionalities.</p>
+                                                <p>List of used tools:</p>
+                                                <ul>
+                                                    <li>NumPy</li>
+                                                    <li>Pillow</li>
+                                                    <li>Plotly</li>
+                                                    <li>BeautifulSoup</li>
+                                                    <li>Django</li>
+                                                    <li>Kivy</li>
+                                                    <li>KivyMD</li>
+                                                    <li>Telegram Bot API</li>
+                                                    <li>Pyautogui</li>
+                                                </ul>
+                                                <p>I don't have a specific list of frameworks to study. I try to learn <span style="color: #6cc0e2">by creating</span> different <span style="color: #6cc0e2">projects</span>.
+                                                    This way I research new libraries and deep my knowledge in <span style="color: #6cc0e2">Python</span>.</p>
+                                                <div class="progress-block">
+                                                    <p>Advanced beginner</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column django">
+                                        <a class="column-link">
+                                        <img class="icon" src="{% static 'blog/img/icons/framework-django.png' %}" alt="">
+                                        <h2 class="icon-text">Django</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 3+ months.</p>
+                                                <p>Of course, <span style="color: #6cc0e2">Django</span> could not be missed by me while studying various libraries. <span style="color: #6cc0e2">Django</span> can help me to implement my ideas into life in the future.
+                                                    One of such ideas was to create an online service for friends parties, where various board games would be easily accessed.
+                                                </p>
+                                                <div class="progress-block">
+                                                    <p>Basic knowledge</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column html">
+                                        <a class="column-link">
+                                        <img class="icon" src="{% static 'blog/img/icons/language-html.png' %}" alt="">
+                                        <h2 class="icon-text">HTML5</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 4+ months.</p>
+                                                <p><span style="color: #6cc0e2">HTML</span> is very easy and quick to learn. Similarly to the situation with CSS, I'm not going
+                                                   become an <span style="color: #6cc0e2">HTML</span> specialist.
+                                                </p>
+                                                <div class="progress-block">
+                                                    <p>Advanced beginner</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-skills">
+                                    <div class="column javasctipt">
+                                        <a class="column-link" href="#javascript-info">
+                                        <img class="icon" src="{% static 'blog/img/icons/language-javascript1.png' %}" alt="">
+                                        <h2 class="icon-text">JavaScript</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Learning time: 3+ months.</p>
+                                                <p>During working with <span style="color: #6cc0e2">CSS</span> and <span style="color: #6cc0e2">HTML</span> I needed a tool to add some compicated animation to my website.
+                                                    Of course, <span style="color: #6cc0e2">JavaScript</span> was the perfect choise. JS is the third serious programming language I've come across.
+                                                    After <span style="color: #6cc0e2">Python</span>, it was quite easy to enter an unusual structure. My knowledge of JS at the moment
+                                                    is basic, I took a few online courses, including OOP.
+                                                </p>
+                                                <div class="progress-block">
+                                                    <p>Basic knowledge</p>
+                                                    <div class="progress-bar">
+                                                        <div>
+                                                            <span class="progress-red"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-orange"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="progress-green"></span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="slider__control-skills slider__control_prev-skills" href="#" role="button" ></a>
+                        <a class="slider__control-skills slider__control_next-skills" href="#" role="button" ></a>                   
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div id="projects_page" class="page">
+                    <div class="slider-projects">
+                        <div class="slider__wrapper-projects">
+                            <div class="slider__items-projects">
+                                <div class="slider__item-projects">
+                                    <div class="first_slider">
+                                        <span class="slider-direction"></span>
+                                        <div class="animated-title">
+                                            <div class="text-top">
+                                              <div>
+                                                <span>My projects.</span>
+                                                <span>The biggest.</span>
+                                              </div>
+                                            </div>
+                                            <div class="text-bottom">
+                                              <div>Swipe me left...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-projects pr-telbot">
+                                    <div class="column">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/telegram-icon.png' %}" alt="">
+                                            <h2 class="icon-text">Telegram BOT</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>The idea was to make a helper bot for the clan in the game Clash Royale.
+                                                    The bot was used in practice, but was not deployed
+                                                    on hosting. The bot is currently disabled and not in use.
+                                                    An update will be required for further use.</p>
+                                                <p>Bot features:</p>
+                                                <ul>
+                                                    <li>Collecting information from internet.</li>
+                                                    <li>Analysis of information and processing.</li>
+                                                    <li>Contact with players and provide information.</li>
+                                                </ul>
+                                                <p>Libraries and tools used in the project:</p>
+                                                <ul>
+                                                    <li>Python - main programing language.</li>
+                                                    <li>BeautifulSoup - web scraping.</li>
+                                                    <li>SQLite - main database.</li>
+                                                    <li>Plotly - more modern analogue of matplotlib.</li>
+                                                    <li>Telegram Bot API - the library on which the bot was based.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-projects pr-calc">
+                                    <div class="column">
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/calc-icon.png' %}" alt=''>
+                                            <h2 class="icon-text">Travian Troop Calculator</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>Travian Calculator is a mini algorithm with a graphical shell for the Travian browser game. The project was
+                                                    created at the request of a friend. The task was to calculate how many resources are needed to create a certain amount
+                                                    soldiers of a certain type, a certain faction.</p>
+                                                <p>Program features:</p>
+                                                <ul>
+                                                    <li>Ability to change the type and faction of the warrior.</li>
+                                                    <li>Calculation of additional information.</li>
+                                                    <li>Taking into account additional bonuses.</li>
+                                                    <li>Different languages.</li>
+                                                    <li>Ability to create both .exe and .apk versions.</li>
+                                                    <li>App remember the last selected data (language or nation).</li>
+                                                </ul>
+                                                <p>Libraries and tools used in the project:</p>
+                                                <ul>
+                                                    <li>Python - main programing language.</li>
+                                                    <li>Kivy and KivyMD - graphic component of project.</li>
+                                                    <li>SQLite - main database.</li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-projects pr-website">
+                                    <div class="column">    
+                                        <a class="column-link">
+                                            <img class="icon" src="{% static 'blog/img/icons/website-icon.png' %}" alt=''>
+                                            <h2 class="icon-text">My Own Website</h2>
+                                        </a>
+                                        <div class="column-info">
+                                            <div class="info-text">
+                                                <p>As I learned programming, I decided to try web programming,from backend to frontend and
+                                                    ending with deploying. Of course, the first thing that came to mind is portfolio website. At that time I had minimal knowledge of HTML,
+                                                    and zero in JavaScript and CSS. And of course, it was the first meeting with such a popular framework as Django. </p>
+                                                <p>Libraries and tools used in the project:</p>
+                                                <ul>
+                                                    <li>Django - backend part of project.</li>
+                                                    <li>JavaScript - different scripts for sliders and animations.</li>
+                                                    <li>AJAX - asynchronous sending contact emails and feedbacks.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="slider__control-skills slider__control_prev-projects" href="#" role="button" ></a>
+                        <a class="slider__control-skills slider__control_next-projects" href="#" role="button" ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div id="hobbies_page" class="page">
+                    <div class="slider-hobbies">
+                        <div class="slider__wrapper-hobbies">
+                            <div class="slider__items-hobbies">
+                                <div class="slider__item-hobbies">
+                                    <div class="first_slider">
+                                        <span class="slider-direction"></span>
+                                        <div class="animated-title">
+                                            <div class="text-top">
+                                              <div>
+                                                <span>My hobbies.</span>
+                                                <span>Not only sport.</span>
+                                              </div>
+                                            </div>
+                                            <div class="text-bottom">
+                                              <div>Swipe me left...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-ski-snowboard"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-paintball"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-rollerblade"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-rollerskate"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-videomake"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-gaming"></div>
+                                </div>
+                                <div class="slider__item-hobbies">
+                                    <div class="hobbie-printer3d"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="slider__control-skills slider__control_prev-hobbies" href="#" role="button" ></a>
+                        <a class="slider__control-skills slider__control_next-hobbies" href="#" role="button" ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="slider__control_block slider__control slider__control_prev" href="#" role="button" ></a>
+    <a class="slider__control_block slider__control slider__control_next" href="#" role="button" >
+        <svg class="slider__control slider__control_next" href="#" role="button" width="100vw" height="10vh"  >
+            <circle class="circle-1" cx="50vw" cy="3vh" r=".9vh" fill="#6cc0e2" />
+            <circle class="circle-2" cx="50vw" cy="6vh" r=".7vh" fill="#6cc0e2" />
+            <circle class="circle-3" cx="50vw" cy="9vh" r=".5vh" fill="#6cc0e2" />
+        </svg>
+    </a>
+</div>
+{% endblock %}
+{% block javascript %}
+<style type="text/css">
+    #preloader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background-color: rgb(54, 54, 54);
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        animation:show_load_block 2s ease-in forwards;
+        animation-delay: 5s;
+        justify-content: center;
+        align-items:center;
+      }
+      
+      .logo-bottom-part {
+        animation: logo-bottom-part 2s ease-in forwards;
+      }
+      
+      .logo-left-part {
+        animation: logo-left-part 2s ease-in forwards;
+      }
+      
+      .logo-right-part {
+        animation: logo-right-part 2s ease-in forwards;
+      }
+      
+      .typewriter p {
+        font-size: calc(1.8em + 1vw);
+        color: white;
+        font-family: monospace;
+        overflow: hidden;
+        border-right: .15em solid #6cc0e2;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #6cc0e2 }
+      }
+      @keyframes logo-left-part {
+        from {transform: translate(20px,-5px);}
+        20% {transform: translate(20px,-5px);}
+        40% {transform: translate(0,0);}
+        to {transform: translate(0,0);}
+      }
+    
+      @keyframes logo-bottom-part {
+        from {transform: translateY(-20px);}
+        20% {transform: translateY(-20px);}
+        40% {transform: translateY(0px);}
+        to {transform: translateY(0px);}
+      }
+    
+      @keyframes logo-right-part {
+        from {transform: translate(-20px,-5px);}
+        20% {transform: translate(-20px,-5px);}
+        40% {transform: translate(0,0);}
+        to {transform: translate(0,0);}
+      }
+</style>
+<script type="text/javascript" src="{% static 'blog/js/slider_scripts_mobile.js' %}"></script>
+{% endblock %}
