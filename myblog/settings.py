@@ -120,4 +120,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'maksym.mishchuk.py@gmail.com'
-EMAIL_HOST_PASSWORD = "MM_Gmail_roza1120"
+EMAIL_HOST_PASSWORD = "MM_Py_Gmail_asus1120"

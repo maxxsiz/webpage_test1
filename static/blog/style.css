@@ -1,7 +1,7 @@
 body {
     --third_color: #6cc0e2; 
     --inv: #fff;
-    --whiteborder: 5px white solid;
+    --whiteborder: 5px var(--inv) solid;
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
     padding: 0;
@@ -14,7 +14,6 @@ body {
 
   @media screen and (max-width:1023px) {
     body {font-size: 50%;}
-  
   }
 
   @media screen and (min-width:1024px) {
@@ -39,15 +38,22 @@ body {
   }
 
   @keyframes change-color {
-    from {background-color: #6cc1e200;}
-    to {background-color: var(--third_color);}
+    100% {
+      background-color: var(--third_color);   
+    }
   }
-
-  @keyframes do_visible {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
-
 
   /* page settigns */
   .page {
@@ -69,8 +75,10 @@ body {
   }
 
   #hobbies_page {
-    background: rgba(128, 128, 128, 0.068) url(img/hobbies/viedo_making.jpg) center;
-    background-size: cover;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, rgb(44, 43, 43), #919191, rgb(44, 43, 43), #8b8b8b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
 
   #skills_page {
@@ -98,12 +106,10 @@ body {
 
   .col7 {
     flex: calc(100vw/7);
-    filter: grayscale(1);
   }
 
   .col7:hover {
     flex: 0 0 calc(100vw/3);
-    filter: grayscale(0);
   }
 
   .col5 {
@@ -116,11 +122,26 @@ body {
 
   .col3 {
     flex: calc(100vw/3);
-    filter: grayscale(1);
   }
 
   .col3:hover {
     flex: 0 0 calc(100vw*0.7);
+  }
+
+  .col3::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    filter: grayscale(1);
+    z-index: -1;
+  }
+  
+  .col3:hover {
+    flex: 0 0 calc(100vw*0.7);
+  }
+
+  .col3:hover::before {
     filter: grayscale(0);
   }
 
@@ -161,17 +182,13 @@ body {
     overflow: hidden;
     font-size: 1.5em;
   }
-  
-  .hobbies-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0;
-    height: 100vh;
-    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-  }
+
 
   /* setting how to show a column info*/
+  .column:hover .background-photo {
+    opacity: 0;
+  }
+
   .column:hover .icon {
     transform: scale(1.5);
   }
@@ -184,11 +201,6 @@ body {
   .column:hover .column-info {
     height: 67vh;
     transition-delay: .5s;
-  }
-
-  .column:hover .hobbies-info {
-    animation: do_visible .5s both;
-    animation-delay: .7s;
   }
 
   .column-info:before, .column-info:after {
@@ -212,7 +224,7 @@ body {
     left: 50%;
     height: 100%;
     width: 0;
-    border: 2px white solid;
+    border: 2px var(--inv) solid;
     border-left: 0;
     border-right: 0;
   }
@@ -277,47 +289,9 @@ body {
 
   .secondary-info-text li:before {
     padding-right:0.5vw;
-    color: white;
+    color: var(--inv);
     content: "\2714";
     transition-duration: 0.5s;
-  }
-
-  /* hobbies setting page */
-  .hobbies-info:before, .hobbies-info:after {
-    content: '';
-    position: absolute;
-    transition: inherit;
-    z-index: -1;
-    background-color: rgba(94, 93, 93, 0.685);
-    transition-delay: .85s;
-  }
-
-  .hobbies-info:before {
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 50%;
-  }
-      
-  .hobbies-info:after {
-    bottom: 0;
-    right: 0;
-    height: 0;
-    width: 50%;
-  }
-      
-  .hobbies-info:hover:before {
-    height: 100%;
-  }
-      
-  .hobbies-info:hover:after {
-    height: 100%;
-  }
-
-  .hobbies-info p {
-    text-align: justify;
-    margin: 0 3vw;
-    font-size: 1.2em;
   }
 
   /* setting to main page*/
@@ -343,7 +317,7 @@ body {
     left:0;
     width:4px;
     height:30vh;
-    background:rgb(255, 255, 255)
+    background:var(--third_color)
   }
 
   .big-block-blog::before {
@@ -353,7 +327,7 @@ body {
     right:0;
     width:4px;
     height:30vh;
-    background:rgb(255, 255, 255)
+    background:var(--third_color)
   }
 
   .bottom-block-blog {
@@ -383,14 +357,17 @@ body {
     height: 100vh;
     z-index: 3;
     justify-content: center;
+    background-image: linear-gradient(-20deg,0% rgba(255, 255, 255, 0),100% #6cc0e2);
   }
 
   .blog-col a {
+    position: relative;
     margin: 1.25vw; 
     width: 2.5vw;
     height: 2.5vw;
     background-color: #6cc1e200;
     border-radius: 50%;
+    transform: scale(1.2);
   }
 
   .icon-contact {
@@ -401,6 +378,7 @@ body {
 
   .blog-col a:hover{
     animation-iteration-count: 1;
+    animation-direction: alternate;
     animation: change-color 1s both;
   }
 
@@ -433,7 +411,7 @@ body {
     height: 80vh;
     margin: 10vh 10vw;
     border-radius: 5vw;
-    border: var(--whiteborder);
+    border: var(- var(--inv)border);
     background: url(img/backgrounds/contact-background.jpg) 0 0 repeat;
     background-size:100vw 100vh;
   }
@@ -448,7 +426,7 @@ body {
     margin: 5vh auto;
     border-radius: 1vw 0 1vw 0;
     font-weight: 700;
-    border: var(--whiteborder);
+    border: var(- var(--inv)border);
   }
 
   #email-show-result {
@@ -487,7 +465,7 @@ body {
     right:-2vw;
     width: 4vw;
     height: 4vw;
-    border: var(--whiteborder);
+    border: var(- var(--inv)border);
     border-radius: 50%;
     background-color: var(--third_color);
   }
@@ -530,53 +508,18 @@ body {
   }
 
    /* setting to projects page*/
-  .pr-telbot {
+  .pr-telbot::before {
     background: url(img/backgrounds/bc_telbot.jpg) 0 0 repeat;
     background-size:auto 100vh;
   }
 
-  .pr-website{
+  .pr-website::before{
     background: url(img/backgrounds/bc_website.jpg) 0 0 repeat;
     background-size:auto 100vh;
   }
 
-  .pr-calc{
+  .pr-calc::before{
     background: url(img/backgrounds/bc_calculator.jpg) 0 0 repeat;
-    background-size:auto 100vh;
-  }
-
-   /* setting to hobbies page*/
-   .hobbie-ski-snowboard {
-    background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-paintball {
-    background: url(img/hobbies/paintball_hobbies.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-rollerblade{
-    background: url(img/hobbies/icering_hobbies.JPG) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-rollerskate {
-    background: url(img/backgrounds/bg_skate.jpg) 0 0 no-repeat;
-    background-size:auto 100vh;
-  }
-
-  .hobbie-videomake {
-    background: url(img/backgrounds/bg_gopro.jpg) 0 0 no-repeat;
-    background-size:auto 130vh;
-  }
-
-  .hobbie-gaming {
-    background: url(img/backgrounds/bg_ski.jpg) 0 0 no-repeat;
-  }
-
-  .hobbie-printer3d {
-    background: url(img/hobbies/3dprinting_hobbies.jpg) 0 0 no-repeat;
     background-size:auto 100vh;
   }
 
@@ -751,7 +694,7 @@ body {
     cursor: pointer;
     background-color: rgb(119, 119, 119);
     background-clip: padding-box;
-    border: 1px solid white;
+    border: 1px solid var(--inv);
     padding-left: 0;
   }
 
@@ -857,6 +800,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   justify-content: center;
+  padding-inline-start: 0;
 }
 
 .slider__indicators-general li {
@@ -865,7 +809,7 @@ body {
   justify-content: center;
   width: 6vw;
   height: 4vh;
-  border-bottom: 0.9vh white solid;
+  border-bottom: 0.9vh var(--inv) solid;
   transition: all .5s ease-in-out;
   cursor: pointer;
   margin: 0 1.5vw 2vh 1.5vw;
@@ -897,143 +841,178 @@ body {
   opacity: 1;
 }
 
+.slider__indicators-general:hover .slider__indicators__name-general{
+  animation: none;
+}
+
 .slider__indicators-general li.active .slider__indicators__name-general{
   color: var(--third_color);
   transition: all .5s ease-in-out;
 }
 
-/* progress bar */
-.progress-block {
+
+
+/* hobbie slider */
+@keyframes opacity_full {
+  to {opacity: 1;}
+}
+
+.dg-container{
   display: flex;
-  flex-direction: column;
+	width: 100vw;
+	height: 90vh;
+}
+.dg-wrapper{
+	width: 45vw;
+	height: calc(45vw*9/16);
+	margin: auto;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+}
+.dg-wrapper .hobbies{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+  background-color: gray;
+	left: 0;
+	top: 0;
+  border: .5vh var(--inv) solid;
+}
+.dg-wrapper .hobbies.dg-transition{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.dg-wrapper .hobbies img{
+	display: block;
+  width: 100%;
+  height: 100%;
+}
+.dg-wrapper .hobbies div.background-photo{
+	width: 100%;
+	display: block;
+	position: absolute;
+  transition: all 1s ease-in-out;
+}
+.dg-wrapper .hobbies div.hobbies-info{
+	position: absolute;
+  opacity: 0;
+  background-color: rgba(128, 128, 128, 0.452);
 }
 
-.progress-block p {
-  text-align: center;
-  font-size: 1.2em;
-  margin-bottom: 0;
+.dg-wrapper .hobbies video{
+	width: 100%;
+  display: none;
+  opacity: 0;
 }
 
-.progress-bar {
+.dg-wrapper .hobbies.dg-center div.background-photo{
+	opacity: 0;
+}
+
+.dg-wrapper .hobbies.dg-center div.hobbies-info{
+	opacity: 1;
+}
+
+.dg-wrapper .hobbies.dg-center video{
+  display: block;
+	opacity: 1;
+}
+
+.dg-container nav{
+  position:absolute;
+  display: flex;
+  margin-top: 10vh;
+  width: 100vw;
+  height: 80vh;
+	z-index: 1000;
+  justify-content: space-between;
+}
+.dg-container nav span{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  height: 3vh;
-  width: 60%;
-  margin: 1vh auto;
-  border-radius: 3px; 
-  background-color: rgba(128, 128, 128, 0.767);
-  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+  justify-content: space-between;
+	cursor:pointer;
+	width: 25vw;
+	height: 100%;
 }
 
-.progress-bar div {
-  width: 32%;
-  height: 2vh;
-  border-radius: 3px;
-  margin: .5vh 0 .5vh 0;
-}
-
-.progress-bar span {
- display: block;
- height: 2vh;
- border-radius: 3px;  
- overflow: hidden;
- box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
- width: 0;
-}
-
-.progress-red {
-  background-color:rgba(255, 0, 0, 0.4);
-  transition: all .4s ease-in-out;
-  transition-delay: 1s;
-}
-
-.progress-orange {
-  background-color:rgba(255, 166, 0, 0.4);
-  transition: all .4s ease-in-out;
-  transition-delay: 1.5s;
-}
-
-.sqlite .progress-red {
+/* hobbies sliders view */
+.hobbies-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   width: 100%;
+  z-index: 40;
+  transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.sqlite .progress-orange {
-  width: 50%;
+.background-video {
+  position: absolute;
+  max-height: 100%;
+  margin: 0 auto;
+  transition: all 0.5 ease-in-out;
+  z-index: 20;
 }
 
-.sqlite .progress-green {
-  width: 0%;
-}
-
-.git .progress-red {
+.background-photo {
+  position: absolute;
+  height: 100%;
   width: 100%;
+  transition: all 0.5 ease-in-out;
+  z-index: 30;
 }
 
-.git .progress-orange {
-  width: 100%;
+.hobbie-ski-snowboard .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/hobbies/ski_hobbies.jpg) center no-repeat;
+  background-size: 100% auto;
 }
 
-.git .progress-green {
-  width: 0%;
+.hobbie-paintball .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/hobbies/paintball_hobbies.jpg) center no-repeat;
+  background-size: 100% auto;
 }
 
-.CSS3 .progress-red {
-  width: 100%;
+.hobbie-rollerblade .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/hobbies/icering_hobbies.JPG) center no-repeat;
+  background-size: 100% auto;
 }
 
-.CSS3 .progress-orange {
-  width: 100%;
+.hobbie-rollerskate .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_skate.jpg) center no-repeat;
+  background-size: 100% auto;
 }
 
-.CSS3 .progress-green {
-  width: 0%;
+.hobbie-videomake .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_videomaking.jpg) center no-repeat;
+  background-size: 100% auto;
 }
 
-.python .progress-red {
-  width: 100%;
+.hobbie-gaming .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_gopro.jpg) center  no-repeat;
+  background-size: 100% auto;
 }
 
-.python .progress-orange {
-  width: 50%;
+.hobbie-printer3d .background-photo {
+  background: rgba(83, 83, 83, 0.76) url(img/hobbies/3dprinting_hobbies.jpg) center no-repeat;
+  background-size: 100% auto;
 }
 
-.python .progress-green {
-  width: 0%;
-}
-
-.django .progress-red {
-  width: 75%;
-}
-
-.django .progress-orange {
-  width: 0%;
-}
-
-.django .progress-green {
-  width: 0%;
-}
-
-.html .progress-red {
-  width: 100%;
-}
-
-.html .progress-orange {
-  width: 100%;
-}
-
-.html .progress-green {
-  width: 0%;
-}
-
-.javasctipt .progress-red {
-  width: 100%;
-}
-
-.javasctipt .progress-orange {
-  width: 0%;
-}
-
-.javasctipt .progress-green {
-  width: 0%;
+.hobbies-info p {
+  text-align: justify;
+  margin: 0 3vw;
+  font-size: 1.2em;
 }

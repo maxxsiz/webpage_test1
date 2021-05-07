@@ -1,4 +1,32 @@
 'use strict';
+var Visible = function (target) {
+  var targetPosition = {
+      top: window.pageYOffset + target.getBoundingClientRect().top,
+      left: window.pageXOffset + target.getBoundingClientRect().left,
+      right: window.pageXOffset + target.getBoundingClientRect().right,
+      bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+    },
+
+    windowPosition = {
+      top: window.pageYOffset,
+      left: window.pageXOffset,
+      right: window.pageXOffset + document.documentElement.clientWidth,
+      bottom: window.pageYOffset + document.documentElement.clientHeight
+    };
+    console.log(targetPosition.right);
+    console.log(windowPosition.left);
+    console.log(targetPosition.left);
+    console.log(windowPosition.right);
+  if (targetPosition.right > windowPosition.left && 
+    targetPosition.left < windowPosition.right) { 
+    console.log('ok');
+    return true;
+  } else {
+    console.log('not');
+    return false;
+  };
+};
+
 //slider main
  var slideShow = (function () {
   return function (selector, config) {
@@ -8,7 +36,7 @@
       _sliderItems = _slider.querySelectorAll('.slider__item'), // коллекция .slider-item
       _sliderControls = _slider.querySelectorAll('.slider__control'), // элементы управления
       _currentPosition = 0, // позиция левого активного элемента
-      _transformValue = 0, // значение транфсофрмации .slider_wrapper
+      _transformValue = 0, // значение транфсофрмации+  .slider_wrapper
       _transformStep = 100, // величина шага (для трансформации)
       _itemsArray = [], // массив элементов
       //_itemsName = ["Main","About me","Skills","Projects","Hobbies"],
@@ -54,37 +82,41 @@
 
     // функция, выполняющая смену слайда в указанном направлении
     var _move = function (direction) {
-      var nextItem, currentIndicator = _indicatorIndex;;
-      if (direction === 'next') {
-        _currentPosition++;
-        if (_currentPosition > position.getItemPosition('max')) {
-          nextItem = position.getItemIndex('min');
-          _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
-          _itemsArray[nextItem].transform += _itemsArray.length * 100;
-          _itemsArray[nextItem].item.style.transform = 'translateY(' + _itemsArray[nextItem].transform + '%)';
+      if (Visible(document.querySelector('#main_page'))) {
+        var nextItem, currentIndicator = _indicatorIndex;;
+        if (direction === 'next') {
+          _currentPosition++;
+          if (_currentPosition > position.getItemPosition('max')) {
+            nextItem = position.getItemIndex('min');
+            _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
+            _itemsArray[nextItem].transform += _itemsArray.length * 100;
+            _itemsArray[nextItem].item.style.transform = 'translateY(' + _itemsArray[nextItem].transform + '%)';
+          }
+          _transformValue -= _transformStep;
+          _indicatorIndex = _indicatorIndex + 1;
+          if (_indicatorIndex > _indicatorIndexMax) {
+            _indicatorIndex = 0;
+          }
+        } else {
+          _currentPosition--;
+          if (_currentPosition < position.getItemPosition('min')) {
+            nextItem = position.getItemIndex('max');
+            _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
+            _itemsArray[nextItem].transform -= _itemsArray.length * 100;
+            _itemsArray[nextItem].item.style.transform = 'translateY(' + _itemsArray[nextItem].transform + '%)';
+          }
+          _transformValue += _transformStep;
+          _indicatorIndex = _indicatorIndex - 1;
+          if (_indicatorIndex < 0) {
+            _indicatorIndex = _indicatorIndexMax;
+          }
         }
-        _transformValue -= _transformStep;
-        _indicatorIndex = _indicatorIndex + 1;
-        if (_indicatorIndex > _indicatorIndexMax) {
-          _indicatorIndex = 0;
-        }
+        _sliderContainer.style.transform = 'translateY(' + _transformValue + '%)';
+        _indicatorItems[currentIndicator].classList.remove('active');
+        _indicatorItems[_indicatorIndex].classList.add('active');
       } else {
-        _currentPosition--;
-        if (_currentPosition < position.getItemPosition('min')) {
-          nextItem = position.getItemIndex('max');
-          _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
-          _itemsArray[nextItem].transform -= _itemsArray.length * 100;
-          _itemsArray[nextItem].item.style.transform = 'translateY(' + _itemsArray[nextItem].transform + '%)';
-        }
-        _transformValue += _transformStep;
-        _indicatorIndex = _indicatorIndex - 1;
-        if (_indicatorIndex < 0) {
-          _indicatorIndex = _indicatorIndexMax;
-        }
-      }
-      _sliderContainer.style.transform = 'translateY(' + _transformValue + '%)';
-      _indicatorItems[currentIndicator].classList.remove('active');
-      _indicatorItems[_indicatorIndex].classList.add('active');
+        console.log('not scroll');
+      };
     };
 
     // функция, осуществляющая переход к слайду по его порядковому номеру
