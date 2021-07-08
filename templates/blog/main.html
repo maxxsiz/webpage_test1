@@ -5,7 +5,6 @@
 {% endblock %}
 {% block css_style %}
 <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-<script type="text/javascript" src="{% static 'blog/js/modernizr.custom.53451.js' %}"></script>
 {% endblock %}
 {% block title %}
 Maksym Mishchuk - Hello world!
@@ -44,8 +43,7 @@ Maksym Mishchuk - Hello world!
                                         <p id="email-show-result-text">RESULT</p>
                                     </div>
                                 </form>
-                                <div class="btn-exit-from-contact">
-                                    <a role="button" onclick="contact_email()"><img class="icon-exit-contact" src="{% static 'blog/img/icons/cross_exit_icon.png' %}" alt=""></a>
+                                <div class="btn-exit-from-contact" role="button" onclick="contact_email()">
                                 </div>
                             </div>
                         </div>
@@ -379,7 +377,7 @@ Maksym Mishchuk - Hello world!
                     <div id="hobbies_page" class="page">
                         <section id="dg-container" class="dg-container">
                             <div class="dg-wrapper">
-                                <div class="hobbies hobbie-ski-snowboard">
+                                <div class="hobbies" id="hobbie-ski-snowboard">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/paintball_gif.mp4' %}" type="video/mp4">
@@ -389,7 +387,7 @@ Maksym Mishchuk - Hello world!
                                         <p>Also I wanted to try something other than skiing. So three years ago I decided to learn snowboarding.</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-paintball">
+                                <div class="hobbies" id="hobbie-paintball">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/paintball_gif.mp4' %}" type="video/mp4">
@@ -398,7 +396,7 @@ Maksym Mishchuk - Hello world!
                                         <p>Paintball is also some kind of relax for me.</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-rollerblade">
+                                <div class="hobbies" id="hobbie-rollerblade">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/lodowisko_gif.mp4' %}" type="video/mp4">
@@ -407,7 +405,7 @@ Maksym Mishchuk - Hello world!
                                         <p>As a child, I played hockey for 3 years. After moving to Poland, I was unable to continue my studies. But I often go to the ice rink so as not to lose skills.</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-rollerskate">
+                                <div class="hobbies" id="hobbie-rollerskate">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/rollers_gif.mp4' %}" type="video/mp4">
@@ -416,7 +414,7 @@ Maksym Mishchuk - Hello world!
                                         <p>In summer, skates are replaced by rollers. My friend and I often practiced slalom and speed skating.</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-videomake">
+                                <div class="hobbies" id="hobbie-videomake">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/rollers_gif.mp4' %}" type="video/mp4">
@@ -427,7 +425,7 @@ Maksym Mishchuk - Hello world!
                                         <span style="color: #5761e7">Photoshop</span>. Now I am actively studying <span style="color: #ff9100">Ilustrator</span>.</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-gaming">
+                                <div class="hobbies" id="hobbie-gaming">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/gaming_gif.mp4' %}" type="video/mp4">
@@ -436,7 +434,7 @@ Maksym Mishchuk - Hello world!
                                         <p>New</p>
                                     </div>
                                 </div>
-                                <div class="hobbies hobbie-printer3d">
+                                <div class="hobbies" id="hobbie-printer3d">
                                     <div class="background-photo"></div>
                                     <video class="background-video" autoplay muted loop>
                                         <source src="{% static 'blog/img/hobbies/printing_gif.mp4' %}" type="video/mp4">
@@ -449,8 +447,8 @@ Maksym Mishchuk - Hello world!
                                 </div>
                             </div>
                             <nav>	
-                                <span class="dg-prev"></span>
-                                <span class="dg-next"></span>
+                                <span class="dg-prev" onclick="ChangeBcHobbie()"></span>
+                                <span class="dg-next" onclick="ChangeBcHobbie()"></span>
                             </nav>
                         </section>
                     </div>
@@ -464,6 +462,11 @@ Maksym Mishchuk - Hello world!
 {% endblock %}
 {% block javascript %}
 <style type="text/css">
+    @keyframes show_load_block {
+        from { opacity: 1;}
+        to { opacity: 0;}
+      }
+      
     #preloader {
         position: absolute;
         top: 0;
@@ -535,12 +538,21 @@ Maksym Mishchuk - Hello world!
         to {transform: translate(0,0);}
       }
 </style>
-<script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="{% static 'blog/js/jquery.gallery.js' %}"></script>
 <script type="text/javascript">
-    $(function() {
-        $('#dg-container').gallery();
-    });
+    var ChangeBcHobbie = function() {  // funtion which change backgroud at hobbies page
+        setTimeout(function() {
+            var background_id = document.querySelector(".dg-center").getAttribute("id");
+            console.log(background_id);
+            console.log("#"+background_id+" > div:first-child");
+            var elem = document.querySelector("#"+background_id+" > div:first-child");
+            var new_bc = window.getComputedStyle(elem).background;
+            console.log(new_bc);
+            document.getElementById('hobbies_page').style.background = new_bc;
+        },1000);
+    };
+
+    ChangeBcHobbie();
 </script>
+<script type="text/javascript" src="{% static 'blog/js/slider_scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/jquery.gallery.js' %}"></script>
 {% endblock %}

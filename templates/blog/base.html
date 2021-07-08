@@ -23,20 +23,52 @@
 </div>
 {% block content %} {% endblock %}
 <script type="text/javascript">
-    var IsAlreadyLoad = function() {
-        if ( document.readyState === "complete" ) {
-            document.getElementById("preloader").style.display = "none";
-        } else {
-            IsAlreadyLoad()
+    var HideLoader = function() { 
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.body.style.overflow = "scroll";
+            document.getElementById("preloader").classList.add('preload-hide');
+            setTimeout(function() {
+                console.log("opacity");
+                document.getElementById("preloader").style.display = "none";
+            },2000);
+            console.log("end");
+          } else {
+            document.getElementById("preloader").classList.add('preload-hide');
+            setTimeout(function() {
+                console.log("opacity");
+                document.getElementById("preloader").style.display = "none";
+            },2000);
+            console.log("end");
         };
     };
-    var loader_time = 7000;
-	window.onload = function() {
-        var time_end = performance.now();
-		setTimeout(function() {
-			    IsAlreadyLoad();
-		},loader_time );
-	};
+
+
+    var loader_time = 5000;
+    var time_end = performance.now();
+    var IsAlreadyLoad = function() {
+        console.log("start");
+        if ( document.readyState === "complete" ) {
+            var load_time = performance.now() - time_end; // time how long page is loading
+            if (load_time >= loader_time) {
+                console.log("time_left > loader_time");
+                HideLoader();
+            } else {
+                console.log("time_left < loader_time");
+                setTimeout(function() {
+                    HideLoader();
+                },loader_time - load_time );
+            }
+        } else {
+            setTimeout(function() {
+                IsAlreadyLoad()
+            },10);
+        };
+    };
+    IsAlreadyLoad();
+
+    $(function() {
+        $('#dg-container').gallery();
+    });
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -67,6 +99,7 @@
     });
 </script>
 <script type="text/javascript" src="{% static 'blog/js/other_scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/modernizr.custom.53451.js' %}"></script>
 {% block javascript %} {% endblock %}
 </body>
 </html>

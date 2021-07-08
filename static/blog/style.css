@@ -2,6 +2,9 @@ body {
     --third_color: #6cc0e2; 
     --inv: #fff;
     --whiteborder: 5px var(--inv) solid;
+    --border_color: #56b1d4; 
+    --border: 5px var(--border_color) solid;
+    --second_font_color:rgb(209, 209, 209);
     font-family: 'Playfair Display', serif;
     color:  rgb(255, 255, 255);
     padding: 0;
@@ -70,7 +73,7 @@ body {
   }
 
   #aboutme_page {
-    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/texture_background.jpg) center;
+    background: rgba(128, 128, 128, 0.068) url(img/backgrounds/bc_monochrom.png) center;
     background-size: cover;
   }
 
@@ -79,6 +82,8 @@ body {
     background-image: linear-gradient(315deg, rgb(44, 43, 43), #919191, rgb(44, 43, 43), #8b8b8b);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    background-blend-mode: saturation;
+    transition: background 0.5s ease;
   }
 
   #skills_page {
@@ -410,8 +415,7 @@ body {
     width: 80vw;
     height: 80vh;
     margin: 10vh 10vw;
-    border-radius: 5vw;
-    border: var(- var(--inv)border);
+    border-radius: 5vw 0 5vw 0;
     background: url(img/backgrounds/contact-background.jpg) 0 0 repeat;
     background-size:100vw 100vh;
   }
@@ -421,12 +425,34 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(167, 206, 224);
+    background-color: rgb(177, 177, 177);
     height: 70vh;
     margin: 5vh auto;
     border-radius: 1vw 0 1vw 0;
     font-weight: 700;
-    border: var(- var(--inv)border);
+    padding: 0 2vw;
+  }
+
+  #email-contact-small-block::after, .email-contact-medium-block::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+    border-left: var(--border);
+    border-bottom: var(--border);
+  }
+
+  #email-contact-small-block::before, .email-contact-medium-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 30%;
+    border-right: var(--border);
+    border-top: var(--border);
   }
 
   #email-show-result {
@@ -434,8 +460,7 @@ body {
     display: none;  
     height: 100%;
     width: 100%;
-    background-color: var(--third_color);
-    border-radius: 1vw 0 1vw 0;
+    background-color: rgba(165, 165, 165);
     font-size: 1.2em;
     font-weight: 600;
   }
@@ -450,8 +475,8 @@ body {
   }
 
   .icon-exit-contact {
-    width: 2vw;
-    height: 2vw;
+    width: 1.5vw;
+    height: 1.5vw;
     cursor: pointer;
     margin: auto;
   }
@@ -461,23 +486,41 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -2vw;
-    right:-2vw;
-    width: 4vw;
-    height: 4vw;
-    border: var(- var(--inv)border);
-    border-radius: 50%;
-    background-color: var(--third_color);
+    top: 3vh;
+    right: 3vh;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .btn-exit-from-contact::before,
+  .btn-exit-from-contact::after {
+    content: '';
+    width: 1vh;
+    height: 4vh;
+    background: rgb(97, 97, 97);
+    display: block;
+    transform: rotate(45deg) translateX(0px);
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  .btn-exit-from-contact::after {
+    transform: rotate(-45deg) translateX(0px);
   }
 
   /* contact form settings*/
   .input-block {
 		font-weight: 700;
 		font-size: 1.2em;
+    width: 30vw;
 		padding: 0.5vw;
-		border: 0.5vw rgba(247, 247, 247, .3) solid;
+		border: 0.5vw rgba(92, 92, 92, .3) solid;
     background: url('transparent');
-    margin: 0 1.56vw 1.56vw 1.56vw;
+    margin: 0 auto 1.56vw auto;
   }
 
   .input-block:focus {
@@ -490,9 +533,9 @@ body {
     font-weight: 600;
 		font-size: 1.4em;
     height: 10%;
-    width: 50%;
+    width: auto;
     background: url('transparent');
-    border: 0.625vw rgba(247, 247, 247, .3) solid;
+    border: 0.5vw rgba(92, 92, 92, .3) solid;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 auto;
@@ -501,6 +544,7 @@ body {
   }
 
   .textarea-form {
+    width: 50vw;
     font-size: 1.2em;
     height: 40%;
     resize: none;
@@ -976,37 +1020,37 @@ body {
   z-index: 30;
 }
 
-.hobbie-ski-snowboard .background-photo {
+#hobbie-ski-snowboard .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/hobbies/ski_hobbies.jpg) center no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-paintball .background-photo {
+#hobbie-paintball .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/hobbies/paintball_hobbies.jpg) center no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-rollerblade .background-photo {
+#hobbie-rollerblade .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/hobbies/icering_hobbies.JPG) center no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-rollerskate .background-photo {
+#hobbie-rollerskate .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_skate.jpg) center no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-videomake .background-photo {
+#hobbie-videomake .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_videomaking.jpg) center no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-gaming .background-photo {
+#hobbie-gaming .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/backgrounds/bg_gopro.jpg) center  no-repeat;
   background-size: 100% auto;
 }
 
-.hobbie-printer3d .background-photo {
+#hobbie-printer3d .background-photo {
   background: rgba(83, 83, 83, 0.76) url(img/hobbies/3dprinting_hobbies.jpg) center no-repeat;
   background-size: 100% auto;
 }
